@@ -2,7 +2,7 @@ This folder contains all the basic React Project.
 
 ## Solutions:- 
 
-- Expenses Chart Solution URL:- [Github](https://github.com/SameerJS6/React-Project/tree/master/Expenses-Chart)
+- Expenses Chart Solution URL:- [Github](https://github.com/SameerJS6/React-Projects/tree/master/Expenses-Chart)
 
 ## Live Site URL:- 
 
