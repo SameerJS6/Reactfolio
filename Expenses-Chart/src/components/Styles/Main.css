@@ -1,0 +1,47 @@
+main {
+    border: none;
+    padding: 1.35rem;
+    border-radius: .8rem;
+    background-color: var(--white);
+    box-shadow: 2px 10px 25px rgb(22, 22, 22, 0.05);
+    transition: background-color var(--t-250ms), color var(--t-350ms);
+}
+.chart-box {
+    border-bottom: 1px solid hsl(28, 10%, 80%);
+}
+.chart-box h2 {
+    color: var(--brown-400);
+}
+.chart {
+    margin-block: 1rem;
+}
+@media (max-width: 20em) {
+    .chart canvas {
+        width: 250px !important;
+    } 
+}
+.total-box {
+    display: flex;
+    align-items: flex-end;
+    color: var(--brown-400);
+    margin-block-start: 1rem;
+    justify-content: space-between;
+}
+.total-box p {
+    opacity: 0.6;
+    color: var(--brown-300);
+    font-size: var(--size-100);
+}
+.total-content h3 {
+    text-align: right;
+    line-height: 1.25rem;
+    font-size: var(--size-200);
+}
+.total-content h1 {
+    line-height: 2.5rem;
+}
+@media (min-width: 35em) {
+    .chart-box h2 {
+        font-size: 2rem
+    }
+}
