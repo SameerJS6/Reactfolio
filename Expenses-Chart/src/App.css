@@ -116,14 +116,17 @@ body {
   transition: background-color var(--t-250ms);
   animation: color-change-2x 5s linear infinite alternate both;
 }
+
 @keyframes color-change-2x {
   0% {
     background: hsl(33, 100%, 85%);
   }
+
   100% {
     background: var(--orange);
   }
 }
+
 .container {
   padding: 1rem;
   max-width: 500px;
@@ -135,11 +138,13 @@ body {
     width: 375px;
   }
 }
+
 @media (min-width: 31em) {
   .container {
     width: 450px;
   }
 }
+
 @media (min-width: 84em) {
   .container {
     width: 600px;
@@ -147,7 +152,7 @@ body {
 }
 
 .slide-in {
-	animation: slide-in-bottom 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-bottom 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 @keyframes slide-in-bottom {
@@ -155,6 +160,7 @@ body {
     opacity: 0;
     transform: translateY(200px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -162,7 +168,7 @@ body {
 }
 
 .track-in {
-	animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 @keyframes tracking-in-expand {
@@ -170,16 +176,18 @@ body {
     letter-spacing: -0.5em;
     opacity: 0;
   }
+
   40% {
     opacity: 0.6;
   }
+
   100% {
     opacity: 1;
   }
 }
 
 .tracking-in-bottom {
-	animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
 @keyframes tracking-in-expand-fwd-bottom {
@@ -188,9 +196,11 @@ body {
     transform: translateZ(-70px) translateY(50px);
     opacity: 0;
   }
+
   40% {
     opacity: 0.6;
   }
+
   100% {
     transform: translateZ(0) translateY(0);
     opacity: 1;
@@ -198,7 +208,7 @@ body {
 }
 
 .rotate-in {
-	animation: rotate-in-2-cw 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: rotate-in-2-cw 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @keyframes rotate-in-2-cw {
@@ -206,6 +216,7 @@ body {
     transform: rotate(-45deg);
     opacity: 0;
   }
+
   100% {
     transform: rotate(0);
     opacity: 1;

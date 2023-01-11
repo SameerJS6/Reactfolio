@@ -1,17 +1,17 @@
 header {
-    border: none;
-    display: flex;
-    padding: 1.25rem;
-    align-items: center;
-    color: var(--cream);
-    border-radius: 0.8rem;
-    margin-block-end: 1.5rem;
-    justify-content: space-between;
-    background-color: var(--soft-red);
-    box-shadow: 2px 10px 25px rgb(22, 22, 22, 0.04);
-    transition: background-color var(--t-250ms), color var(--t-250ms);
+  border: none;
+  display: flex;
+  padding: 1.25rem;
+  align-items: center;
+  color: var(--cream);
+  border-radius: 0.8rem;
+  margin-block-end: 1.5rem;
+  justify-content: space-between;
+  background-color: var(--soft-red);
+  box-shadow: 2px 10px 25px rgb(22, 22, 22, 0.04);
+  transition: background-color var(--t-250ms), color var(--t-250ms);
 }
 .title p {
-    opacity: 0.9;
-    font-size: var(--size-100);
+  opacity: 0.9;
+  font-size: var(--size-100);
 }
