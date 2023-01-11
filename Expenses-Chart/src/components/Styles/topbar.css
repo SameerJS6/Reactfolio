@@ -3,7 +3,7 @@ header {
   display: flex;
   padding: 1.25rem;
   align-items: center;
-  color: var(--cream);
+  color: var(--white);
   border-radius: 0.8rem;
   margin-block-end: 1.5rem;
   justify-content: space-between;
@@ -14,4 +14,13 @@ header {
 .title p {
   opacity: 0.9;
   font-size: var(--size-100);
+}
+.title h2 {
+  font-size: 1.75rem;
+  line-height: 2.75rem;
+}
+@media (min-width: 32em) {
+  .title h2 {
+    font-size: 2rem;
+  }
 }

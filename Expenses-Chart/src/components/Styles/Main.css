@@ -39,9 +39,14 @@ main {
 }
 .total-content h1 {
   line-height: 2.5rem;
+  font-size: 1.75rem;
 }
 @media (min-width: 35em) {
-  .chart-box h2 {
+  .chart-box h2,
+  .total-content h1 {
     font-size: 2rem;
+  }
+  .total-box p {
+    font-size: 0.9rem;
   }
 }
