@@ -15,6 +15,7 @@ build
 style-guide.md
 README-template.md
 design
+README1.md
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
