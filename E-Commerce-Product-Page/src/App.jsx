@@ -1,11 +1,19 @@
 import React from 'react'
 import './App.css'
+import ImageSlider from './components/ImageSlider'
+import MainContent from './components/MainContent'
 import Navbar from './components/Navbar'
 
 export default function App() {
   return (
     <>
       <Navbar />
+      <div className="container">
+        <div className="container-wrapper">
+          <MainContent />
+          <ImageSlider />
+        </div>
+      </div>
     </>
   )
 }
