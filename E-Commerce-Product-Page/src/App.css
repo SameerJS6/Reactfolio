@@ -13,6 +13,7 @@
 
     --ff-primary: 'Kumbh Sans', sans-serif;
 
+    --size-50: 0.65rem; 
     --size-100: 0.85rem; 
     --size-200: 1rem; 
     --size-300: 1.125rem; 
@@ -71,4 +72,34 @@ body {
     background-color: var(--grey-100);
     background-color: var(--white);
     transition: background-color var(--t-350ms);
+}
+.container {
+
+}
+.container-wrapper {
+    gap: 2rem;
+    display: grid;
+}
+@media (min-width: 45em) {
+    .container {
+        padding-inline: 1rem;
+    }
+    .container-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 59em) {
+    .container {
+        padding-inline: 3rem;
+    }
+}
+@media (min-width: 75em) {
+    .container {
+        padding-inline: 5rem;
+    }
+}
+@media (min-width: 87em) {
+    .container {
+        padding-inline: 10rem;
+    }
 }

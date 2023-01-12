@@ -10,8 +10,8 @@ export default function App() {
       <Navbar />
       <div className="container">
         <div className="container-wrapper">
-          <MainContent />
           <ImageSlider />
+          <MainContent />
         </div>
       </div>
     </>

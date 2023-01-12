@@ -6,7 +6,6 @@ header {
     align-items: center;
     margin-inline: auto;
     justify-content: space-between;
-    /* background-color: var(--orange-100); */
 }
 .svg-logo {
     fill: #1D2026;
