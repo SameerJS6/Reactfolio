@@ -69,5 +69,6 @@
 body {
     font-family: var(--ff-primary);
     background-color: var(--grey-100);
+    background-color: var(--white);
     transition: background-color var(--t-350ms);
 }
