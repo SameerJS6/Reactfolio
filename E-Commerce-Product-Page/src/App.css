@@ -1,0 +1,73 @@
+/* Custom Properties  */
+:root {
+    --orange: hsl(26, 100%, 55%);
+    --orange-100: hsl(25, 100%, 94%);
+
+    --dark-blue: hsl(220, 13%, 13%);
+    --grey-300: hsl(219, 9%, 45%);
+    --grey-200: hsl(220, 14%, 75%);
+    --grey-100:  hsl(223, 64%, 98%);
+
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+
+    --ff-primary: 'Kumbh Sans', sans-serif;
+
+    --size-100: 0.85rem; 
+    --size-200: 1rem; 
+    --size-300: 1.125rem; 
+    --size-400: 1.5rem; 
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --t-250ms: 250ms ease;
+    --t-350ms: 350ms ease;
+    --t-500ms: 500ms ease;
+}
+
+/* CSS Reset  */
+
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* General Styling  */
+body {
+    font-family: var(--ff-primary);
+    background-color: var(--grey-100);
+    transition: background-color var(--t-350ms);
+}
