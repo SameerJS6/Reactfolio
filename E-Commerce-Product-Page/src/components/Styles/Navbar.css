@@ -2,42 +2,60 @@ header {
     gap: 2rem;
     display: flex;
     max-width: 1440px;
-    padding-inline: 2rem;
-    margin-inline: auto;
+    padding: 1rem 2rem;
     align-items: center;
+    margin-inline: auto;
     justify-content: space-between;
-    background-color: rebeccapurple;
+    /* background-color: var(--orange-100); */
 }
-.logo {
-    background-color: pink;
+.svg-logo {
+    fill: #1D2026;
+    transition: fill var(--t-250ms), translate var(--t-350ms), rotate var(--t-250ms), scale var(--t-250ms);
+}
+.svg-logo:hover {
+    scale: 1.15;
+    rotate: -5deg;
+    cursor: pointer;
+    translate: 0 -3px;
+    fill: var(--orange);
+    filter: drop-shadow(0 10px 15px -3px rgb(0 0 0 / 0.1));
 }
 nav {
-    background-color: white;
     margin-inline-end: auto;
 }
 .nav-list {
-    gap: 2rem;
+    gap: 1rem;
     display: flex;
     list-style: none;
 }
 .nav-list > li > a {
     border: none;
     text-decoration: none;
+    color: var(--grey-300);
     border-radius: 100vmax;
-    color: var(--grey-100);
     padding: 0.45rem 0.9rem;
-    font-size: var(--size-100);
-    background-color: orange;
+    font-weight: var(--fw-500);
+    font-size: var(--size-200);
     transition: background-color var(--t-250ms), color var(--t-350ms);
+}
+.nav-list > li {
+    transition: transform var(--t-350ms);
+}
+.nav-list > li:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    transform: translateY(-3px) scale(1.1) rotate(-1deg);
+}
+.nav-list > li > a:hover {
+    color: var(--white);
+    background-color: var(--orange)
 }
 .buttons-wrapper {
     gap: 1rem;
     display: flex;
     align-items: center;
-    background-color: pink;
 }
 .btn-profile > img {
-    width: 45px;
+    width: 35px;
 }
 .hamburger {
     border: none;
@@ -45,12 +63,79 @@ nav {
     cursor: pointer;
     padding: 0.75rem;
     border-radius: 50%;
-    background-color: white;
+    background-color: transparent;
 }
-@media (max-width: 50em) {
+.btn-profile {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--orange-100);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    transition: transform var(--t-350ms), border-color var(--t-250ms);
+}
+.btn-profile:hover {
+    transform-origin: center;
+    border-color: var(--orange);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+.theme,
+.cart {
+    border: none;
+    padding: .35rem;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all var(--t-350ms);
+}
+.cart {
+    padding: 0.45rem;
+}
+
+.theme {
+    display: none;
+}
+
+.theme:hover,
+.cart:hover {
+    translate: 0 -5px;
+    background-color: var(--grey-200);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.cart-svg {
+    fill: var(--dark-blue);
+    transition: fill var(--t-250ms), scale var(--t-350ms), rotate var(--t-350ms);
+}
+
+.moon-svg,
+.sun-svg {
+    transition: fill var(--t-250ms), scale var(--t-350ms), rotate var(--t-250ms);
+}
+
+.cart-svg:hover,
+.moon-svg:hover,
+.sun-svg:hover {
+    scale: 1.2;
+    rotate: -5deg;
+}
+
+.cart-svg:hover,
+.sun-svg:hover {
+    fill: black;  
+}
+
+.sun-svg:hover {
+    scale: 1.2;
+    rotate: -360deg;
+}
+
+
+
+@media (max-width: 59em) {
     header {
         gap: 0;
-        padding: 0.5rem;
+        padding: 1rem 0.5rem;
     }
     .logo {
         gap: .75rem;
@@ -58,27 +143,29 @@ nav {
         align-items: center;
     }
     nav {
-        width: 65%;
+        top: 0;
+        left: 0px;
+        width: 0%;
         opacity: 0;
-        left: -300px;
         height: 100vh;
         position: fixed;
         transition: all var(--t-350ms);
-        background-color: rebeccapurple;
+        background-color: var(--grey-100);
     }
     .open {
-        left: 0;
-        top: 0;
+        width: 65%;
         opacity: 1;
         box-shadow: 0 3px 25px rgb(22, 22, 22, 0.15);
     }
     .nav-list {
-        gap: 1rem;
         height: 65%;
+        display: none;
         flex-direction: column;
         justify-content: center;
-        background-color: pink;
         padding-inline-start: 1rem;
+    }
+    .active {
+        display: flex;
     }
     .nav-list > li > a {
         color: var(--dark-blue);
@@ -86,9 +173,35 @@ nav {
         font-weight: var(--fw-700);
         background-color: transparent;
     }
+    .nav-list > li:hover {
+        box-shadow: none;
+    }
     .hamburger {
         display: block;
         z-index: 99999;
-        
+    }
+    .buttons-wrapper {
+        gap: .25rem;
+    }
+    .cart-svg:hover {
+        scale: 1.01;
+    }
+}
+
+@media (min-width: 30em) {
+    .theme {
+        padding: 0.65rem;
+    }
+    .cart {
+        padding: 0.75rem 0.75rem 0.82rem 0.75rem;
+    }
+    .btn-profile > img {
+        width: 45px;
+    }
+    .theme {
+        display: block;
+    }
+    .buttons-wrapper {
+        gap: 1rem
     }
 }
