@@ -38,10 +38,12 @@ nav {
     transition: background-color var(--t-250ms), color var(--t-350ms);
 }
 .nav-list > li {
+    border: none;
+    border-radius: 100vmax;
     transition: transform var(--t-350ms);
 }
 .nav-list > li:hover {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     transform: translateY(-3px) scale(1.1) rotate(-1deg);
 }
 .nav-list > li > a:hover {
@@ -98,7 +100,7 @@ nav {
 .theme:hover,
 .cart:hover {
     translate: 0 -5px;
-    background-color: var(--grey-200);
+    background-color: var(--hover-grey-100);
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
 }
 
@@ -129,12 +131,30 @@ nav {
     rotate: -360deg;
 }
 
-
-
 @media (max-width: 59em) {
     header {
         gap: 0;
         padding: 1rem 0.5rem;
+    }
+    .overlay {
+        overflow: hidden;
+    }
+    header[data-overlay=true]::after {
+        content: "";
+        inset: 0;
+        z-index: 2;
+        height: 100vh;
+        position: fixed;
+        transition: opacity var(--t-350ms);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.205) 10%, rgba(0, 0, 0, 0.85) 100%);
+        animation: opacity 500ms ease both;
+    }
+    header[data-overlay=false]::after {
+        animation: opacity 10s ease reverse;
+    }
+    @keyframes opacity {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
     }
     .logo {
         gap: .75rem;
@@ -142,6 +162,7 @@ nav {
         align-items: center;
     }
     nav {
+        z-index: 10;
         top: 0;
         left: 0px;
         width: 0%;
@@ -161,7 +182,7 @@ nav {
         display: none;
         flex-direction: column;
         justify-content: center;
-        padding-inline-start: 1rem;
+        padding-inline-start: 1.5rem;
     }
     .active {
         display: flex;
