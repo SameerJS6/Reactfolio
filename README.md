@@ -11,4 +11,4 @@ This folder contains all the basic React Project.
 
 - Expenses Chart Live Site URL :- [Netify](https://expenses-chart-singh.netlify.app/)
 -  It's Incomplete
-- E-Commerce Product Page Live Site URL :- [Netify](https://expenses-chart-singh.netlify.app/)
+- E-Commerce Product Page Live Site URL :- [Netify](https://sneaker-sameer.netlify.app/)
