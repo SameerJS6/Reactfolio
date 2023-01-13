@@ -74,6 +74,10 @@ body {
     background-color: var(--white);
     transition: background-color var(--t-350ms);
 }
+.container {
+    max-width: 1440px;
+    margin-inline: auto;
+}
 .container-wrapper {
     gap: 2rem;
     display: grid;
