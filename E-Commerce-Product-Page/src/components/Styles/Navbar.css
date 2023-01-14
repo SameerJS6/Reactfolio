@@ -146,8 +146,8 @@ nav {
         height: 100vh;
         position: fixed;
         transition: opacity var(--t-350ms);
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.205) 10%, rgba(0, 0, 0, 0.85) 100%);
         animation: opacity 500ms ease both;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.205) 10%, rgba(0, 0, 0, 0.85) 100%);
     }
     header[data-overlay=false]::after {
         animation: opacity 10s ease reverse;

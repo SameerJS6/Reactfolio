@@ -77,9 +77,9 @@ body {
 .container {
     max-width: 1440px;
     margin-inline: auto;
+    padding-block-start: 1rem;
 }
 .container-wrapper {
-    gap: 2rem;
     display: grid;
 }
 @media (min-width: 45em) {
@@ -87,21 +87,26 @@ body {
         padding-inline: 1rem;
     }
     .container-wrapper {
-        grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
+}
+@media (min-width: 50em) {
+  .container-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+}
 }
 @media (min-width: 59em) {
     .container {
-        padding-inline: 3rem;
+        padding: 1rem 3rem;
     }
 }
 @media (min-width: 75em) {
     .container {
-        padding-inline: 5rem;
+        padding: 3rem 5rem;
     }
 }
 @media (min-width: 87em) {
     .container {
-        padding-inline: 10rem;
+        padding: 3rem 10rem;
     }
 }
