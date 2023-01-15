@@ -24,7 +24,6 @@ export default function ImageSlider() {
   const handleClick = (index) => {
     setCurrentIndex(index)
   }
-
   return (
     <>
       <section className="wrapper" data-active="false">  
@@ -57,7 +56,7 @@ export default function ImageSlider() {
           <div className="main-img translate">
             <img className="hero-img" src={Images[currentIndex]} alt={Images[currentIndex]}  />
           </div>
-            <button className="box arrows left-arrow" onClick={ handlePrevClick }>
+            <button className="box arrows left-arrow " onClick={ handlePrevClick } >
               <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 1 3 9l8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd"/>
               </svg>
