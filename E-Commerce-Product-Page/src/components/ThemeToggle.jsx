@@ -1,12 +1,37 @@
 import React, { useState } from 'react'
 import './Styles/Navbar.css'
 
-export default function ThemeToggle(props) {
-  const [theme, setTheme] = useState(false)
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState(false);
+  let darkMode = localStorage.getItem("darkmode");
+  
+  const EnableDarkMode = () => {
+    document.body.classList.add("DarkMode");
+    localStorage.setItem("darkmode", 'enabled');
+  }
+  const DisableDarkMode = () => {
+    document.body.classList.remove("DarkMode");
+    localStorage.setItem('darkmode', 'disabled');
+  }
+
+  if(darkMode === 'enabled') EnableDarkMode();
+
+  const handleTheme = () => {
+    darkMode = localStorage.getItem('darkmode');
+    if(darkMode === 'enabled') {
+      DisableDarkMode();
+      setTheme(false)
+      console.log("Dark Mode Disabled");
+    }else {
+      EnableDarkMode();
+      setTheme(true);
+      console.log("Dark Mode Enabled");
+    }
+  }
 
   return (
     <div>
-      <button className="theme" onClick={() => setTheme(!theme)}> 
+      <button className="theme" onClick={ handleTheme }> 
       {!theme && <svg className="moon-svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20.9931 13.3127C20.5158 13.435 20.0155 13.5 19.5 13.5C16.1863 13.5 13.5 10.8137 13.5 7.5C13.5 6.98452 13.565 6.48422 13.6873 6.00686C9.9664 6.17045 7 9.2388 7 13C7 16.866 10.134 20 14 20C17.7612 20 20.8295 17.0336 20.9931 13.3127Z" fill="#000000"/>
         <path fillRule="evenodd" clipRule="evenodd" d="M4.5 8.25C4.77614 8.25 5 8.47386 5 8.75V10.25C5 10.5261 4.77614 10.75 4.5 10.75C4.22386 10.75 4 10.5261 4 10.25V8.75C4 8.47386 4.22386 8.25 4.5 8.25Z" fill="#000000"/>

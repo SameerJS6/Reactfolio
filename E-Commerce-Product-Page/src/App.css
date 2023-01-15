@@ -28,7 +28,19 @@
     --t-350ms: 350ms ease;
     --t-500ms: 500ms ease;
 }
+.DarkMode {
+    --orange: hsl(26, 100%, 55%);
+    --orange-100: hsl(25, 100%, 94%);
 
+    --dark-blue: #FFFFFF;
+    --grey-300: hsl(219, 9%, 45%);
+    --grey-200: hsl(220, 14%, 75%);
+    --grey-100:  #111111;
+    --hover-grey-100:  hsl(223, 64%, 95%);
+
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+}
 /* CSS Reset  */
 
 *, *::before, *::after {
@@ -71,7 +83,7 @@
 body {
     font-family: var(--ff-primary);
     background-color: var(--grey-100);
-    background-color: var(--white);
+    /* background-color: var(--white); */
     transition: background-color var(--t-350ms);
 }
 .container {
