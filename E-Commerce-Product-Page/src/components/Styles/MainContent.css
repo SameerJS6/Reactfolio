@@ -75,7 +75,7 @@
     }
 }
 .counting-container {
-    gap: 1rem;
+    gap: 0.5rem;
     display: flex;
     align-items: center;
     border-radius: .5rem;
@@ -106,7 +106,7 @@
     background-color: var(--hover-grey-100);
 }
 .count {
-    width: 2ch;
+    width: 2.5ch;
     text-align: center;
     color: var(--dark-blue);
     font-size: var(--size-200);
@@ -159,7 +159,7 @@
         padding: 0.8rem 1.6rem;
     }
     .counting-container {
-        gap: 1.75rem;
+        gap: 1.25rem;
         padding: 0.5rem 0.5rem;
     }
     .count {
@@ -173,7 +173,7 @@
         scale: 1.15;
     }
     .minus:hover,
-.plus:hover {
+    .plus:hover {
     scale: 1.01;
     translate: 0 -2px;
     background-color: var(--hover-grey-100);

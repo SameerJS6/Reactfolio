@@ -110,3 +110,15 @@ body {
         padding: 3rem 10rem;
     }
 }
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 11px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 100vmax;
+  background: var(--grey-200)
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grey-300)
+}

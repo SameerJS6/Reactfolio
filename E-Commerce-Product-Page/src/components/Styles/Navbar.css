@@ -139,23 +139,23 @@ nav {
     .overlay {
         overflow: hidden;
     }
-    header[data-overlay=true]::after {
+    header[data-overlay=true]::after,
+    header[data-overlay=false]::after {
         content: "";
         inset: 0;
         z-index: 2;
+        opacity: 1;
         height: 100vh;
         position: fixed;
         transition: opacity var(--t-350ms);
-        animation: opacity 500ms ease both;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.205) 10%, rgba(0, 0, 0, 0.85) 100%);
     }
     header[data-overlay=false]::after {
-        animation: opacity 10s ease reverse;
+        opacity: 0;
+        z-index: -39874;
+        transition: opacity var(--t-500ms);
     }
-    @keyframes opacity {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
+
     .logo {
         gap: .75rem;
         display: flex;
