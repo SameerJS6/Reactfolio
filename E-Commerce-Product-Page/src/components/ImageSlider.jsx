@@ -13,23 +13,25 @@ export default function ImageSlider() {
   const handlePrevClick = () => {
     const prevIndex = currentIndex - 1;
     console.log("Previous Button Was Clicked");
-    setCurrentIndex(prevIndex < 0 ? Images.length : prevIndex);
+    setCurrentIndex(prevIndex < 0 ? Images.length -1 : prevIndex);
   }
   const handleNextClick = () => {
     const nextIndex = currentIndex + 1;
     console.log("Next Button Was Clicked");
     setCurrentIndex(nextIndex === Images.length ? 0 : nextIndex);
+    console.log(nextIndex)
   }
   const handleClick = (index) => {
     setCurrentIndex(index)
   }
+
   return (
     <>
       <section className="wrapper" data-active="false">  
         <div className="main-img">
-          <img className="hero-img" src={Images[currentIndex]} alt={Images[currentIndex].caption} onClick={()=> setIsOpen(!isOpen)}/>
+          <img className="hero-img" src={Images[currentIndex]} alt={Images[currentIndex]} onClick={()=> setIsOpen(!isOpen)}/>
 
-          <button className="arrows left-arrow" onClick={ handlePrevClick }>
+          <button className="arrows left-arrow" onClick={ handlePrevClick } >
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1 3 9l8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd"/>
             </svg>
@@ -53,7 +55,7 @@ export default function ImageSlider() {
       {isOpen && <section className="lightbox opacity" data-overlay={`${!isOpen ? "true" : "false"}`}>
             <button className='lightbox-close-btn' onClick={()=> setIsOpen(!isOpen)}>X</button>
           <div className="main-img translate">
-            <img className="hero-img" src={Images[currentIndex]} alt={Images[currentIndex].caption}  />
+            <img className="hero-img" src={Images[currentIndex]} alt={Images[currentIndex]}  />
           </div>
             <button className="box arrows left-arrow" onClick={ handlePrevClick }>
               <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
