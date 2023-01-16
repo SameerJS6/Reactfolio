@@ -1,0 +1,54 @@
+/* LightBox Animations */
+.opacity {
+    animation: opacity var(--t-500ms) both;
+}
+@keyframes opacity {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px) ;
+    }
+}
+.translate {
+    animation: translate-up 1s ease-out both;
+}
+@keyframes translate-up {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translate(0px);
+    }
+}
+
+.tilt-in-bottom-2 {
+	animation: tilt-in-bottom-2 1.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes tilt-in-bottom-2 {
+    0% {
+        transform: rotateY(-50deg) translateY(80px) skewY(30deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        opacity: 1;
+    }
+  }
+
+  .scale-in {
+	animation: scale-in-center 1.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes scale-in-center {
+    0% {
+      transform: scale(0) translateY(50px);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1) translateY(0);
+    }
+  }
