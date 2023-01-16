@@ -50,17 +50,30 @@
     width: 35px;
     aspect-ratio: 1/1;
     background-color: var(--white);
-    transition: all var(--t-350ms);
+    transition: background-color var(--t-500ms), scale var(--t-350ms), translate var(--t-500ms);
 }
 .arrows > svg {
     margin-inline: auto;
+    stroke: var(--black);
+    transition: stroke var(--t-500ms), translate var(--t-350ms), scale var(--t-500ms);
 }
+.arrows:hover,
+.lightbox-close-btn:hover {
+    scale: 1.1;
+    translate: 0 -5px;
+    background-color: var(--dark-blue);
+}
+.arrows:hover > svg {
+    stroke: var(--orange);
+}
+
 .left-arrow {
     left: 15px;
 }
 .right-arrow {
     right: 15px;
 }
+
 /* All The Hover State Here  */
 @media (hover:hover) {
 
@@ -84,6 +97,16 @@
     .wrapper-content:hover::after {
         opacity: 1;
     }
+    .arrows:hover > svg,
+    .lightbox-close-btn:hover > svg {
+        scale: 1.1;
+    }
+    .left-arrow:hover > svg {
+        translate: -3px 0
+    }
+    .right-arrow:hover > svg {
+        translate: 3px 0
+    }
 }
 
 /* Active State Classes */
@@ -91,10 +114,15 @@
     scale: 0.9;
     transform: translateY(5px);
     outline: 3px solid var(--orange);
+    transition: transform var(--t-500ms);
 }
 .active-img > img {
     scale: 1.1;
     opacity: 0.75;
+}
+.wrapper-content.active-img {
+    translate: 0 5px;
+    transition: translate var(--t-500ms);
 }
 .wrapper-content.active-img::after {
     opacity: 0.5;
@@ -113,14 +141,13 @@
 }
 
 /* LightBox  */
-
 .lightbox {
     inset: 0;
-    z-index: 154548485487854;
     display: grid;
     position: fixed;
     place-content: center;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 10%, rgba(0, 0, 0, 0.9) 100%);;
+    z-index: 154548485487854;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 10%, rgba(0, 0, 0, 0.9) 100%);
 }
 .lightbox > .main-img {
     max-width: 400px;
@@ -144,60 +171,21 @@
     right: 35px;
     border: none;
     cursor: pointer;
+    aspect-ratio: 1/1;
     position: absolute;
     border-radius: 50%;
-    background: white;
     z-index: 549837538475;
     padding: 0.5rem 0.8rem;
-    transition: scale var(--t-350ms), translate var(--t-350ms);
+    background-color: var(--white);
+    transition: scale var(--t-350ms), translate var(--t-350ms), background-color var(--t-500ms);
 }
-.lightbox-close-btn:hover {
-    scale: 1.1;
-    translate: 0 -5px;
+.lightbox-close-btn > svg {
+    fill: var(--dark-blue);
+    transition: fill var(--t-350ms), scale var(--t-500ms);
 }
-/* .lightbox[data-active=true]::after,
-.lightbox[data-active=false]::after {
-    inset: 0;
-    opacity: 1;
-    z-index: 25;
-    content: '';
-    height: 100vh;
-    position: absolute;
-    transition: opacity var(--t-500ms);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.205) 10%, rgba(0, 0, 0, 0.85) 100%);
+.lightbox-close-btn:hover > svg {
+    fill: var(--orange);
 }
-.lightbox[data-active=false]::after {
-    opacity: 0;
-    z-index: -73498;
-} */
-
-
-.opacity {
-    animation: opacity var(--t-500ms) both;
-}
-@keyframes opacity {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(0px) ;
-    }
-}
-.translate {
-    animation: translate-up 2s ease-out both;
-}
-@keyframes translate-up {
-    from {
-        transform: translateY(10px);
-    }
-    to {
-        transform: translate(0px) ;
-    }
-}
-
-
 
 @media (min-width: 45em) {
     .main-img {
@@ -218,6 +206,7 @@
     }
     .box.right-arrow {
         right: 15%;
+        opacity: 1;
     }
     .lightbox-close-btn {
         top: 3%;
@@ -228,7 +217,7 @@
 
 @media (min-width: 1024px) {
     .box.arrows {
-        width: 50px;
+        width: 45px;
     }
     .box.left-arrow {
         left: 25%;
@@ -236,8 +225,14 @@
     .box.right-arrow {
         right: 25%;
     }
+    
+}
+@media (min-width: 1300px) {
     .lightbox > .main-img {
         max-width: 500px;
+    }
+    .box.arrows {
+        width: 50px;
     }
 }
 @media (min-width: 2000px) {
@@ -255,5 +250,3 @@
         max-width: 600px;
     }
 }
-
-
