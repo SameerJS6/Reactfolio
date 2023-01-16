@@ -55,8 +55,8 @@ Users should be able to:
 
 ### What I learned
 
--I learned how to organize my files(File Structure) and what components are and how to use them.
--I also learned how to use a library called ChartJS to make vertical bar charts. Here's some code that shows how it works:-
+- I learned how to organize my files(File Structure) and what components are and how to use them.
+- I also learned how to use a library called ChartJS to make vertical bar charts. Here's some code that shows how it works:-
 
 ```javascript react
 const state = {
