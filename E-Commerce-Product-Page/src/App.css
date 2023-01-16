@@ -4,7 +4,7 @@
     --orange-100: hsl(25, 100%, 94%);
 
     --dark-blue: hsl(220, 13%, 13%);
-    --grey-300: hsl(219, 9%, 45%);
+    --grey-300: hsl(217, 9%, 45%);
     --grey-200: hsl(220, 14%, 75%);
     --grey-100:  hsl(223, 64%, 98%);
     --hover-grey-100:  hsl(223, 64%, 95%);
@@ -33,13 +33,13 @@
     --orange-100: hsl(25, 100%, 94%);
 
     --dark-blue: #FFFFFF;
-    --grey-300: hsl(219, 9%, 45%);
-    --grey-200: hsl(220, 14%, 75%);
-    --grey-100:  #111111;
-    --hover-grey-100:  hsl(223, 64%, 95%);
+    --grey-300: hsl(0, 0%, 35%);
+    --grey-200: hsl(0, 0%, 23%);
+    --grey-100:  hsl(0, 0%, 15%);
+    --hover-grey-100:  hsl(0, 0%, 20%);
 
-    --white: hsl(0, 0%, 100%);
-    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 7%);
+    --black: white;
 }
 /* CSS Reset  */
 
@@ -83,7 +83,7 @@
 body {
     font-family: var(--ff-primary);
     background-color: var(--grey-100);
-    /* background-color: var(--white); */
+    background-color: var(--white);
     transition: background-color var(--t-350ms);
 }
 .container {
