@@ -7,7 +7,7 @@ import ProfileImage from '../assets/image-avatar.png'
 export default function Navbar() {
  const [isOpen, setIsOpen] = useState(false); 
    isOpen ? document.body.classList.add("overlay") : document.body.classList.remove("overlay");
-   
+ 
   return (
    <>
      <header data-overlay={`${isOpen ? "true" : "false"}`} >
@@ -25,11 +25,11 @@ export default function Navbar() {
 
       <nav className={`${isOpen ? "open" : ""}`}>
         <ul className={`nav-list ${isOpen ? 'active' : ''}`}>
-          <li><a href="/">Collections</a></li>
-          <li><a href="/">Men</a></li>
-          <li><a href="/">Women</a></li>
-          <li><a href="/">About</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><a href='#'>Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href='#'>Contact</a></li>
         </ul>
       </nav>
 
