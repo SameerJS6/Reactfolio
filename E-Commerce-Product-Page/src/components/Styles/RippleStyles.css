@@ -1,0 +1,42 @@
+/* Ripple Effect  */
+@media (min-width: 59em) {
+  .ripple-container {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    
+      --ripple-top: 0px;
+      --ripple-left: 0px;
+      --ripple-size: 100px;
+      --ripple-duration: 1000ms;
+      --ripple-color: var(--black);
+    }
+    .ripple-container::before {
+      content: '';
+      opacity: 0.5;
+      border: none;
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      pointer-events: none;
+      top: var(--ripple-top);
+      left: var(--ripple-left);
+      width: var(--ripple-size);
+      height: var(--ripple-size);
+      background: var(--ripple-color);
+    }
+    .ripple-container.ripple-active::before {
+      border-radius: 50%;
+      animation: ripple var(--ripple-duration) linear forwards
+    }
+    @keyframes ripple {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(5);
+        opacity: 0;
+      }
+    }
+
+}
