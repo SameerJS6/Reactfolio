@@ -1,5 +1,4 @@
 /* Ripple Effect  */
-@media (min-width: 59em) {
   .ripple-container {
       position: relative;
       overflow: hidden;
@@ -38,5 +37,3 @@
         opacity: 0;
       }
     }
-
-}

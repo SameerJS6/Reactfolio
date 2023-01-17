@@ -141,7 +141,7 @@ nav {
   transform: scale(0) translateY(-5px);
 }
 .cart-wrapper::after { 
-  bottom: -18px; 
+  bottom: -19px; 
 }
 .theme:hover::after,
 .cart-wrapper:hover::after {
@@ -282,6 +282,9 @@ nav {
   }
   .buttons-wrapper {
     gap: 1rem;
+  }
+  .cart-wrapper::after {
+    bottom: -18px;
   }
 }
 @media (min-width: 1300px) {
