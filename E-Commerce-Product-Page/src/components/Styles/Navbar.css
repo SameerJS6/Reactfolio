@@ -57,16 +57,17 @@ nav {
   transition: transform var(--t-350ms);
 }
 .nav-list > li:hover {
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   transform: translateY(-3px) scale(1.1) rotate(-1deg);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 .nav-list > li > a:hover {
   color: var(--white);
   background-color: var(--orange);
 }
-.cart::after,
+
 .theme::after,
-.nav-list > li::after {
+.nav-list > li::after,
+.cart-wrapper::after {
   left: 0;
   content: '';
   width: 100%;
@@ -78,6 +79,9 @@ nav {
   border-radius: 1rem 1rem 0 0;
   background-color: var(--orange);
   transition: transform var(--t-350ms);
+}
+.cart-wrapper::after {
+  height: 5px;
 }
 .nav-list > li:hover::after {
   transform: scale(1) rotate(1deg) translateY(-2px);
@@ -130,14 +134,17 @@ nav {
 .theme {
   display: none;
 }
-.cart::after,
+.cart-wrapper::after,
 .theme::after {
   bottom: -24px;
   transition: transform var(--t-250ms);
   transform: scale(0) translateY(-5px);
 }
-.cart:hover::after,
-.theme:hover::after {
+.cart-wrapper::after { 
+  bottom: -18px; 
+}
+.theme:hover::after,
+.cart-wrapper:hover::after {
   transform: scale(1);
   transform-origin: center;
 }
@@ -254,7 +261,6 @@ nav {
   .cart-svg:hover {
     scale: 1.01;
   }
-  .theme::after,
   .nav-list > li::after  {
     display: none;
   }
@@ -285,7 +291,9 @@ nav {
   .nav-list > li::after {
     bottom: -43px;
   }
-  .cart::after,
+  .cart-wrapper::after {
+    bottom: -33px;
+  }
   .theme::after {
     bottom: -38px;
   }
