@@ -170,6 +170,7 @@ nav {
 .sun-svg:hover {
   scale: 1.2;
   rotate: -5deg;
+  pointer-events: none;
 }
 
 .cart-svg:hover,

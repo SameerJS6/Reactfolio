@@ -41,6 +41,11 @@
     --white: hsl(0, 0%, 7%);
     --black: white;
 }
+
+/* Utility Classes  */
+.event-none {
+  pointer-events: none;
+}
 /* CSS Reset  */
 
 *, *::before, *::after {
