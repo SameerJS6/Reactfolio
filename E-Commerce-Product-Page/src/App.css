@@ -33,7 +33,7 @@
 }
 .DarkMode {
     --orange: hsl(26, 100%, 60%);
-    --orange-100: hsl(25, 100%, 94%);
+    --orange-100: hsl(25, 100%, 10%);
 
     --dark-blue: hsl(25, 100%, 94%);
     --grey-300: #656465;
