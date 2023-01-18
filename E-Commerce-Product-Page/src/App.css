@@ -3,7 +3,9 @@
     --orange: hsl(26, 100%, 55%);
     --orange-100: hsl(25, 100%, 94%);
 
-    --dark-blue: hsl(220, 13%, 13%);
+    --dark-blue: #1d2025;
+    --link: hsl(217, 9%, 45%);
+    --line: hsl(220, 14%, 75%);
     --grey-300: hsl(217, 9%, 45%);
     --grey-200: hsl(220, 14%, 75%);
     --grey-100:  hsl(223, 64%, 98%);
@@ -11,6 +13,7 @@
 
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
+    --box-shadow: 255, 125, 26;
 
     --ff-primary: 'Kumbh Sans', sans-serif;
 
@@ -29,16 +32,20 @@
     --t-500ms: 500ms ease;
 }
 .DarkMode {
-    --orange: hsl(26, 100%, 55%);
+    --orange: hsl(26, 100%, 60%);
     --orange-100: hsl(25, 100%, 94%);
 
-    --dark-blue: #FFFFFF;
-    --grey-300: hsl(0, 0%, 35%);
-    --grey-200: hsl(0, 0%, 23%);
-    --grey-100:  hsl(0, 0%, 15%);
-    --hover-grey-100:  hsl(0, 0%, 20%);
+    --dark-blue: hsl(25, 100%, 94%);
+    --grey-300: #656465;
+    --grey-200: #3b3b3b;
+    --grey-100: #2B2B2B;
+    --hover-grey-100: #656465;
+    --link: white;
+    --line: #656465;
 
-    --white: hsl(0, 0%, 7%);
+    --box-shadow: 255, 125, 6;
+
+    --white: #111111;
     --black: white;
 }
 

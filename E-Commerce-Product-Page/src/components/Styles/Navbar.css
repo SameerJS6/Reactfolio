@@ -16,11 +16,11 @@ header::before {
   width: 90%;
   height: 1px;
   transform: translate(-50%, 50%);
-  background-color: var(--grey-200);
+  background-color: var(--line);
   transition: background-color var(--t-350ms);
 }
 .svg-logo {
-  fill: #1d2026;
+  fill: var(--dark-blue);
   transition: fill var(--t-250ms), translate var(--t-350ms),
     rotate var(--t-250ms), scale var(--t-250ms);
 }
@@ -61,7 +61,7 @@ nav {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 .nav-list > li > a:hover {
-  color: var(--white);
+  color: var(--orange-100);
   background-color: var(--orange);
 }
 
@@ -226,7 +226,7 @@ nav {
     height: 100vh;
     position: fixed;
     transition: all var(--t-350ms);
-    background-color: var(--grey-100);
+    background-color: var(--white);
   }
   .open {
     width: 65%;
