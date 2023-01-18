@@ -28,16 +28,16 @@ export default function ImageSlider() {
   return (
     <>
       <section className="wrapper" data-active="false">  
-        <div className="main-img">
+        <div className="main-img | tilt-in-top">
           <img className="hero-img" src={Images[currentIndex]} alt={Images[currentIndex]} onClick={()=> setIsOpen(!isOpen)}/>
 
-          <button className="arrows left-arrow" onClick={ handlePrevClick } >
+          <button className="arrows left-arrow scale-in" onClick={ handlePrevClick } >
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1 3 9l8 8" stroke="" strokeWidth="3" fill="none" fillRule="evenodd"/>
             </svg>
           </button>
 
-          <button className="arrows right-arrow" onClick={ handleNextClick }>
+          <button className="arrows right-arrow scale-in" onClick={ handleNextClick }>
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
               <path d="m2 1 8 8-8 8" stroke="" strokeWidth="3" fill="none" fillRule="evenodd"/>
             </svg>
@@ -45,7 +45,7 @@ export default function ImageSlider() {
         </div>
           <div className="image-wrapper">
             {Images.map((image, index) => (
-              <div key={index} className={`wrapper-content ${currentIndex === index ? "active-img" : ''}`} onClick={() => handleClick(index)}>
+              <div key={index} className={`wrapper-content tilt-in-bottom-2 ${currentIndex === index ? "active-img" : ''}`} onClick={() => handleClick(index)}>
                 <img className="imgCarousel" src={image} alt="MainImage" />
               </div>
             ))}

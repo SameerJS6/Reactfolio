@@ -42,7 +42,7 @@
     font-size: var(--size-50);
     font-weight: var(--fw-700);
     border: 2px solid transparent;
-    background-color: var(--orange-100);
+    background-color: var(--orange-200);
     transition: color var(--t-250ms), background-color var(--t-350ms), scale var(--t-250ms), translate var(--t-350ms);
 }
 .discount:hover {

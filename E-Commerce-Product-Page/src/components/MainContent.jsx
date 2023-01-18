@@ -3,6 +3,7 @@ import RippleAnimation from './RippleAnimation'
 import minus from '../assets/icon-minus.svg'
 import plus from '../assets/icon-plus.svg'
 import './Styles/MainContent.css'
+import './Styles/Animations.css'
 
 export default function MainContent() {
   const [count, setCount] = useState(0);
@@ -26,17 +27,17 @@ export default function MainContent() {
 
   return (
     <>
-      <div className="content-contianer">
-        <p className='title'><strong>SNEAKER COMPANY</strong></p>
-        <h1 className='main-title'>fall limited edition sneakers</h1>
-        <p className='main-para'>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+      <div className="content-contianer | opacity">
+        <p className='title | tracking-in-expand'><strong>SNEAKER COMPANY</strong></p>
+        <h1 className='main-title | opacity'>fall limited edition sneakers</h1>
+        <p className='main-para | opacity'>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
 
         <div className="price-container">
           <div className="price-tag">
-            <h2>$125.00</h2>
-            <p className="discount">50%</p>
+            <h2 className='tracking-in-expand'>$125.00</h2>
+            <p className="discount | fade-in-fwd">50%</p>
           </div>
-          <p className='crossed-price'>$250.00</p>
+          <p className='crossed-price | tracking-in-contract'>$250.00</p>
         </div>
 
         <div className="buttons">

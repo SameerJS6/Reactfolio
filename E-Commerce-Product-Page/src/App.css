@@ -2,6 +2,7 @@
 :root {
     --orange: hsl(26, 100%, 55%);
     --orange-100: hsl(25, 100%, 94%);
+    --orange-200: hsl(25, 100%, 94%);
 
     --dark-blue: #1d2025;
     --link: hsl(217, 9%, 45%);
@@ -33,7 +34,8 @@
 }
 .DarkMode {
     --orange: hsl(26, 100%, 60%);
-    --orange-100: hsl(25, 100%, 10%);
+    --orange-100: hsl(25, 100%, 94%);
+    --orange-200: hsl(25, 100%, 10%);
 
     --dark-blue: hsl(25, 100%, 94%);
     --grey-300: #656465;
