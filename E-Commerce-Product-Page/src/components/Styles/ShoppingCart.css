@@ -1,3 +1,91 @@
 .cart-wrapper {
     position: relative;
+    border-radius: 50%;
+}
+
+.cart-content-box{
+    display: none;
+    top: -10px;
+    top: 70px;
+    /* opacity: 0; */
+    left: -200px;
+    width: 380px;
+    padding: 1rem;
+    z-index: 2;
+    position: absolute;
+    /* pointer-events: none; */
+    border-radius: 0.75rem;
+    background-color: var(--white);
+    transition: top var(--t-500ms), opacity var(--t-350ms);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+/* .cart-wrapper:hover .cart-content-box {
+    top: 70px;
+    opacity: 1;
+    pointer-events: all;
+} */
+.cart-content-box > h3 {
+    padding-block-end: 1rem;
+}
+.checkout-content {
+    display: flex;
+    align-items: center;
+    padding-block: 2rem;
+    border-block-start: 3px solid var(--hover-grey-100);
+
+}
+.thumbnail > img {
+    border: none;
+    max-width: 50px;
+    cursor: pointer;
+    border-radius: .5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+/* Checkout Title  */
+.out-title {
+    margin-inline: 0.75rem .5rem;
+}
+.out-title > p:first-child {
+    font-size: 1rem;
+}
+/* Delete Svg Button  */
+.delete-btn {
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color var(--t-350ms);
+}
+.delete-btn > svg {
+    margin-inline: auto;
+    fill: var(--grey-200);
+    transition: fill var(--t-350ms), scale var(--t-250ms), rotate var(--t-350ms);
+}
+.delete-btn:hover {
+    background-color: var(--hover-grey-100);
+}
+.delete-btn:hover > svg {
+    scale: 1.1;
+    rotate: -10deg;
+    fill: var(--grey-300);
+}
+/* Checkout Button  */
+.out-btn {
+    width: 100%;
+    cursor: pointer;
+    padding: 0.45rem;
+    color: var(--white);
+    border-radius: 0.5rem;
+    font-weight: var(--fw-700);
+    font-size: var(--size-200);
+    border: 2px solid transparent;
+    background-color: var(--orange);
+    transition: color var(--t-350ms), background-color var(--t-250ms), border var(--t-350ms);
+}
+.out-btn:hover {
+    color: var(--orange);
+    border-color: var(--orange);
+    background-color: transparent;
 }
