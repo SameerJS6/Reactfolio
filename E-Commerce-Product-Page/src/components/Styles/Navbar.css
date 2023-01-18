@@ -99,12 +99,11 @@ nav {
   border: none;
   display: none;
   cursor: pointer;
-  padding: 0.55rem;
+  /* padding: 0.55rem; */
   /* overflow: visible; */
   border-radius: 50%;
   background-color: transparent;
 }
-
 .btn-profile {
   cursor: pointer;
   border-radius: 50%;
@@ -255,6 +254,7 @@ nav {
   .hamburger {
     display: block;
     z-index: 99999;
+    aspect-ratio: 1/1;
   }
   .buttons-wrapper {
     gap: 0.25rem;

@@ -53,6 +53,9 @@
 .event-none {
   pointer-events: none;
 }
+.p-1 {
+  padding: 0.65rem;
+}
 /* CSS Reset  */
 
 *, *::before, *::after {
