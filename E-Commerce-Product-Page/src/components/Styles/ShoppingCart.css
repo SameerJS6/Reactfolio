@@ -1,31 +1,34 @@
-.cart-wrapper {
+header {
     position: relative;
-    border-radius: 50%;
 }
-
 .cart-content-box{
-    display: none;
-    top: -10px;
-    top: 70px;
-    /* opacity: 0; */
-    left: -200px;
-    width: 380px;
-    padding: 1rem;
+    top: -5%;
+    right: 0%;
     z-index: 2;
+    opacity: 0;
+    padding: 1rem;
     position: absolute;
-    /* pointer-events: none; */
+    margin-inline: 1rem;
+    pointer-events: none;
     border-radius: 0.75rem;
-    background-color: var(--white);
-    transition: top var(--t-500ms), opacity var(--t-350ms);
+    background-color: var(--grey-100);
+    transition: top 650ms ease, opacity var(--t-350ms), background-color var(--t-350ms);
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
-/* .cart-wrapper:hover .cart-content-box {
-    top: 70px;
+@media (min-width: 600px) {
+    .cart-content-box {
+        right: 4%
+    }
+}
+.cart-active {
+    top: 150%;
     opacity: 1;
     pointer-events: all;
-} */
+}
 .cart-content-box > h3 {
+    color: var(--black);
     padding-block-end: 1rem;
+    transition: color var(--t-250ms);
 }
 .checkout-content {
     display: flex;
@@ -43,9 +46,11 @@
 }
 /* Checkout Title  */
 .out-title {
+    color: var(--black);
     margin-inline: 0.75rem .5rem;
 }
 .out-title > p:first-child {
+    font-size: var(--size-100);
     font-size: 1rem;
 }
 /* Delete Svg Button  */
@@ -76,8 +81,8 @@
     width: 100%;
     cursor: pointer;
     padding: 0.45rem;
-    color: var(--white);
     border-radius: 0.5rem;
+    color: var(--orange-100);
     font-weight: var(--fw-700);
     font-size: var(--size-200);
     border: 2px solid transparent;

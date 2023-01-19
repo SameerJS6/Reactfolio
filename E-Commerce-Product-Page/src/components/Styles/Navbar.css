@@ -83,6 +83,9 @@ nav {
 .cart-wrapper::after {
   height: 5px;
 }
+.cart-wrapper[data-after=true]::after {
+  transform: scale(1);
+}
 .nav-list > li:hover::after {
   transform: scale(1) rotate(1deg) translateY(-2px);
   transform-origin: center;
@@ -139,9 +142,9 @@ nav {
   transition: transform var(--t-250ms);
   transform: scale(0) translateY(-5px);
 }
-.cart-wrapper::after { 
+/* .cart-wrapper::after { 
   bottom: -19px; 
-}
+} */
 .theme:hover::after,
 .cart-wrapper:hover::after {
   transform: scale(1);
