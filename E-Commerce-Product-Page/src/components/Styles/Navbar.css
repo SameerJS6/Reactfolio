@@ -15,8 +15,9 @@ header::before {
   bottom: 0px;
   width: 90%;
   height: 1px;
-  transform: translate(-50%, 50%);
   background-color: var(--line);
+  transform: translate(-50%, 50%);
+  animation: line-scale 500ms ease;
   transition: background-color var(--t-350ms);
 }
 .svg-logo {

@@ -85,7 +85,17 @@
     }
   }
   
-
+  @keyframes line-scale {
+    from {
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center;
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
   /* Text Animations  */
   .tracking-in {
 	animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);

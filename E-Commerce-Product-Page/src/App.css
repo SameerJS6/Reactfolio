@@ -10,7 +10,9 @@
     --grey-300: hsl(217, 9%, 45%);
     --grey-200: hsl(220, 14%, 75%);
     --grey-100:  hsl(223, 64%, 98%);
+    --cart-bg: hsl(223, 64%, 98%);
     --hover-grey-100:  hsl(223, 64%, 95%);
+    --hover-grey-200:  hsl(223, 64%, 95%);
 
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
@@ -41,9 +43,12 @@
     --grey-300: #656465;
     --grey-200: #3b3b3b;
     --grey-100: #2B2B2B;
-    --hover-grey-100: #656465;
     --link: white;
     --line: #656465;
+    --cart-bg: #1F1F1F;
+    --hover-grey-100: #656465;
+    --hover-grey-200: #2B2B2B;
+    
 
     --box-shadow: 255, 125, 6;
 

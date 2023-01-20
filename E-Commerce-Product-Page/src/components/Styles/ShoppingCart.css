@@ -11,7 +11,7 @@ header {
     margin-inline: 1rem;
     pointer-events: none;
     border-radius: 0.75rem;
-    background-color: var(--grey-100);
+    background-color: var(--cart-bg);
     transition: top 650ms ease, opacity var(--t-350ms), background-color var(--t-350ms);
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
@@ -34,6 +34,7 @@ header {
     display: flex;
     align-items: center;
     padding-block: 2rem;
+    transition: border-color var(--t-350ms);
     border-block-start: 3px solid var(--hover-grey-100);
 
 }
@@ -69,7 +70,7 @@ header {
     transition: fill var(--t-350ms), scale var(--t-250ms), rotate var(--t-350ms);
 }
 .delete-btn:hover {
-    background-color: var(--hover-grey-100);
+    background-color: var(--hover-grey-200);
 }
 .delete-btn:hover > svg {
     scale: 1.1;

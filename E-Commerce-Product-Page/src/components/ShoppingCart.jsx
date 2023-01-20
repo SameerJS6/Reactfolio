@@ -7,7 +7,7 @@ import mainImage from "../assets/image-product-1-thumbnail.jpg";
 
 export default function ShoppingCart(props) {
   const buttonRef2 = useRef();
-  RippleAnimation(buttonRef2, { color: "var(--grey-200)" });
+  RippleAnimation(buttonRef2, { color: "var(--grey-300)" });
   const buttonRef3 = useRef();
   RippleAnimation(buttonRef3, { color: "var(--dark-blue)", duration: 500 });
   return (

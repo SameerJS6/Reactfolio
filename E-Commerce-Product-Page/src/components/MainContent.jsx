@@ -11,7 +11,7 @@ export default function MainContent() {
   const buttonRef = useRef();
   const buttonRef1 = useRef();
   const buttonRef2 = useRef();
-  RippleAnimation(buttonRef,{});
+  RippleAnimation(buttonRef,{color: "var(--dark-blue)"});
   RippleAnimation(buttonRef1,{});
   RippleAnimation(buttonRef2,{});
 
