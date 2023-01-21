@@ -1,196 +1,201 @@
 .content-contianer {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 .title {
-    letter-spacing: 4px;
-    color: var(--orange);
-    font-size: var(--size-100);
+  letter-spacing: 4px;
+  color: var(--orange);
+  font-size: var(--size-100);
 }
 .main-title {
-    font-size: 2.5rem;
-    line-height: 2.75rem;
-    color: var(--dark-blue);
-    padding-block: 1rem 2rem;
-    text-transform: capitalize;
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  color: var(--dark-blue);
+  padding-block: 1rem 2rem;
+  text-transform: capitalize;
 }
 .main-para {
-    color: var(--grey-300);
-    font-size: var(--size-500);
-    transition: color var(--t-350ms);
+  color: var(--grey-300);
+  font-size: var(--size-500);
+  transition: color var(--t-350ms);
 }
 .price-container {
-    display: flex;
-    padding-block: 1.5rem;
-    align-items: flex-end;
-    justify-content: space-between;
+  display: flex;
+  padding-block: 1.5rem;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .price-tag {
-    gap: 0.75rem;
-    display: flex;
-    align-items: center;
+  gap: 0.75rem;
+  display: flex;
+  align-items: center;
 }
 .price-tag > h2 {
-    font-size: 2rem;
-    color: var(--dark-blue);
-    transition: all var(--t-250ms);
+  font-size: 2rem;
+  color: var(--dark-blue);
+  transition: all var(--t-250ms);
 }
 .discount {
-    border-radius: 5px;
-    color: var(--orange);
-    padding: 0.1rem .35rem;
-    font-size: var(--size-50);
-    font-weight: var(--fw-700);
-    border: 2px solid transparent;
-    background-color: var(--orange-200);
-    transition: color var(--t-250ms), background-color var(--t-350ms), scale var(--t-250ms), translate var(--t-350ms);
+  border-radius: 5px;
+  color: var(--orange);
+  padding: 0.1rem 0.35rem;
+  font-size: var(--size-50);
+  font-weight: var(--fw-700);
+  border: 2px solid transparent;
+  background-color: var(--orange-200);
+  transition: color var(--t-250ms), background-color var(--t-350ms),
+    scale var(--t-250ms), translate var(--t-350ms);
 }
 .discount:hover {
-    scale: 1.05;
-    cursor: default;
-    translate: 0 -3px;
-    color: var(--orange-100);
-    background-color: var(--orange);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  scale: 1.05;
+  cursor: default;
+  translate: 0 -3px;
+  color: var(--orange-100);
+  background-color: var(--orange);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 .crossed-price {
-    color: var(--grey-300);
-    font-weight: var(--fw-700);
-    font-size: var(--size-100);
-    text-decoration: line-through;
+  color: var(--grey-300);
+  font-weight: var(--fw-700);
+  font-size: var(--size-100);
+  text-decoration: line-through;
 }
 .buttons {
-    gap: 1rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 @media (min-width: 45em) {
-    .price-container {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-    .buttons {
-        flex-direction: row;
-    }
+  .price-container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .buttons {
+    flex-direction: row;
+  }
 }
 .counting-container {
-    gap: 0.5rem;
-    display: flex;
-    align-items: center;
-    border-radius: .5rem;
-    padding: 0.25rem 0.25rem;
-    background-color: var(--grey-100);
-    transition: background-color var(--t-250ms);
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.25rem;
+  background-color: var(--grey-100);
+  transition: background-color var(--t-250ms);
 }
 .minus,
 .plus {
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    background-color: transparent;
-    transition: all var(--t-350ms);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all var(--t-350ms);
 }
 .minus {
-    padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0.5rem;
 }
 .minus > img,
 .plus > img {
-    scale: 1.05;
+  scale: 1.05;
 }
 .minus:hover,
 .plus:hover {
-    scale: 1.01;
-    translate: 0 -1px;
-    background-color: var(--hover-grey-100);
+  scale: 1.01;
+  translate: 0 -1px;
+  background-color: var(--hover-grey-100);
 }
 .count {
-    width: 2.5ch;
-    text-align: center;
-    color: var(--dark-blue);
-    font-size: var(--size-200);
-    font-weight: var(--fw-700);
-    transition: color var(--t-250ms);
+  width: 2.5ch;
+  text-align: center;
+  color: var(--dark-blue);
+  font-size: var(--size-200);
+  font-weight: var(--fw-700);
+  transition: color var(--t-250ms);
 }
 .add-to-cart {
-    gap: 1rem;
-    display: flex;
-    cursor: pointer;
-    padding: 0.45rem 0.7rem;
-    border-radius: .5rem;
-    font-weight: var(--fw-700);
-    border: 2px solid transparent;
-    background-color: var(--orange);
-    box-shadow: 0 20px 30px -5px rgb(var(--box-shadow), 0.3), 0 8px 10px -6px rgb(var(--box-shadow), 0.3);
-    transition: background-color var(--t-350ms), color var(--t-250ms), scale var(--t-350ms), translate var(--t-350ms);
+  gap: 1rem;
+  display: flex;
+  cursor: pointer;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.5rem;
+  font-weight: var(--fw-700);
+  border: 2px solid transparent;
+  background-color: var(--orange);
+  box-shadow: 0 20px 30px -5px rgb(var(--box-shadow), 0.3),
+    0 8px 10px -6px rgb(var(--box-shadow), 0.3);
+  transition: background-color var(--t-350ms), color var(--t-250ms),
+    scale var(--t-350ms), translate var(--t-350ms);
 }
 .add-to-cart > .add-cart-svg {
-    fill: var(--white);
-    transition: fill var(--t-250ms), translate var(--t-350ms), rotate var(--t-250ms), scale var(--t-250ms);
+  fill: var(--white);
+  transition: fill var(--t-250ms), translate var(--t-350ms),
+    rotate var(--t-250ms), scale var(--t-250ms);
 }
 .add-to-cart-btn {
-    border: none;
-    cursor: pointer;
-    color: var(--white);
-    font-size: var(--size-100);
-    background-color: transparent;
-    transition: background-color var(--t-350ms), color var(--t-250ms), scale var(--t-350ms), translate var(--t-350ms);
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  font-size: var(--size-100);
+  background-color: transparent;
+  transition: background-color var(--t-350ms), color var(--t-250ms),
+    scale var(--t-350ms), translate var(--t-350ms);
 }
 .add-to-cart:hover {
-    scale: 1.01;
-    translate: 0 -2px;
-    border-color: var(--orange);
-    background-color: transparent;
-    box-shadow: 0 25px 40px -12px rgb(var(--box-shadow), 0.4);
+  scale: 1.01;
+  translate: 0 -2px;
+  border-color: var(--orange);
+  background-color: transparent;
+  box-shadow: 0 25px 40px -12px rgb(var(--box-shadow), 0.4);
 }
 .add-to-cart:hover > .add-to-cart-btn {
-    scale: 1.02;
-    color: var(--orange);
+  scale: 1.02;
+  color: var(--orange);
 }
 .add-to-cart:hover > .add-cart-svg {
-    scale: 1.03;
-    rotate: 360deg;
-    translate: 0 -1px;
-    fill: var(--orange);
+  scale: 1.03;
+  rotate: 360deg;
+  translate: 0 -1px;
+  fill: var(--orange);
 }
 @media (min-width: 55em) {
-    .add-to-cart {
-        padding: 0.8rem 1.6rem;
-    }
-    .counting-container {
-        gap: 1.25rem;
-        padding: 0.5rem 0.5rem;
-    }
-    .count {
-        font-size: var(--size-300);
-    }
-    .minus {
-        padding: 0.75rem 0.5rem;
-    }
-    .minus > img,
-    .plus > img {
-        scale: 1.15;
-    }
-    .minus:hover,
-    .plus:hover {
+  .add-to-cart {
+    padding: 0.8rem 1.6rem;
+  }
+  .counting-container {
+    gap: 1.25rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .count {
+    font-size: var(--size-300);
+  }
+  .minus {
+    padding: 0.75rem 0.5rem;
+  }
+  .minus > img,
+  .plus > img {
+    scale: 1.15;
+  }
+  .minus:hover,
+  .plus:hover {
     scale: 1.01;
     translate: 0 -2px;
     background-color: var(--hover-grey-100);
-}
-    .add-to-cart-btn {
-        font-size: var(--size-200);
-    }
-    .add-to-cart:hover {
-        scale: 1.02;
-        translate: 0 -5px;
-    }
-    .add-to-cart:hover > .add-to-cart-btn {
-        scale: 1.04;
-    }
-    .add-to-cart:hover > .add-cart-svg {
-        scale: 1.1;
-        rotate: 360deg;
-        translate: 0 -3px;
-    }
+  }
+  .add-to-cart-btn {
+    font-size: var(--size-200);
+  }
+  .add-to-cart:hover {
+    scale: 1.02;
+    translate: 0 -5px;
+  }
+  .add-to-cart:hover > .add-to-cart-btn {
+    scale: 1.04;
+  }
+  .add-to-cart:hover > .add-cart-svg {
+    scale: 1.1;
+    rotate: 360deg;
+    translate: 0 -3px;
+  }
 }

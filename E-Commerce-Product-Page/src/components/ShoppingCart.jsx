@@ -12,7 +12,11 @@ export default function ShoppingCart(props) {
   RippleAnimation(buttonRef3, { color: "var(--dark-blue)", duration: 500 });
   return (
     <>
-      <div className={`cart-content-box ${props.cartIsOpen == true ? 'cart-active' : ''}`}>
+      <div
+        className={`cart-content-box ${
+          props.cartIsOpen == true ? "cart-active" : ""
+        }`}
+      >
         <h3 className="opacity">Cart</h3>
         <div className="checkout-wrapper">
           <div className="checkout-content">

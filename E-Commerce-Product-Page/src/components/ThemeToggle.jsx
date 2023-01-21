@@ -23,7 +23,7 @@ export default function ThemeToggle() {
     darkMode = localStorage.getItem('darkmode');
     if(darkMode === 'enabled') {
       DisableDarkMode();
-      setTheme(false)
+      setTheme(false);
       console.log("Dark Mode Disabled");
     }else {
       EnableDarkMode();
