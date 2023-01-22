@@ -107,7 +107,7 @@ I wasn't sure where to start with this project because I thought it would be eas
 ## Author
 
 - Website - [Github](https://github.com/SameerJS6/)
-- Frontend Mentor - [@ySameerJS6](https://www.frontendmentor.io/profile/sameerjs6)
+- Frontend Mentor - [@SameerJS6](https://www.frontendmentor.io/profile/sameerjs6)
 
 ## Acknowledgments
 
