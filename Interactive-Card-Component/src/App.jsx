@@ -68,6 +68,11 @@ export default function App() {
 
         <button type="submit">Confirm</button>
       </form>
+
+      <div className="thank-you">
+        <img src={complete} alt="Complete Sign" />
+        <p>We've added your card details</p>
+      </div>
     </div>
    </main>
   )
