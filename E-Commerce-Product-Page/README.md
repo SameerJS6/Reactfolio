@@ -33,8 +33,9 @@ Users should be able to:
 ### Screenshot
 
 ![Dark Mode - Desktop Preview](<./public/Desktop(Dark-Mode).png>)
-![Dark Mode - Tablet Preview](<./public/Tablet(Dark-Mode).png>)
-![Dark Mode - Mobile Preview](<./public/Mobile(Dark-Mode).png>) ![Light Mode - Mobile Preview](<./public/Mobile(Light-Mode).png>)
+<!-- ![Dark Mode - Tablet Preview](<./public/Tablet(Dark-Mode).png>)
+![Dark Mode - Mobile Preview](<./public/Mobile(Dark-Mode).png>) 
+![Light Mode - Mobile Preview](<./public/Mobile(Light-Mode).png>) -->
 
 ### Links
 
