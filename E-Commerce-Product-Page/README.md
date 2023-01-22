@@ -47,15 +47,12 @@ Users should be able to:
 - I began with a simple grid layout for the main section of the website, which was just two columns.
   Then I worked on the navigation bar which was a bit tricky because it had to change into a hamburger menu when viewed on mobile.
 - This whole UI part of the website took me around 3-5 hours because it was only the second time I was using React.
-
 - Next, I wanted to add a dark theme to the website, so I started working on that.
 - I also tried to make an image slider where you could click on one image and it would change to another, yaa that one. At first, I couldn't do it, but after a few hours, I figured out how to do it by storing the images in an array and using a function to change the images.
-
 - I also wanted to add a lightbox feature to the website, where you could click on an image and it would open up in a bigger size with dark linear gradient in the background.
 - I didn't understand how to do it from watching videos on Youtube, so I decided to figure it out on my own.
 - I broke the problem down into smaller tasks and tackled them one by one.
 - It wasn't too difficult, but the animations were a bit tricky.
-
 - After that, I added the dark theme colors and SVGs and made them animated.
 - Before adding the shopping cart feature, I made the whole website animated using CSS.
 - I tried to make the shopping cart layout, but I didn't succeed the first time because of some width issues.
