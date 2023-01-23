@@ -9,12 +9,56 @@
 }
 img {
     display: block;
-    /* max-width: 100%; */
+    max-width: 100%;
 }
 body {
     min-height: 100vh;
-    background: url(./assets/bg-main-desktop.png);
-    background-repeat: no-repeat;
-    background-position: top left;
     font-family: 'Space Grotesk', sans-serif;
+}
+.cvc {
+    top: 44%;
+}
+.card-front {
+    top: 37%;
+    left: 2%;
+    right: 18%;
+}
+.card-back {
+    top: 6%;
+    left: 20%;
+    right: 2%;
+}
+@media (max-width: 420px) {
+    .text-2xl {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 330px) {
+    .logo { max-width: 50px; }
+    .bottom-6 { bottom: 0.75rem; }
+    .right-6 { right: 1rem; }
+    .right-12 { right: 2.5rem; }
+    .left-6 { left: 1rem; }
+    .cvc { top: 44%; }
+    .card-back { top: 16%; }
+}
+
+@media (max-width: 290px) {
+    .text-sm { font-size: 0.65rem; }
+    .text-2xl { font-size: 1rem; }
+    .cvc { top: 41%; }
+    .right-12 { right: 2rem; }
+}
+@media (min-width: 700px) {
+    .card-front{
+        top: 30%;
+        left: 15%;
+        right: 0;
+    }
+    .card-back {
+        top: auto;
+        bottom: 15%;
+        right: 13%;
+    }
 }

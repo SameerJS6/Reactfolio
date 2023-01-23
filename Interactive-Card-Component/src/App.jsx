@@ -6,18 +6,18 @@ import complete from './assets/icon-complete.svg'
 
 export default function App() {
   return (
-   <main className='grid gap-8 lg:gap-16 lg:grid-cols-2 lg:items-center min-h-screen lg:px-16'>
-    <div className="card-preview">
-      <div className="card-front | relative text-white bg-lime-600 rounded-2xl">
+   <main className='grid grid-rows-2 gap-0 md:gap-8 xl:gap-16 lg:grid-cols-2 lg:grid-rows-none lg:items-center min-h-screen lg:px-8 xl:px-16'>
+    <div className="card-preview | relative bg-slate-900 p-2 md:p-4 lg:p-4">
+      <div className="card-front | absolute z-10 lg:inset-0 lg:relative text-white bg-lime-600 rounded-2xl max-w-md">
         <img src={cardFront} alt="Front Side of Credit Card" />
-        <img className='absolute top-8 left-8'src={logo} alt="Card Logo" />
-        <span className='absolute left-8 top-2/4'>0000 0000 0009 8888</span>
-        <span className='absolute left-8 bottom-8'>Jane Appleseed</span>
-        <span className='absolute right-8 bottom-8'>01/25</span>
+        <img className='logo | absolute top-4 left-6 lg:top-8 lg:left-8'src={logo} alt="Card Logo" />
+        <span className='absolute left-6 top-1/2 text-2xl lg:left-8 lg:top-2/4 tracking-widest'>0000 0000 0009 8888</span>
+        <span className='absolute left-6 bottom-6 md:text-base lg:left-8 text-sm lg:bottom-8 tracking-wider'>Jane Appleseed</span>
+        <span className='absolute right-6 bottom-6 text-sm md:text-base lg:right-8 lg:bottom-8 tracking-widest'>01/25</span>
       </div>
-      <div className="card-back | relative text-white mt-8 ml-auto">
+      <div className="card-back | absolute lg:inset-0 lg:relative text-white lg:mt-8 ml-auto bg-lime-600 rounded-2xl max-w-md">
         <img src={cardBack} alt="Back Side of Credit Card" />
-        <span className='absolute right-2/4 top-28'>123</span>
+        <span className='cvc | absolute right-12 text-sm md:text-lg lg:right-16 tracking-widest'>123</span>
       </div>
     </div>
 
@@ -69,7 +69,7 @@ export default function App() {
         <button type="submit">Confirm</button>
       </form>
 
-      <div className="thank-you">
+      <div className="thank-you | hidden">
         <img src={complete} alt="Complete Sign" />
         <p>We've added your card details</p>
       </div>
