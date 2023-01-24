@@ -11,9 +11,19 @@ img {
     display: block;
     max-width: 100%;
 }
+::-webkit-scrollbar {
+    width: 11px;
+    background: hsl(278, 68%, 90%);
+}
+::-webkit-scrollbar-thumb {
+    background: hsl(278, 68%, 11%);
+    border-radius: 100vmax;
+}
 body {
     min-height: 100vh;
+    color: hsl(278, 68%, 11%);
     font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(224, 224, 224) 50%, hsl(278, 68%, 90%) 100%);
 }
 .cvc {
     top: 44%;
@@ -28,10 +38,36 @@ body {
     left: 20%;
     right: 2%;
 }
-@media (max-width: 420px) {
-    .text-2xl {
-        font-size: 1.15rem;
-    }
+
+
+
+.card-number > input {
+    width: 14%;
+}
+
+
+.submit-btn {
+    background-color: hsl(278, 68%, 11%);
+    transition: background-color 500ms ease, color 350ms ease, transform 350ms ease;
+}
+.submit-btn:hover {
+    color:hsl(278, 68%, 11%);
+    background-color: transparent;
+    border-color: hsl(278, 68%, 11%);
+}
+#card-name:focus-visible,
+#cvc:focus-visible,
+input:focus-visible,
+.card-number:has(input:focus-visible) {
+    transform: scale(0.99);
+    outline: 1px solid hsl(278, 68%, 11%);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+input:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
 }
 
 @media (max-width: 330px) {
@@ -42,8 +78,13 @@ body {
     .left-6 { left: 1rem; }
     .cvc { top: 44%; }
     .card-back { top: 16%; }
+    .text-lg{ font-size: 0.95rem; }
+    .p-2, .submit-btn { padding: 0.25rem 0.5rem; }
 }
-
+@media (max-width: 420px) {
+    .text-2xl { font-size: 1.15rem; }
+    .card-number > input { width: 20%;}
+}
 @media (max-width: 290px) {
     .text-sm { font-size: 0.65rem; }
     .text-2xl { font-size: 1rem; }
