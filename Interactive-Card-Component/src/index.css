@@ -20,6 +20,7 @@ img {
     border-radius: 100vmax;
 }
 body {
+    --padding: 1rem;
     min-height: 100vh;
     color: hsl(278, 68%, 11%);
     font-family: 'Space Grotesk', sans-serif;
@@ -63,34 +64,38 @@ input:focus-visible,
     outline: 1px solid hsl(278, 68%, 11%);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
-
+/* .error:focus-visible {
+    outline: 1px solid #ef4444;
+} */
 input:focus-visible {
     outline: none;
     border: none;
     box-shadow: none;
 }
-
-@media (max-width: 330px) {
+@media (max-width: 450px) {
+    .text-2xl { font-size: 1.15rem; }
+    .card-number > input { width: 20%;}
+    .bottom-6 { bottom: var(--padding); }
+    .right-6 { right: var(--padding); }
+    .left-6 { left: var(--padding); }
+}
+@media (max-width: 380px) {
     .logo { max-width: 50px; }
     .bottom-6 { bottom: 0.75rem; }
-    .right-6 { right: 1rem; }
     .right-12 { right: 2.5rem; }
-    .left-6 { left: 1rem; }
     .cvc { top: 44%; }
     .card-back { top: 16%; }
     .text-lg{ font-size: 0.95rem; }
+    .text-2xl { font-size: 1rem}
+    .text-sm { font-size: 0.7rem}
     .p-2, .submit-btn { padding: 0.25rem 0.5rem; }
 }
-@media (max-width: 420px) {
-    .text-2xl { font-size: 1.15rem; }
-    .card-number > input { width: 20%;}
-}
 @media (max-width: 290px) {
-    .text-sm { font-size: 0.65rem; }
-    .text-2xl { font-size: 1rem; }
+    .text-2xl { font-size: 0.9rem; }
     .cvc { top: 41%; }
     .right-12 { right: 2rem; }
 }
+
 @media (min-width: 700px) {
     .card-front{
         top: 30%;
@@ -102,4 +107,8 @@ input:focus-visible {
         bottom: 15%;
         right: 13%;
     }
+}
+
+.show {
+    opacity: 1;
 }
