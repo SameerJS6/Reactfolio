@@ -39,14 +39,6 @@ body {
     left: 20%;
     right: 2%;
 }
-
-
-
-.card-number > input {
-    width: 14%;
-}
-
-
 .submit-btn {
     background-color: hsl(278, 68%, 11%);
     transition: background-color 500ms ease, color 350ms ease, transform 350ms ease;
@@ -58,15 +50,12 @@ body {
 }
 #card-name:focus-visible,
 #cvc:focus-visible,
-input:focus-visible,
-.card-number:has(input:focus-visible) {
+input:focus-visible{
     transform: scale(0.99);
     outline: 1px solid hsl(278, 68%, 11%);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
-/* .error:focus-visible {
-    outline: 1px solid #ef4444;
-} */
+
 input:focus-visible {
     outline: none;
     border: none;
@@ -74,7 +63,6 @@ input:focus-visible {
 }
 @media (max-width: 450px) {
     .text-2xl { font-size: 1.15rem; }
-    .card-number > input { width: 20%;}
     .bottom-6 { bottom: var(--padding); }
     .right-6 { right: var(--padding); }
     .left-6 { left: var(--padding); }
