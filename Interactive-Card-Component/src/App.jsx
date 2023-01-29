@@ -213,7 +213,7 @@ export default function App() {
               required
               pattern="[0-9]{19}"
               aria-label="Credit Card Number"
-              placeholder="e.g. 1234 5678 9123 0000"
+              placeholder="e.g. 0000 0000 0009 8888"
             />
             <span
               className={`text-red-600 opacity-0 translate-y-2 transition-transform duration-300 text-xs font-medium ${
