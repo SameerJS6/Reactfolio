@@ -2,101 +2,263 @@
 @tailwind components;
 @tailwind utilities;
 
-*, *::after, *::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 ::-webkit-scrollbar {
-    width: 11px;
-    background: hsl(278, 68%, 90%);
+  width: 11px;
+  background: hsl(278, 68%, 90%);
 }
 ::-webkit-scrollbar-thumb {
-    background: hsl(278, 68%, 11%);
-    border-radius: 100vmax;
+  background: hsl(278, 68%, 11%);
+  border-radius: 100vmax;
 }
 body {
-    --padding: 1rem;
-    min-height: 100vh;
-    color: hsl(278, 68%, 11%);
-    font-family: 'Space Grotesk', sans-serif;
-    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(224, 224, 224) 50%, hsl(278, 68%, 90%) 100%);
+  --padding: 1rem;
+  min-height: 100vh;
+  color: hsl(278, 68%, 11%);
+  font-family: "Space Grotesk", sans-serif;
+  background: linear-gradient(
+    4deg,
+    rgba(224, 224, 224, 1) 35%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 .cvc {
-    top: 44%;
+  top: 44%;
 }
 .card-front {
-    top: 37%;
-    left: 2%;
-    right: 18%;
+  top: 37%;
+  left: 2%;
+  right: 18%;
 }
 .card-back {
-    top: 6%;
-    left: 20%;
-    right: 2%;
+  top: 6%;
+  left: 20%;
+  right: 2%;
 }
 .submit-btn {
-    background-color: hsl(278, 68%, 11%);
-    transition: background-color 500ms ease, color 350ms ease, transform 350ms ease;
+  background-color: hsl(278, 68%, 11%);
+  transition: background-color 500ms ease, color 350ms ease,
+    transform 350ms ease;
 }
 .submit-btn:hover {
-    color:hsl(278, 68%, 11%);
-    background-color: transparent;
-    border-color: hsl(278, 68%, 11%);
+  color: hsl(278, 68%, 11%);
+  background-color: transparent;
+  border-color: hsl(278, 68%, 11%);
 }
 #card-name:focus-visible,
 #cvc:focus-visible,
-input:focus-visible{
-    transform: scale(0.99);
-    outline: 1px solid hsl(278, 68%, 11%);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+input:focus-visible {
+  transform: scale(0.99);
+  outline: 1px solid hsl(278, 68%, 11%);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 input:focus-visible {
-    outline: none;
-    border: none;
-    box-shadow: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 @media (max-width: 450px) {
-    .text-2xl { font-size: 1.15rem; }
-    .bottom-6 { bottom: var(--padding); }
-    .right-6 { right: var(--padding); }
-    .left-6 { left: var(--padding); }
+  .text-2xl {
+    font-size: 1.15rem;
+  }
+  .bottom-6 {
+    bottom: var(--padding);
+  }
+  .right-6 {
+    right: var(--padding);
+  }
+  .left-6 {
+    left: var(--padding);
+  }
 }
 @media (max-width: 380px) {
-    .logo { max-width: 50px; }
-    .bottom-6 { bottom: 0.75rem; }
-    .right-12 { right: 2.5rem; }
-    .cvc { top: 44%; }
-    .card-back { top: 16%; }
-    .text-lg{ font-size: 0.95rem; }
-    .text-2xl { font-size: 1rem}
-    .text-sm { font-size: 0.7rem}
-    .p-2, .submit-btn { padding: 0.25rem 0.5rem; }
+  .logo {
+    max-width: 50px;
+  }
+  .bottom-6 {
+    bottom: 0.75rem;
+  }
+  .right-12 {
+    right: 2.5rem;
+  }
+  .cvc {
+    top: 44%;
+  }
+  .card-back {
+    top: 16%;
+  }
+  .text-lg {
+    font-size: 0.95rem;
+  }
+  .text-2xl {
+    font-size: 1rem;
+  }
+  .text-sm {
+    font-size: 0.7rem;
+  }
+  .p-2,
+  .submit-btn {
+    padding: 0.25rem 0.5rem;
+  }
 }
 @media (max-width: 290px) {
-    .text-2xl { font-size: 0.9rem; }
-    .cvc { top: 41%; }
-    .right-12 { right: 2rem; }
+  .text-2xl {
+    font-size: 0.9rem;
+  }
+  .cvc {
+    top: 41%;
+  }
+  .right-12 {
+    right: 2rem;
+  }
 }
 
 @media (min-width: 700px) {
-    .card-front{
-        top: 30%;
-        left: 15%;
-        right: 0;
-    }
-    .card-back {
-        top: auto;
-        bottom: 15%;
-        right: 13%;
-    }
+  .card-front {
+    top: 30%;
+    left: 15%;
+    right: 0;
+  }
+  .card-back {
+    top: auto;
+    bottom: 15%;
+    right: 13%;
+  }
 }
 
 .show {
+  opacity: 1;
+}
+
+/* Animations  */
+.slide-in-top {
+  animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.slide-in-bottom {
+  animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.slide-in-bottom-2 {
+  animation: slide-in-bottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
     opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.slide-in-bg {
+  animation: slide-in-bg 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* For Comfirm Logo  */
+.slide-in-bg-2 {
+  animation: slide-in-bg 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@keyframes slide-in-bg {
+  from {
+    opacity: 0;
+    left: -25px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+.fade-in {
+  animation: fade-in 1s ease;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+  }
+}
+/* Input Animation  */
+.input-in {
+  animation: input-in 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@keyframes input-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+/* Text Animation  */
+.tracking-in-expand {
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.tracking-in-expand-bottom {
+  animation: tracking-in-expand-bottom 1s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+}
+@keyframes tracking-in-expand-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-70px) translateY(50px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+
+.hide {
+  display: none;
+}
+@media (max-width: 960px) and (min-width: 768px) {
+  .hide {
+    display: block;
+    visibility: hidden;
+  }
 }
