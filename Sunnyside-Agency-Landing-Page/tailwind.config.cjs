@@ -7,6 +7,10 @@ module.exports = {
     './components/**/*.{html,js}',
   ],
   theme: {
+    fontFamily: {
+      'barlow': ['Barlow', 'sans-serif'],
+      'fraunces': ['Fraunces', 'serif'],
+    },
     extend: {},
   },
   plugins: [],

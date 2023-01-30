@@ -6,7 +6,7 @@ import Profile3 from '../assets/image-thomas.jpg'
 export default function MainContent() {
   return (
     <>
-        <main className='min-h-screen'>
+        <main className=''>
             <h1>Main Content</h1>
         </main>
     </>
