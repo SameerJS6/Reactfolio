@@ -116,11 +116,11 @@ export default function App() {
   };
   return (
     <main className="grid grid-rows-2 gap-0 md:gap-24 xl:gap-16 lg:grid-cols-2 lg:grid-rows-none lg:items-center min-h-screen lg:px-8 xl:px-16">
-      <div className="slide-in-bg | absolute lg:fixed -z-10 left-0 h-screen">
+      <div className="slide-in-bg | absolute lg:fixed -z-10 left-0">
         <picture>
           <source media="(min-width: 960px)" srcSet={bgDesktop} />
           <img
-            className="w-screen lg:w-auto"
+            className="w-screen lg:w-auto lg:h-screen"
             src={bgMobile}
             alt="Background Image for Mobile"
           />
