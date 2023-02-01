@@ -57,8 +57,7 @@ body {
 }
 
 
-@media (max-width: 1024px) {
-
+@media (max-width: 1023px) {
   header[data-overlay="true"]::after,
   header[data-overlay="false"]::after {
     content: '';
