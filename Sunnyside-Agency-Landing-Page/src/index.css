@@ -31,6 +31,7 @@ img, picture, video, canvas, svg {
     --cyan: hsl(167, 40%, 24%);
     --blue: hsl(198, 62%, 26%);
     --footer: hsl(168, 34%, 41%);
+    --hover: rgb(255, 255, 255, 0.35);
 
     --neutral-blue: hsl(212, 27%, 19%);
     --neutral-gray: hsl(213, 9%, 39%);
@@ -54,3 +55,42 @@ body {
         height: 100vh;
    }
 }
+
+
+@media (max-width: 1024px) {
+
+  header[data-overlay="true"]::after,
+  header[data-overlay="false"]::after {
+    content: '';
+    inset: 0;
+    opacity: 1;
+    z-index: -1;
+    position: fixed;
+    transition: opacity 500ms ease;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.116) 0%, rgba(0, 0, 0, 0.705) 100%);
+  }
+  header[data-overlay="false"]::after {
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
+  nav[data-active="true"],
+  nav[data-active="false"] {
+    position: fixed;
+    opacity: 1;
+    padding: 1rem;
+    max-width: 25rem;
+    text-align: center;
+    margin-inline: auto;
+    inset: 5rem 1rem auto;
+    background-color: white;
+    animation: drop 500ms ease;;
+    transition: all 500ms ease;
+  }
+
+  nav[data-active="false"] {
+    top: -50px;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
