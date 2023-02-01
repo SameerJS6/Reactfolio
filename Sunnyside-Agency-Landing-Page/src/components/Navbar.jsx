@@ -17,7 +17,7 @@ export default function Navbar() {
             </ul>
           </nav> 
           <div className='block lg:hidden'>
-            <button className='block lg:hidden bg-yellow-400 rounded-full p-3 aspect-square' onClick={()=> setIsactive(!isactive)}>
+            <button className='block lg:hidden rounded-full p-3 aspect-square' onClick={()=> setIsactive(!isactive)}>
               <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M24 16v2H0v-2h24zm0-8v2H0V8h24zm0-8v2H0V0h24z" fill="#FFF" fillRule="evenodd"/></svg>
             </button>
           </div>
