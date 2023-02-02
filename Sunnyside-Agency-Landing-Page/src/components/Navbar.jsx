@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Ripples from 'react-ripples'
 
 export default function Navbar() {
   const [isactive, setIsactive] = useState(false);
@@ -10,16 +11,18 @@ export default function Navbar() {
           </div>
           <nav className="shadow-xl rounded-xl lg:shadow-none font-barlow font-semibold text-[var(--neutral-gray)] transition-colors duration-300 " data-active={`${isactive ? "true" : "false"}`}>
             <ul className='flex flex-col lg:flex-row gap-2 lg:gap-4'>
-              <li><a className='inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]' href="/">About</a></li>
-              <li><a className='inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]' href="/">Services</a></li>
-              <li><a className='inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]' href="/">Projects</a></li>
-              <li><a className='inline-block bg-[var(--yellow)] px-4 py-3 rounded-full text-[var(--neutral-blue)] font-fraunces transition-all duration-300 lg:bg-[var(--white)] font-extrabold text-lg lg:hover:bg-[var(--hover)] hover:-translate-y-1 hover:translate-x-1 hover:text-black lg:hover:text-[var(--white)]' href="#">Contact</a></li>
+              <li><Ripples><a className='inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]' href="#">About</a></Ripples></li>
+              <li><Ripples><a className='inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]' href="#">Services</a></Ripples></li>
+              <li><Ripples><a className='inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]' href="#">Projects</a></Ripples></li>
+              <li><Ripples><a className='inline-block bg-[var(--yellow)] px-4 py-3 rounded-full text-[var(--neutral-blue)] font-fraunces transition-all duration-300 lg:bg-[var(--white)] font-extrabold text-lg lg:hover:bg-[var(--hover)] hover:text-black lg:hover:text-[var(--white)]' href="#">Contact</a></Ripples></li>
             </ul>
           </nav> 
-          <div className='block lg:hidden'>
-            <button className='block lg:hidden rounded-full p-3 aspect-square z-50' onClick={()=> setIsactive(!isactive)}>
+          <div className='block lg:hidden rounded-full'>
+            <Ripples>
+            <button className='block lg:hidden rounded-full p-3 aspect-square' onClick={()=> setIsactive(!isactive)}>
               <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M24 16v2H0v-2h24zm0-8v2H0V8h24zm0-8v2H0V0h24z" fill="#FFF" fillRule="evenodd"/></svg>
             </button>
+            </Ripples>
           </div>
        </header>
     </>

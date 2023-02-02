@@ -1,18 +1,10 @@
 import React from 'react';
 // All the Desktop Images Imports
-import Egg from "../assets/desktop/image-transform.jpg"
-import Orange from "../assets/desktop/image-photography.jpg"
-import Cherry from "../assets/desktop/image-graphic-design.jpg"
-import Standout from "../assets/desktop/image-stand-out.jpg"
 import Cone from "../assets/desktop/image-gallery-cone.jpg"
 import Milk from "../assets/desktop/image-gallery-milkbottles.jpg"
 import GalleryOrange from "../assets/desktop/image-gallery-orange.jpg"
 import SugarCubes from "../assets/desktop/image-gallery-sugarcubes.jpg"
 // All the Mobile Images Imports
-import MobileEgg from "../assets/mobile/image-transform.jpg"
-import MobileOrange from "../assets/mobile/image-photography.jpg"
-import MobileCherry from "../assets/mobile/image-graphic-design.jpg"
-import MobileStandout from "../assets/mobile/image-stand-out.jpg"
 import MobileCone from "../assets/mobile/image-gallery-cone.jpg"
 import MobileMilk from "../assets/mobile/image-gallery-milkbottles.jpg"
 import MobileGalleryOrange from "../assets/mobile/image-gallery-orange.jpg"
@@ -23,13 +15,16 @@ import Profile2 from '../assets/image-thomas.jpg';
 import Profile3 from '../assets/image-jennie.jpg';
 import ArrowDone from '../assets/icon-arrow-down.svg';
 
+import ContentGrid from './ContentGrid';
+import Footer from './Footer';
+
 
 export default function MainContent() {
   const GalleyImage = [
-    {id:1, desktop: Milk, mobile: MobileMilk},
-    {id:2, desktop: GalleryOrange, mobile: MobileGalleryOrange},
-    {id:3, desktop: Cone, mobile: MobileCone},
-    {id:4, desktop: SugarCubes, mobile: MobileSugarCubes},
+    {id:1, desktop: Milk, mobile: MobileMilk, des: "Milk Bottles"},
+    {id:2, desktop: GalleryOrange, mobile: MobileGalleryOrange, des: "Oranges"},
+    {id:3, desktop: Cone, mobile: MobileCone, des: "Cones"},
+    {id:4, desktop: SugarCubes, mobile: MobileSugarCubes, des: "Sugar Cubes"},
   ];
 
   const Reviews = [
@@ -56,56 +51,16 @@ export default function MainContent() {
     <>
         <main>
           {/* Heading and Hero Background Section  */}
-            <article className="article-bg | grid place-content-center gap-8">
-              <h1 className='uppercase text-[var(--white)] font-fraunces text-3xl sm:text-5xl xl:text-6xl'>we are creatives</h1>
+            <article className="article-bg | grid place-content-center  gap-8">
+              <h1 className='uppercase text-[var(--white)] font-fraunces text-4xl sm:text-5xl xl:text-6xl tracking-[7px] leading-tight text-center'>we are creatives</h1>
               <img className="mx-auto" src={ArrowDone} alt="Arrow Pointing towards Down" />
             </article>
+            
             {/* Main Content Grid Section  */}
-            <div>
-              <article className='flex flex-col-reverse md:grid md:grid-cols-2'>
-                <div className='grid place-content-center gap-4 p-8 lg:p-20 '>
-                  <h2 className='font-fraunces'>Transform your brand</h2>
-                  <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do must of the marketing for you</p>
-                  <button className='font-fraunces font-extrabold mr-auto'>Learn more</button>
-                </div>
-                <div >
-                  <picture>
-                    <source media="(min-width: 1024px)" srcSet={Egg} />
-                    <img src={MobileEgg} alt="A Picture of a Egg" />
-                  </picture>
-                </div>
-              </article>
-
-              <article className='flex flex-col md:grid md:grid-cols-2'>
-                <div>
-                  <picture>
-                    <source media="(min-width: 1024px)" srcSet={Standout} />
-                    <img src={MobileStandout} alt="A Picture of a Pink cup" />
-                  </picture>
-                </div>
-
-                <div className='grid place-content-center gap-4 p-8 lg:p-20 '>
-                  <h2 className='font-fraunces'>Stand out to the right audience</h2>
-                  <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll build and extend your brand in digital places.</p>
-                  <button className='font-fraunces font-extrabold mr-auto'>Learn more</button>
-                </div>
-              </article>
-
-              <article className='flex flex-col md:grid md:grid-cols-2'>
-                <div className='content-grid | grid place-content-center gap-4 p-8 lg:p-20'>
-                    <h2 className='font-fraunces'>Graphic Design</h2>
-                    <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients' attention.</p>
-                </div>
-
-                <div className='content-grid | grid place-content-center gap-4 p-8 lg:p-20'>
-                  <h2 className='font-fraunces'>Photography</h2>
-                  <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
-                </div>
-              </article>
-            </div>
+            <ContentGrid />
 
             {/* Testimonials Section  */}
-            <div className="grid gap-10 px-4 my-12 ">
+            <div className="grid gap-10 px-4 my-20 ">
               <h2 className='text-center tracking-[0.25rem] text-2xl md:text-3xl font-fraunces text-[var(--neutral-gray-400)] md:tracking-[0.86rem]'>CLIENT TESTIMONIALS</h2>
               <div className="content-grid | grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-0 lg:gap-8">
               {Reviews.map(reviews => {
@@ -122,19 +77,27 @@ export default function MainContent() {
               })}
               </div>
             </div>
-                {/* Image Gallery Section  */}
-            <div className="Gallery | grid grid-cols-2 md:grid-cols-4">
+              {/* Image Gallery Section  */}
+            <div className="grid grid-cols-2 md:grid-cols-4">
             {GalleyImage.map(items => {
               return (
-              <div key={items.id}>
+              <div className='card | relative overflow-hidden' key={items.id}>
                 <picture>
                   <source media="(min-width: 768px)" srcSet={items.desktop} />
                   <img src={items.mobile} alt="Few Bottles of Milk with sky as background" />
                 </picture>
+                <div className="title block">
+                  <p className='font-bold text-2xl text-[var(--white)] font-barlow'>{items.des}</p>
+                </div>
+                <div className="para hidden xl:block">
+                  <p className='font-bold text-md text-[var(--white)] font-barlow'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum earum debitis quo iusto ea sapiente sequi vitae id doloribus illo!</p>
+                </div>
               </div> 
               )
-            }) }
+            })}
             </div> 
+            {/* Footer Section  */}
+            <Footer />
         </main>
     </>
   )
