@@ -52,8 +52,8 @@ export default function MainContent() {
         <main>
           {/* Heading and Hero Background Section  */}
             <article className="article-bg | grid place-content-center  gap-8">
-              <h1 className='uppercase text-[var(--white)] font-fraunces text-4xl sm:text-5xl xl:text-6xl tracking-[7px] leading-tight text-center'>we are creatives</h1>
-              <img className="mx-auto" src={ArrowDone} alt="Arrow Pointing towards Down" />
+              <h1 className='title-gsap | uppercase text-[var(--white)] font-fraunces text-4xl sm:text-5xl xl:text-6xl tracking-[7px] leading-tight text-center'>we are creatives</h1>
+              <img className="arrow-gsap | mx-auto" src={ArrowDone} alt="Arrow Pointing towards Down" />
             </article>
             
             {/* Main Content Grid Section  */}
@@ -61,11 +61,11 @@ export default function MainContent() {
 
             {/* Testimonials Section  */}
             <div className="grid gap-10 px-4 my-20 ">
-              <h2 className='text-center tracking-[0.25rem] text-2xl md:text-3xl font-fraunces text-[var(--neutral-gray-400)] md:tracking-[0.86rem]'>CLIENT TESTIMONIALS</h2>
+              <h2 className='title-gsap | text-center tracking-[0.25rem] text-2xl md:text-3xl font-fraunces text-[var(--neutral-gray-400)] md:tracking-[0.86rem]'>CLIENT TESTIMONIALS</h2>
               <div className="content-grid | grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-0 lg:gap-8">
               {Reviews.map(reviews => {
                 return (
-                <article className='grid gap-6 place-content-center text-center p-2 mx-auto' key={reviews.id}>
+                <article className='grid-content-testimonial grid gap-6 place-content-center text-center p-2 mx-auto' key={reviews.id}>
                   <img className='mx-auto rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1 max-w-[60px]' src={reviews.profile} alt="A Profile Picture of a user" />
                   <p className='font-barlow font-bold text-[var(--neutral-gray)] -tracking-tight max-w-[40ch]'>{reviews.review}</p>
                   <div >
@@ -81,7 +81,7 @@ export default function MainContent() {
             <div className="grid grid-cols-2 md:grid-cols-4">
             {GalleyImage.map(items => {
               return (
-              <div className='card | relative overflow-hidden' key={items.id}>
+              <div className='card grid-content-image | relative overflow-hidden' key={items.id}>
                 <picture>
                   <source media="(min-width: 768px)" srcSet={items.desktop} />
                   <img src={items.mobile} alt="Few Bottles of Milk with sky as background" />
