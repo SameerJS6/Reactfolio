@@ -255,3 +255,16 @@ h6 {
   overflow: visible;
   border-radius: 100vmax;
 }
+.card,
+.grid-content,
+.grid-content-testimonial {
+  opacity: 0;
+  transform: translate(0, 25px);
+}
+.grid-content,
+.grid-content-2,
+.grid-content-3,
+.foot {
+  opacity: 0;
+  transform: translate(0, 75px);
+}

@@ -4,7 +4,7 @@ import Ripples from "react-ripples";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[var(--footer)] grid gap-12 place-content-center p-20 md:p-28 font-barlow">
+      <footer className="foot | bg-[var(--footer)] grid gap-12 place-content-center p-20 md:p-28 font-barlow">
         <div className="grid gap-6">
           <svg
             className="mx-auto"

@@ -34,14 +34,14 @@ export default function ContentGrid() {
       </article>
 
       <article className="flex flex-col md:grid md:grid-cols-2">
-        <div className="grid-image | grid-content">
+        <div className="grid-image | grid-content-2">
           <picture>
             <source media="(min-width: 1024px)" srcSet={Standout} />
             <img src={MobileStandout} alt="A Picture of a Pink cup" />
           </picture>
         </div>
 
-        <div className="grid-content | grid place-content-center text-center md:text-left gap-8 md:gap-4 lg:gap-8 p-8 py-20 lg:p-20 md:py-0">
+        <div className="grid-content-2 | grid place-content-center text-center md:text-left gap-8 md:gap-4 lg:gap-8 p-8 py-20 lg:p-20 md:py-0">
           <h2 className="font-fraunces text-3xl md:text-4xl md:width-[15ch]">
             Stand out to the right audience
           </h2>
@@ -57,7 +57,7 @@ export default function ContentGrid() {
       </article>
 
       <article className="flex flex-col md:grid md:grid-cols-2">
-        <div className="main-content-grid | grid place-content-center gap-4">
+        <div className="main-content-grid grid-content-3 | grid place-content-center gap-4">
           <picture>
             <source media="(min-width: 768px)" srcSet={Cherry} />
             <img src={MobileCherry} alt="A Picture of a Cherry" />
@@ -74,7 +74,7 @@ export default function ContentGrid() {
           </div>
         </div>
 
-        <div className="main-content-grid | grid place-content-center gap-4">
+        <div className="main-content-grid grid-content-3 | grid place-content-center gap-4">
           <picture>
             <source media="(min-width: 768px)" srcSet={Orange} />
             <img src={MobileOrange} alt="A Picture of a Orange" />

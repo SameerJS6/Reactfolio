@@ -61,7 +61,7 @@ export default function MainContent() {
 
             {/* Testimonials Section  */}
             <div className="grid gap-10 px-4 my-20 ">
-              <h2 className='title-gsap | text-center tracking-[0.25rem] text-2xl md:text-3xl font-fraunces text-[var(--neutral-gray-400)] md:tracking-[0.86rem]'>CLIENT TESTIMONIALS</h2>
+              <h2 className='grid-content-testimonial | text-center tracking-[0.25rem] text-2xl md:text-3xl font-fraunces text-[var(--neutral-gray-400)] md:tracking-[0.86rem]'>CLIENT TESTIMONIALS</h2>
               <div className="content-grid | grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-0 lg:gap-8">
               {Reviews.map(reviews => {
                 return (
