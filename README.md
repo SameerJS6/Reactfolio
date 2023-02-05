@@ -7,12 +7,14 @@ This folder contains all the basic React Project.
 ### Expenses Chart :- 
 
 ![](./Expenses-Chart/Preview.png)
-- [Live Site](https://expenses-chart-singh.netlify.app/)     [Github](https://github.com/SameerJS6/React-Projects/tree/master/Expenses-Chart)
+- [Live Site](https://expenses-chart-singh.netlify.app/)
+[Github](https://github.com/SameerJS6/React-Projects/tree/master/Expenses-Chart)
 
 ### E-Commerce Product Page :- 
 
 ![](./E-Commerce-Product-Page/public/Desktop(Dark-Mode).png)
-- [Live Site](https://sneaker-sameer.netlify.app/)     [Github](https://github.com/SameerJS6/React-Projects/tree/master/E-Commerce-Product-Page)
+- [Live Site](https://sneaker-sameer.netlify.app/)
+[Github](https://github.com/SameerJS6/React-Projects/tree/master/E-Commerce-Product-Page)
 
 ### Interactive Card Component :- 
 
