@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gray-400: hsl(0, 0%, 27%);
+  --gray: hsl(0, 0%, 63%);
+  --black: black;
+  --white: white;
+}
+
+body {
+  font-weight: 500;
+  font-family: "League Spartan", sans-serif;
+}
