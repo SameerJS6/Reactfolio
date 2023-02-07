@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./components/Navbar";
+import HeroContent from "./components/HeroContent";
 
 export default function App() {
   return (
     <>
-    <h1 className='text-center text-lime-400 text-2xl md:text-4xl font-extrabold'>Hello, I am building this Frontend Mentor Project using React JS and GSAP</h1>
+      <main className="max-w-[1440px] mx-auto ">
+        <div className="main-container">
+          <Navbar />
+          <HeroContent />
+        </div>
+      </main>
     </>
-  )
+  );
 }
