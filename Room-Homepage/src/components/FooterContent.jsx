@@ -16,7 +16,7 @@ export default function FooterContent() {
               alt="A Picture of a Chair and a Table"
             />
           </div>
-          <div className="p-8 md:p-12 lg:p-16 lg:pb-12">
+          <div className="p-8 md:p-12 lg:p-16 lg:pb-4">
             <h3 className="font-bold tracking-[5px] md:tracking-[7px] uppercase pb-4 text-xl md:text-2xl ">
               About our furniture
             </h3>

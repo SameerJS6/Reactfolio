@@ -37,6 +37,11 @@ body {
   transition: 350ms ease-in-out;
   transform-origin: center center;
 }
+/* Hero Section  */
+.hero-wrapper {
+  display: grid;
+}
+
 @media (hover: hover) {
   .navbar > li:hover::after {
     transform: scale(1);
@@ -66,8 +71,11 @@ body {
     grid-area: image3;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .grid-wrapper {
     grid-template-areas: "image1 contentbox image2";
+  }
+  .hero-wrapper {
+    grid-template-columns: 1.5fr 1fr;
   }
 }
