@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import FooterContent from "./FooterContent";
+import Ripples from "react-ripples";
 // All the Desktop Images Imports
 import Image1 from "../assets/desktop-image-hero-1.jpg";
 import Image2 from "../assets/desktop-image-hero-2.jpg";
@@ -47,15 +48,16 @@ const Data = [
 export default function HeroContent() {
   const [current, setCurrent] = useState(0);
   const length = Data.length;
-  const tl = useRef(null);
   let MainImg = useRef(null);
   let section = useRef(null);
-  let MainReveal = CSSRulePlugin.getRule(".main-img::after");
+  let MainContent = useRef(null);
+  let arrows = useRef(null);
+  let MainImgReveal = CSSRulePlugin.getRule(".main-img::after");
 
   useEffect(() => {
     let tl = new Timeline();
     tl.to(section, { duration: 0, css: { visibility: "visible" } })
-      .to(MainReveal, {
+      .to(MainImgReveal, {
         duration: 1.5,
         width: "0%",
         ease: Power3.easeInOut,
@@ -65,12 +67,26 @@ export default function HeroContent() {
         scale: 1.5,
         ease: Power4.easeInOut,
         delay: -1.5,
+      })
+      .from(MainContent, {
+        x: 70,
+        opacity: 0,
+        duration: 1,
+        delay: -1.2,
+      })
+      .from(arrows, {
+        y: 70,
+        opacity: 0,
+        duration: 1.5,
+        ease: Power3.easeInOut,
+        delay: -1.4,
       });
     return () => tl.kill();
   }, []);
 
-  const nextSlide = () => {
+  const nextSlide = (e) => {
     setCurrent(current === length - 1 ? 0 : current + 1);
+    console.log(e);
   };
 
   const prevSlide = () => {
@@ -80,11 +96,15 @@ export default function HeroContent() {
   if (!Array.isArray(Data) || Data.length <= 0) {
     return null;
   }
+
   return (
     <>
-      <section ref={(el) => (section = el)} className="invisible">
+      <section
+        ref={(el) => (section = el)}
+        className="invisible overflow-hidden"
+      >
         <div className="hero-wrapper | grid ">
-          <div className="relative">
+          <div className="relative overflow-hidden xl:overflow-visible">
             <div className="overflow-hidden relative">
               {Data.map((images, index) => {
                 return (
@@ -117,28 +137,42 @@ export default function HeroContent() {
               })}
             </div>
 
-            <div className="arrows | flex absolute right-0 bottom-0 bg-blue-600 xl:-right-32">
+            <div
+              ref={(el) => (arrows = el)}
+              className="arrows | flex absolute right-0 bottom-0 xl:-right-32 z-[2]"
+            >
               <div>
-                <button
-                  onClick={prevSlide}
-                  className="w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
-                >
-                  <img className="mx-auto" src={ArrowLeft} alt="Left Arrow" />
-                </button>
+                <Ripples>
+                  <button
+                    onClick={prevSlide}
+                    className="leftclick | w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
+                  >
+                    <img className="mx-auto" src={ArrowLeft} alt="Left Arrow" />
+                  </button>
+                </Ripples>
               </div>
 
               <div>
-                <button
-                  onClick={nextSlide}
-                  className="w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
-                >
-                  <img className="mx-auto" src={ArrowRight} alt="Right Arrow" />
-                </button>
+                <Ripples>
+                  <button
+                    onClick={nextSlide}
+                    className="rightclick | w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
+                  >
+                    <img
+                      className="mx-auto"
+                      src={ArrowRight}
+                      alt="Right Arrow"
+                    />
+                  </button>
+                </Ripples>
               </div>
             </div>
           </div>
 
-          <div className="grid place-content-center gap-4 md:gap-6 lg:gap-4 p-8 pl-4 md:p-12 md:pl-5 lg:px-16 xl:py-0">
+          <div
+            ref={(el) => (MainContent = el)}
+            className="grid place-content-center gap-4 md:gap-6 lg:gap-4 p-8 pl-4 md:p-12 md:pl-5 lg:px-16 xl:py-0"
+          >
             {Data.map((items, index) => {
               return (
                 <div
@@ -160,10 +194,12 @@ export default function HeroContent() {
                 </div>
               );
             })}
-            <button className="flex gap-4 items-center  rounded-full p-4 md:px-7 md:py-3 uppercase font-bold tracking-[10px] w-fit text-[var(--black)] transition-all duration-300 ease-in-out hover:bg-slate-100">
-              shop now
-              <img src={Arrow} alt="Arrow For Shop Now" />
-            </button>
+            <Ripples>
+              <button className="shop-btn | flex gap-4 items-center rounded-full p-4 md:px-7 md:py-3 uppercase font-bold tracking-[10px] w-fit text-[var(--black)] transition-all duration-300 ease-in-out hover:bg-slate-100">
+                shop now
+                <img src={Arrow} alt="Arrow For Shop Now" />
+              </button>
+            </Ripples>
           </div>
         </div>
       </section>

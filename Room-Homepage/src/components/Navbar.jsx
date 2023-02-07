@@ -1,13 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Hamburger from "../assets/icon-hamburger.svg";
 import CloseHamburger from "../assets/icon-close.svg";
 import logo from "../assets/logo.svg";
+import Ripples from "react-ripples";
+import gsap from "gsap";
 
 export default function Navbar() {
   const [isactive, setIsactive] = useState(false);
+  let nav = useRef(null);
+  useEffect(() => {
+    gsap.to(nav, { duration: 0, css: { visibility: "visible" } });
+    gsap.fromTo(
+      nav,
+      {
+        y: -100,
+        scale: 1.5,
+        opacity: 0,
+      },
+      {
+        y: -0,
+        scale: 1,
+        opacity: 1,
+        duration: 1.5,
+        ease: "Power3.easeInOut",
+        delay: 0.1,
+      }
+    );
+  }, []);
   return (
     <>
-      <header className="absolute left-0 z-[1] w-full flex flex-row-reverse md:flex-row items-center md:gap-11 p-4 md:p-8 lg:px-12 xl:px-16">
+      <header
+        ref={(el) => (nav = el)}
+        className="invisible absolute left-0 z-[1] w-full flex flex-row-reverse md:flex-row items-center md:gap-11 p-4 md:p-8 lg:px-12 xl:px-16"
+      >
         <div
           className={`logo mx-auto md:mx-0 transition-all duration-500 ease-in-out ${
             isactive
@@ -24,16 +49,18 @@ export default function Navbar() {
           }`}
         >
           <div className="hamburger z-10 md:hidden rounded-full">
-            <button
-              onClick={() => setIsactive(false)}
-              className=" w-9 rounded-full aspect-square"
-            >
-              <img
-                className="mx-auto"
-                src={CloseHamburger}
-                alt="Close Hamburger Menu Image"
-              />
-            </button>
+            <Ripples>
+              <button
+                onClick={() => setIsactive(false)}
+                className=" w-9 rounded-full aspect-square"
+              >
+                <img
+                  className="mx-auto"
+                  src={CloseHamburger}
+                  alt="Close Hamburger Menu Image"
+                />
+              </button>
+            </Ripples>
           </div>
 
           <ul className="navbar | flex justify-center text-[var(--black)] md:text-[var(--white)] gap-7 md:gap-12 lg:gap-16 items-center w-full md:w-auto">
@@ -51,7 +78,6 @@ export default function Navbar() {
             </li>
           </ul>
         </nav>
-
         <button
           onClick={() => setIsactive(!isactive)}
           className={`w-9 aspect-square md:hidden rounded-full transition-all duration-500 ease-in-out ${

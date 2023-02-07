@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import DarkImage from "../assets/image2.jpg";
 import LightImage from "../assets/image3.jpg";
-
 import { gsap, Power3, Power4 } from "gsap";
 import { Timeline } from "gsap/gsap-core";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
@@ -23,17 +22,25 @@ export default function FooterContent() {
       duration: 1.5,
       width: "0%",
       ease: Power3.easeInOut,
-    }).to([Image1, Image3], {
-      duration: 1.5,
-      scale: 1,
-      ease: Power4.easeInOut,
-      delay: -2.2,
-    });
+    })
+      .to([Image1, Image3], {
+        duration: 1.5,
+        scale: 1,
+        ease: Power4.easeInOut,
+        delay: -2.2,
+      })
+      .from(contentbox, {
+        y: 50,
+        opacity: 0,
+        duration: 1.5,
+        ease: Power4.easeInOut,
+        delay: -3,
+      });
   });
   return (
     <>
       <div ref={(el) => (App = el)} className="wrapper | invisible">
-        <div className="grid-wrapper ">
+        <div className="grid-wrapper grid">
           <div className="mx-auto lg:mx-0 | image-pseudo-2 overflow-hidden">
             <img
               ref={(el) => (Image1 = el)}
@@ -42,10 +49,13 @@ export default function FooterContent() {
               alt="A Picture of a Chair and a Table"
             />
           </div>
-          <div className="p-8 md:p-12 lg:p-16 lg:pb-4">
-            <h3 className="content-title font-bold tracking-[5px] md:tracking-[7px] uppercase pb-4 text-xl md:text-2xl ">
+          <div
+            ref={(el) => (contentbox = el)}
+            className="p-8 md:p-12 lg:p-16 lg:pb-4"
+          >
+            <h2 className="font-bold tracking-[5px] md:tracking-[7px] uppercase pb-4 text-xl md:text-2xl ">
               About our furniture
-            </h3>
+            </h2>
             <p className="text-[var(--gray)] text-sm ">
               Our multifunctional collection blends design and function to suit
               your individual taste. Make each room unique, or pick a cohesive
