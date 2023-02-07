@@ -24,6 +24,7 @@ export default function Footer() {
                 <a
                   className="inline-block border-none px-4 py-3 rounded-full text-[var(--cyan)] transition-all duration-300 lg:hover:bg-[var(--hover)] hover:scale-110"
                   href="/"
+                  aria-label="Link for visiting the About Page"
                 >
                   About
                 </a>
@@ -34,6 +35,7 @@ export default function Footer() {
                 <a
                   className="inline-block border-none px-4 py-3 rounded-full text-[var(--cyan)] transition-all duration-300   lg:hover:bg-[var(--hover)] hover:scale-110"
                   href="/"
+                  aria-label="Link for visiting the Services Page"
                 >
                   Services
                 </a>
@@ -44,6 +46,7 @@ export default function Footer() {
                 <a
                   className="inline-block border-none px-4 py-3 rounded-full text-[var(--cyan)] transition-all duration-300   lg:hover:bg-[var(--hover)] hover:scale-110"
                   href="/"
+                  aria-label="Link for visiting the Projects Page"
                 >
                   Projects
                 </a>
@@ -53,7 +56,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-6 items-center justify-center">
           <div>
-            <a className="social" href="#" target={"_blank"}>
+            <a className="social" href="/" aria-label="Link for our Facebook Page" target={"_blank"}>
               <svg
                 className="transition-all duration-300"
                 width="20"
@@ -69,7 +72,7 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            <a className="social" href="#" target={"_blank"}>
+            <a className="social" href="/" aria-label="Link for our Instagram Page" target={"_blank"}>
               <svg
                 className="transition-all duration-300 shadow-xl"
                 width="20"
@@ -85,7 +88,7 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            <a className="social" href="#" target={"_blank"}>
+            <a className="social" href="/" aria-label="Link for our Pinterest Page" target={"_blank"}>
               <svg
                 className="transition-all duration-300 shadow-xl"
                 width="20"
@@ -101,7 +104,7 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            <a className="social" href="#" target={"_blank"}>
+            <a className="social"href="/" aria-label="Link for our Twitter Page" target={"_blank"}>
               <svg
                 className="transition-all duration-300 shadow-xl"
                 width="20"

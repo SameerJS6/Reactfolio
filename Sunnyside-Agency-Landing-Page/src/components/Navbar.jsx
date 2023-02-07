@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Ripples from "react-ripples";
 
 export default function Navbar() {
@@ -38,7 +38,7 @@ export default function Navbar() {
               <Ripples>
                 <a
                   className="inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]"
-                  href="#"
+                  href="/"
                 >
                   About
                 </a>
@@ -48,7 +48,7 @@ export default function Navbar() {
               <Ripples>
                 <a
                   className="inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]"
-                  href="#"
+                  href="/"
                 >
                   Services
                 </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
               <Ripples>
                 <a
                   className="inline-block px-4 py-3 rounded-full text-lg transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-[var(--neutral-blue)] hover:bg-[var(--hover)] hover:text-black lg:hover:translate-x-0 lg:hover:translate-y-0 lg:hover:scale-105 lg:text-[var(--white)] lg:hover:text-[var(--cyan)]"
-                  href="#"
+                  href="/"
                 >
                   Projects
                 </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
               <Ripples>
                 <a
                   className="inline-block bg-[var(--yellow)] px-4 py-3 rounded-full text-[var(--neutral-blue)] font-fraunces transition-all duration-300 lg:bg-[var(--white)] font-extrabold text-lg lg:hover:bg-[var(--hover)] hover:text-black lg:hover:text-[var(--white)]"
-                  href="#"
+                  href="/"
                 >
                   Contact
                 </a>
