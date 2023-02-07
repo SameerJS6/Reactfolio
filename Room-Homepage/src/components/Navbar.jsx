@@ -54,7 +54,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setIsactive(!isactive)}
-          className={`w-9 aspect-square md:hidden bg-black rounded-full transition-all duration-500 ease-in-out ${
+          className={`w-9 aspect-square md:hidden rounded-full transition-all duration-500 ease-in-out ${
             isactive
               ? "opacity-0 translate-y-4 pointer-events-none"
               : "opacity-100 translate-y-0 delay-[-75ms]"

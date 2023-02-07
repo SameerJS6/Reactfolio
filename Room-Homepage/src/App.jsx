@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import HeroContent from "./components/HeroContent";
+import FooterContent from "./components/FooterContent";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
         <div className="main-container | relative">
           <Navbar />
           <HeroContent />
+          {/* <FooterContent /> */}
         </div>
       </main>
     </>

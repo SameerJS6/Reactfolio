@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
 import FooterContent from "./FooterContent";
 // All the Desktop Images Imports
 import Image1 from "../assets/desktop-image-hero-1.jpg";
@@ -13,6 +12,11 @@ import MobileImage3 from "../assets/mobile-image-hero-3.jpg";
 import Arrow from "../assets/icon-arrow.svg";
 import ArrowLeft from "../assets/icon-angle-left.svg";
 import ArrowRight from "../assets/icon-angle-right.svg";
+// All the GSAP Imports
+import gsap, { Power3, Power4 } from "gsap";
+import { Timeline } from "gsap/gsap-core";
+import CSSRulePlugin from "gsap/CSSRulePlugin";
+gsap.registerPlugin(CSSRulePlugin);
 
 const Data = [
   {
@@ -41,46 +45,121 @@ const Data = [
   },
 ];
 export default function HeroContent() {
+  const [current, setCurrent] = useState(0);
+  const length = Data.length;
+  const tl = useRef(null);
+  let MainImg = useRef(null);
+  let section = useRef(null);
+  let MainReveal = CSSRulePlugin.getRule(".main-img::after");
+
+  useEffect(() => {
+    let tl = new Timeline();
+    tl.to(section, { duration: 0, css: { visibility: "visible" } })
+      .to(MainReveal, {
+        duration: 1.5,
+        width: "0%",
+        ease: Power3.easeInOut,
+      })
+      .from(MainImg, {
+        duration: 1.5,
+        scale: 1.5,
+        ease: Power4.easeInOut,
+        delay: -1.5,
+      });
+    return () => tl.kill();
+  }, []);
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(Data) || Data.length <= 0) {
+    return null;
+  }
   return (
     <>
-      <section>
+      <section ref={(el) => (section = el)} className="invisible">
         <div className="hero-wrapper | grid ">
           <div className="relative">
-            <picture>
-              <source media="(min-width: 376px)" srcSet={Image1} />
-              <img
-                className="w-full"
-                src={MobileImage1}
-                alt="A Image of Chair and Table"
-              />
-            </picture>
+            <div className="overflow-hidden relative">
+              {Data.map((images, index) => {
+                return (
+                  <div
+                    className={`main-img
+                      ${
+                        index === current
+                          ? "slide active"
+                          : "slide overflow-hidden"
+                      }
+                    `}
+                    key={index}
+                  >
+                    {index === current && (
+                      <picture>
+                        <source
+                          media="(min-width: 376px)"
+                          srcSet={images.img}
+                        />
+                        <img
+                          ref={(el) => (MainImg = el)}
+                          className="w-full overflow-hidden"
+                          src={images.mobileImg}
+                          alt="A Image of Chair and Table"
+                        />
+                      </picture>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
 
             <div className="arrows | flex absolute right-0 bottom-0 bg-blue-600 xl:-right-32">
               <div>
-                <button className="w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg">
+                <button
+                  onClick={prevSlide}
+                  className="w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
+                >
                   <img className="mx-auto" src={ArrowLeft} alt="Left Arrow" />
                 </button>
               </div>
 
               <div>
-                <button className="w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg">
+                <button
+                  onClick={nextSlide}
+                  className="w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
+                >
                   <img className="mx-auto" src={ArrowRight} alt="Right Arrow" />
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="grid place-content-center gap-4 md:gap-6 lg:gap-8 p-8 pl-4 md:p-12 md:pl-5 lg:px-16">
-            <h1 className="leading-none text-3xl md:w-[21ch] xl:w-[18ch]  tracking-normal md:text-4xl xl:text-[2.5rem] 2xl:text-5xl font-bold text-[var(--black)] pl-4 md:pl-7 md:leading-none">
-              Discover innovative ways to decorate
-            </h1>
-            <p className="text-[var(--gray)] text-sm pl-4 md:pl-7">
-              We provide unmatched quality, comfort, and style for property
-              owners across the country. Our experts combine form and function
-              in bringing your vision to life. Create a room in your own style
-              with our collection and make your property a reflection of you and
-              what you love.
-            </p>
+          <div className="grid place-content-center gap-4 md:gap-6 lg:gap-4 p-8 pl-4 md:p-12 md:pl-5 lg:px-16 xl:py-0">
+            {Data.map((items, index) => {
+              return (
+                <div
+                  className={`${
+                    index === current ? "content current" : "content"
+                  }`}
+                  key={index}
+                >
+                  {index === current && (
+                    <div className="">
+                      <h1 className="leading-none text-3xl md:w-[21ch] xl:w-[18ch]  tracking-normal md:text-4xl xl:text-[2.5rem] 2xl:text-5xl font-bold text-[var(--black)] pl-4 md:pl-7 md:leading-none mb-4 md:mb-6 lg:mb-8 ">
+                        {items.title}
+                      </h1>
+                      <p className="text-[var(--gray)] text-sm pl-4 md:pl-7">
+                        {items.content}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
             <button className="flex gap-4 items-center  rounded-full p-4 md:px-7 md:py-3 uppercase font-bold tracking-[10px] w-fit text-[var(--black)] transition-all duration-300 ease-in-out hover:bg-slate-100">
               shop now
               <img src={Arrow} alt="Arrow For Shop Now" />
