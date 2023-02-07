@@ -7,7 +7,7 @@ export default function Navbar() {
   const [isactive, setIsactive] = useState(false);
   return (
     <>
-      <header className="absolute left-0  w-full flex flex-row-reverse md:flex-row items-center md:gap-11 p-4 md:p-8 lg:px-12 xl:px-16">
+      <header className="absolute left-0 z-[1] w-full flex flex-row-reverse md:flex-row items-center md:gap-11 p-4 md:p-8 lg:px-12 xl:px-16">
         <div
           className={`logo mx-auto md:mx-0 transition-all duration-500 ease-in-out ${
             isactive
