@@ -8,8 +8,66 @@
   --black: black;
   --white: white;
 }
-
+*,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-weight: 500;
   font-family: "League Spartan", sans-serif;
+}
+/* Navbar  */
+
+.navbar > li {
+  position: relative;
+}
+.navbar > li::after {
+  content: "";
+  left: 24%;
+  width: 50%;
+  height: 2px;
+  bottom: -2px;
+  position: absolute;
+  transform: scale(0);
+  border-radius: 100vmax;
+  background: var(--white);
+  transition: 350ms ease-in-out;
+  transform-origin: center center;
+}
+@media (hover: hover) {
+  .navbar > li:hover::after {
+    transform: scale(1);
+  }
+}
+.grid-wrapper {
+  display: grid;
+}
+@media (max-width: 370px) {
+  .gap-7 {
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .grid-wrapper {
+    grid-template-areas:
+      "image1 image2"
+      "contentbox contentbox";
+  }
+  .grid-wrapper > div:first-child {
+    grid-area: image1;
+  }
+  .grid-wrapper > div:nth-child(2) {
+    grid-area: contentbox;
+  }
+  .grid-wrapper > div:nth-last-child() {
+    grid-area: image3;
+  }
+}
+@media (min-width: 1200px) {
+  .grid-wrapper {
+    grid-template-areas: "image1 contentbox image2";
+  }
 }
