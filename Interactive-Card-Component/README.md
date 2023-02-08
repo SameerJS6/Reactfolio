@@ -30,7 +30,7 @@ Users should be able to:
 ### Screenshot
 
 Desktop Preview
-![Preview](./public/preview.png)
+![Preview](./public/preview.jpg)
 
 ### Links
 

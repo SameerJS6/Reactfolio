@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./Preview.png)
+![](./Preview.jpg)
 
 ### Links
 
