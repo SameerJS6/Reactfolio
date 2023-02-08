@@ -45,16 +45,12 @@ body {
 /* For Image Slider Animation  */
 .slide {
   opacity: 0.9;
-  scale: 1.05;
-  will-change: scale;
-  visibility: hidden;
+  transform: scale(1.05);
   transition: all 1s ease;
 }
 .slide.active {
   opacity: 1;
-  scale: 1;
-  will-change: scale;
-  visibility: visible;
+  transform: scale(1);
   transition: all 1s ease;
 }
 /* For Main Content Slider Change  */
