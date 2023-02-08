@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 style-guide.md
-README.md
 design
 
 # Editor directories and files
