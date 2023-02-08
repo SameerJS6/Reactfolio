@@ -31,12 +31,12 @@ export default function App() {
   useEffect(() => {
     let tl = new Timeline();
     let tl2 = new Timeline();
-    tl.to(App, { duration: 0, css: { visibility: "visible" } });
-    tl.to(MainImgReveal, {
-      duration: 1.5,
-      width: "0%",
-      ease: Power3.easeInOut,
-    })
+    tl.to(App, { duration: 0, css: { visibility: "visible" } })
+      .to(MainImgReveal, {
+        duration: 1.5,
+        width: "0%",
+        ease: Power3.easeInOut,
+      })
       .from(MainImg.current, {
         duration: 1.5,
         scale: 1.5,
