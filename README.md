@@ -32,7 +32,7 @@ This folder contains all the basic React Project.
 
 ### Room Homepage with GSAP :-
 
-![](./Room-Homepage/Preview.png)
+![](./Room-Homepage/Preview.jpg)
 
 - [Live Site](https://home-sameer.netlify.app/)
   [Github](https://github.com/SameerJS6/React-Projects/tree/master/Room-Homepage)
