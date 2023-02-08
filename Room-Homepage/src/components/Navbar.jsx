@@ -1,37 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import Hamburger from "../assets/icon-hamburger.svg";
 import CloseHamburger from "../assets/icon-close.svg";
 import logo from "../assets/logo.svg";
 import Ripples from "react-ripples";
-import gsap from "gsap";
 
-export default function Navbar() {
+export default function Navbar({ nav }) {
   const [isactive, setIsactive] = useState(false);
-  let nav = useRef(null);
-  useEffect(() => {
-    gsap.to(nav, { duration: 0, css: { visibility: "visible" } });
-    gsap.fromTo(
-      nav,
-      {
-        y: -100,
-        scale: 1.5,
-        opacity: 0,
-      },
-      {
-        y: -0,
-        scale: 1,
-        opacity: 1,
-        duration: 1.5,
-        ease: "Power3.easeInOut",
-        delay: 0.1,
-      }
-    );
-  }, []);
   return (
     <>
       <header
-        ref={(el) => (nav = el)}
-        className="invisible absolute left-0 z-[1] w-full flex flex-row-reverse md:flex-row items-center md:gap-11 p-4 md:p-8 lg:px-12 xl:px-16"
+        ref={nav}
+        className="absolute left-0 z-[1] w-full flex flex-row-reverse md:flex-row items-center md:gap-11 p-4 md:p-8 lg:px-12 xl:px-16"
       >
         <div
           className={`logo mx-auto md:mx-0 transition-all duration-500 ease-in-out ${

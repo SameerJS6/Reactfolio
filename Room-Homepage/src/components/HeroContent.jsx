@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import FooterContent from "./FooterContent";
 import Ripples from "react-ripples";
 // All the Desktop Images Imports
@@ -13,11 +13,6 @@ import MobileImage3 from "../assets/mobile-image-hero-3.jpg";
 import Arrow from "../assets/icon-arrow.svg";
 import ArrowLeft from "../assets/icon-angle-left.svg";
 import ArrowRight from "../assets/icon-angle-right.svg";
-// All the GSAP Imports
-import gsap, { Power3, Power4 } from "gsap";
-import { Timeline } from "gsap/gsap-core";
-import CSSRulePlugin from "gsap/CSSRulePlugin";
-gsap.registerPlugin(CSSRulePlugin);
 
 const Data = [
   {
@@ -45,44 +40,16 @@ const Data = [
       "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.",
   },
 ];
-export default function HeroContent() {
+export default function HeroContent({
+  MainImgRef,
+  MainContentRef,
+  arrowsRef,
+  Image1ref,
+  ContentBoxRef,
+  Image3ref,
+}) {
   const [current, setCurrent] = useState(0);
   const length = Data.length;
-  let MainImg = useRef(null);
-  let section = useRef(null);
-  let MainContent = useRef(null);
-  let arrows = useRef(null);
-  let MainImgReveal = CSSRulePlugin.getRule(".main-img::after");
-
-  useEffect(() => {
-    let tl = new Timeline();
-    tl.to(section, { duration: 0, css: { visibility: "visible" } })
-      .to(MainImgReveal, {
-        duration: 1.5,
-        width: "0%",
-        ease: Power3.easeInOut,
-      })
-      .from(MainImg, {
-        duration: 1.5,
-        scale: 1.5,
-        ease: Power4.easeInOut,
-        delay: -1.5,
-      })
-      .from(MainContent, {
-        x: 70,
-        opacity: 0,
-        duration: 1,
-        delay: -1.2,
-      })
-      .from(arrows, {
-        y: 70,
-        opacity: 0,
-        duration: 1.5,
-        ease: Power3.easeInOut,
-        delay: -1.4,
-      });
-    return () => tl.kill();
-  }, []);
 
   const nextSlide = (e) => {
     setCurrent(current === length - 1 ? 0 : current + 1);
@@ -99,10 +66,7 @@ export default function HeroContent() {
 
   return (
     <>
-      <section
-        ref={(el) => (section = el)}
-        className="invisible overflow-hidden"
-      >
+      <section className="overflow-hidden">
         <div className="hero-wrapper | grid ">
           <div className="relative overflow-hidden xl:overflow-visible">
             <div className="overflow-hidden relative">
@@ -125,7 +89,7 @@ export default function HeroContent() {
                           srcSet={images.img}
                         />
                         <img
-                          ref={(el) => (MainImg = el)}
+                          ref={MainImgRef}
                           className="w-full overflow-hidden"
                           src={images.mobileImg}
                           alt="A Image of Chair and Table"
@@ -138,14 +102,14 @@ export default function HeroContent() {
             </div>
 
             <div
-              ref={(el) => (arrows = el)}
-              className="arrows | flex absolute right-0 bottom-0 xl:-right-32 z-[2]"
+              ref={arrowsRef}
+              className="flex absolute right-0 bottom-0 xl:-right-32 z-[2]"
             >
               <div>
                 <Ripples>
                   <button
                     onClick={prevSlide}
-                    className="leftclick | w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
+                    className="w-14 md:w-16 aspect-square bg-[var(--black)] shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)]"
                   >
                     <img className="mx-auto" src={ArrowLeft} alt="Left Arrow" />
                   </button>
@@ -156,7 +120,7 @@ export default function HeroContent() {
                 <Ripples>
                   <button
                     onClick={nextSlide}
-                    className="rightclick | w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)] hover:shadow-lg"
+                    className="w-14 md:w-16 aspect-square bg-[var(--black)]  shadow-md transition-all duration-300 ease-in-out hover:bg-[var(--gray-400)]"
                   >
                     <img
                       className="mx-auto"
@@ -170,7 +134,7 @@ export default function HeroContent() {
           </div>
 
           <div
-            ref={(el) => (MainContent = el)}
+            ref={MainContentRef}
             className="grid place-content-center gap-4 md:gap-6 lg:gap-4 p-8 pl-4 md:p-12 md:pl-5 lg:px-16 xl:py-0"
           >
             {Data.map((items, index) => {
@@ -203,7 +167,11 @@ export default function HeroContent() {
           </div>
         </div>
       </section>
-      <FooterContent />
+      <FooterContent
+        Image1ref={Image1ref}
+        ContentBoxRef={ContentBoxRef}
+        Image3ref={Image3ref}
+      />
     </>
   );
 }
