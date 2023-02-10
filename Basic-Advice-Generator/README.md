@@ -31,14 +31,14 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github](https://your-solution-url.com)
-- Live Site URL: [On Netlify](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/SameerJS6/React-Projects/tree/master/Basic-Advice-Generator)
+- Live Site URL: [On Netlify](https://advice-generator-singh.netlify.app/)
 
 ## My process
 
 - Creating the UI for this project was relatively simple and only took me around 25-30 minutes to complete.
 - Including the animations, it took about an hour to complete.
-- Perhaps, the most challenging aspect was fetching data from the API, as I encountered multiple errors during the process. Despite these setbacks, I was eventually able to make it work after several attempts."
+- Perhaps, the most challenging aspect was fetching data from the API, as I encountered multiple errors during the process. Despite these setbacks, I was eventually able to make it work after several attempts.
 
 ### Built with
 
