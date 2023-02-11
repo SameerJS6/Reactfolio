@@ -10,6 +10,7 @@
 body {
   display: grid;
   min-height: 100vh;
+  min-height: 100dvh;
   place-content: center;
   font-family: "Manrope", sans-serif;
   background-color: var(--bg);
