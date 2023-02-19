@@ -6,7 +6,7 @@ export default function Result() {
   return (
     <>
       <article>
-        <div className="result-bg | relative grid gap-2 text-center border-none rounded-b-[2.5rem] md:rounded-3xl shadow-xl text-lg text-[var(--pale-blue)] p-8 h-full overflow-hidden">
+        <div className="result-bg | relative grid gap-4 text-center border-none rounded-b-[2.5rem] md:rounded-3xl shadow-xl text-lg text-[var(--pale-blue)] p-8 h-full overflow-hidden">
           <h2 className="flex items-center gap-2 justify-center z-[1] tracking-in">
             Your Result
             <svg
@@ -22,7 +22,7 @@ export default function Result() {
               />
             </svg>
           </h2>
-          <div className="score-bg opac-slide | rounded-[50%] border-none aspect-square mx-auto p-8">
+          <div className="score-bg opac-slide | rounded-[50%] border-none aspect-square mx-auto w-[150px] p-8">
             <h1 className="text-6xl font-extrabold">76</h1>
             <span>of 100</span>
           </div>
