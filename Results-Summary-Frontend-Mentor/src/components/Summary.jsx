@@ -1,6 +1,6 @@
 import React from "react";
-import Data from "/data";
-
+import Data from "../data";
+// import reaction from "../assets/images/icon-reaction.svg";
 export default function Summary() {
   return (
     <>
