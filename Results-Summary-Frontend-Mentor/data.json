@@ -9,7 +9,7 @@
   {
     "category": "Memory",
     "score": 92,
-    "icon": "../assets/images/memory.svg",
+    "icon": "../public/memory.svg",
     "backgroundColor": "rgb(254, 252, 232)",
     "Color": "var(--yellow)"
   },
