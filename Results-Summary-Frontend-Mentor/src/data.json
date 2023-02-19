@@ -9,21 +9,21 @@
   {
     "category": "Memory",
     "score": 92,
-    "icon": "./assets/images/icon-memory.svg",
+    "icon": "../assets/images/memory.svg",
     "backgroundColor": "rgb(254, 252, 232)",
     "Color": "var(--yellow)"
   },
   {
     "category": "Verbal",
     "score": 61,
-    "icon": "./assets/images/icon-verbal.svg",
+    "icon": "../assets/images/icon-verbal.svg",
     "backgroundColor": "rgb(236, 253, 245)",
     "Color": "var(--green)"
   },
   {
     "category": "Visual",
     "score": 72,
-    "icon": "./assets/images/icon-visual.svg",
+    "icon": "./assets/images/visual.svg",
     "backgroundColor": "rgb(239, 246, 255)",
     "Color": "var(--blue)"
   }
