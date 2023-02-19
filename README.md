@@ -41,5 +41,12 @@ This folder contains all the basic React Project.
 
 ![](./Basic-Advice-Generator/Preview.jpg)
 
--[Live Site](https://advice-generator-singh.netlify.app/) |
-[Github](https://github.com/SameerJS6/React-Projects/tree/master/Basic-Advice-Generator)
+- [Live Site](https://advice-generator-singh.netlify.app/) |
+  [Github](https://github.com/SameerJS6/React-Projects/tree/master/Basic-Advice-Generator)
+
+### Result Summary :-
+
+![](./Results-Summary-Frontend-Mentor/Preview.jpg)
+
+- [Live Site](https://result-summary.netlify.app/) |
+  [Github](https://github.com/SameerJS6/React-Projects/tree/master/Results-Summary-Frontend-Mentor)
