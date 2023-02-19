@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --red: #ff5757;
+  --yellow: #ffb01f;
+  --green: #00bd91;
+  --blue: #1125d4;
+
+  --circle-1: #4e21ca;
+  --circle-2: #2421ca00;
+
+  --neutral-100: white;
+  --neutral-200: #c8c7ff;
+  --neutral-400: #303b5a;
+  --pale-blue: #ebf1ff;
+
+  --blue-1: #7857ff;
+  --blue-2: #2e2be9;
+}
+
+body {
+  display: grid;
+  font-weight: 500;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: "Hanken Grotesk", sans-serif;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%237857ff' fill-opacity='0.08'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: opac 1s ease;
+}
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Box shadow for Main Container  */
+.main-container {
+  box-shadow: 0 0px 50px var(--neutral-200);
+}
+@media (min-width: 768px) {
+  body {
+    place-content: center;
+  }
+  .main-container {
+    box-shadow: 0 25px 50px -12px var(--neutral-200);
+  }
+}
+/* Result Box and Score Box Gradients */
+
+.result-bg {
+  background: linear-gradient(to top, var(--blue-2), var(--blue-1));
+  background-size: 600% 600%;
+
+  animation: Change 41s ease infinite;
+}
+.score-bg {
+  background: linear-gradient(to top, var(--circle-2), var(--circle-1));
+  background-size: 600% 600%;
+
+  animation: Change 41s ease infinite;
+}
+
+@keyframes Change {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+
+/* Button Hover  */
+.btn {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  background: var(--neutral-400);
+  transition: transform 350ms ease-in-out;
+}
+.btn::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translate3d(0, 100%, 0);
+  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+  background: linear-gradient(to top, var(--blue-2), var(--blue-1));
+}
+.btn:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 0 25px var(--neutral-200);
+}
+.btn:hover::before {
+  transform: translate3d(0, 0%, 0);
+}
+
+/* All the Animations */
+.slide-in {
+  animation: slide-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tracking-in {
+  animation: tracking-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes tracking-in {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.opac-slide {
+  animation: opac-slide 1.2s ease-in-out;
+}
+@keyframes opac-slide {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Background-Image Animations */
+.right-left {
+  animation: right-left 1.5s ease-in-out;
+}
+@keyframes right-left {
+  0% {
+    transform: translateX(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(15px) rotate(130deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(125deg);
+  }
+}
+.left-right {
+  animation: left-right 1.5s ease-in-out;
+}
+@keyframes left-right {
+  0% {
+    transform: translateX(100px) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-15px) rotate(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(-25deg);
+  }
+}
+.scale-in {
+  animation: scale-in 2s ease-in-out;
+}
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    z-index: -10;
+    transform: scale(0) translateY(100px) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) translateY(-10px) rotate(-115deg);
+  }
+  100% {
+    opacity: 1;
+    z-index: -10;
+    transform: scale(1) translateY(0) rotate(-110deg);
+  }
+}
