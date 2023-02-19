@@ -1,7 +1,7 @@
 import React from "react";
 import Result from "./components/Result";
 import Summary from "./components/Summary";
-import Leaf from "./assets/images/tree.png";
+import Leaf from "/leaf.png";
 
 export default function App() {
   return (

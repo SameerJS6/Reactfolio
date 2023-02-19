@@ -1,6 +1,6 @@
 import React from "react";
-import Plant from "../assets/images/plant.png";
-import Flowers from "../assets/images/flowers.png";
+import Plant from "/plant.png";
+import Flowers from "/flowers.png";
 
 export default function Result() {
   return (

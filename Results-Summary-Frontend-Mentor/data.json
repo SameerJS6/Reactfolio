@@ -2,7 +2,7 @@
   {
     "category": "Reaction",
     "score": 80,
-    "icon": "./src/assets/images/icon-reaction.svg",
+    "icon": "/reaction.svg",
     "backgroundColor": "rgb(254, 242, 242)",
     "Color": "var(--red)"
   },
@@ -16,14 +16,14 @@
   {
     "category": "Verbal",
     "score": 61,
-    "icon": "../assets/images/icon-verbal.svg",
+    "icon": "/verbal.svg",
     "backgroundColor": "rgb(236, 253, 245)",
     "Color": "var(--green)"
   },
   {
     "category": "Visual",
     "score": 72,
-    "icon": "./assets/images/visual.svg",
+    "icon": "/visual.svg",
     "backgroundColor": "rgb(239, 246, 255)",
     "Color": "var(--blue)"
   }
