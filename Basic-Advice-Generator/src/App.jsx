@@ -10,7 +10,7 @@ export default function App() {
 
   const getAdvice = async () => {
     try {
-      const response = await fetch(URL);
+      const response = await fetch(URL, { cache: "no-cache" });
       if (!response.ok) {
         throw new Error(
           `This is an HTTP error: The status is ${response.status}`
