@@ -50,3 +50,10 @@ This folder contains all the basic React Project.
 
 - [Live Site](https://result-summary.netlify.app/) |
   [Github](https://github.com/SameerJS6/React-Projects/tree/master/Results-Summary-Frontend-Mentor)
+
+### Typemaster Landing Page :-
+
+![](./Typemaster-Landing-Page/Preview.jpg)
+
+- [Live Site](https://typemaster-landing.netlify.app/) |
+  [Github](https://github.com/SameerJS6/React-Projects/tree/master/Typemaster-Landing-Page)
