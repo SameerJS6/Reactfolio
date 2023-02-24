@@ -17,7 +17,7 @@ import Data from "../data.json";
 export default function App() {
   return (
     <>
-      <main className="max-w-[1440px] mx-auto">
+      <main className="slide-in | max-w-[1440px] mx-auto">
         <div>
           {/* Navbar Section  */}
           <nav className="flex items-center justify-between my-8 px-4 md:px-12 lg:px-20 xl:px-32">

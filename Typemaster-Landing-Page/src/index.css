@@ -55,3 +55,16 @@
     scrollbar-color: hsl(22, 89%, 52%) #e8eff2;
   }
 }
+.slide-in {
+  animation: slide-in 1.25s ease-in-out;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
