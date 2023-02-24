@@ -68,7 +68,6 @@ export default function App() {
     if (
       month === 0 ||
       month > 12 ||
-      month < currentMonth ||
       month === "" ||
       year < currentYear ||
       year === "" ||
@@ -91,7 +90,7 @@ export default function App() {
       month > 12
         ? alert(month + " Months Doesn't exists in this Planet, You Idiot")
         : "";
-      month < currentMonth
+      year <= currentYear && month < currentMonth
         ? alert(
             "Expiration Month Should be higher that Current Month i.e. " + month
           )

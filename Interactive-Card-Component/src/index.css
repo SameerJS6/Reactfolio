@@ -55,14 +55,15 @@ body {
   background-color: transparent;
   border-color: hsl(278, 68%, 11%);
 }
+
 #card-name:focus-visible,
 #cvc:focus-visible,
-input:focus-visible {
+input:focus-visible,
+.input-in:focus-visible {
   transform: scale(0.99);
   outline: 1px solid hsl(278, 68%, 11%);
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
-
 input:focus-visible {
   outline: none;
   border: none;
