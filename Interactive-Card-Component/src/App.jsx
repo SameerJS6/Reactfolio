@@ -69,6 +69,7 @@ export default function App() {
       month === 0 ||
       month > 12 ||
       month === "" ||
+      (year <= currentYear && month < currentMonth) ||
       year < currentYear ||
       year === "" ||
       name === "" ||
