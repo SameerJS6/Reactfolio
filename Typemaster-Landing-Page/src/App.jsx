@@ -22,7 +22,7 @@ export default function App() {
           {/* Navbar Section  */}
           <nav className="flex items-center justify-between my-8 px-4 md:px-12 lg:px-20 xl:px-32">
             <img src={Logo} alt="The logo" />
-            <button className="uppercase font-extrabold rounded-xl p-4 bg-lightBlue text-darkBlue transition-all duration-300  ease-in-out hover:bg-darkBlue hover:text-white active:rounded-md">
+            <button className="uppercase font-extrabold rounded-xl p-4 py-3 md:p-4 bg-lightBlue text-darkBlue transition-all duration-300 ease-in-out hover:bg-darkBlue hover:text-white active:rounded-md">
               pre-order now
             </button>
           </nav>
