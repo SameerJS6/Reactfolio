@@ -24,7 +24,7 @@ export default function App() {
   };
   return (
     <>
-      <main className="mx-4 max-w-xl rounded-s-3xl rounded-ee-[5rem] rounded-se-3xl bg-white px-6 py-8 shadow-md sm:mx-0 md:rounded-s-3xl md:rounded-ee-[9rem] md:rounded-se-3xl md:pl-8 md:pr-10">
+      <main className="mx-4 max-w-xl rounded-s-3xl rounded-ee-[5rem] rounded-se-3xl bg-white px-6 py-8 shadow-sm sm:mx-0 md:rounded-s-3xl md:rounded-ee-[9rem] md:rounded-se-3xl md:pl-8 md:pr-10">
         <div className="grid gap-6">
           {/* The Input Section  */}
           <div className="theInputSection relative">
