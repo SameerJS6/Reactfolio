@@ -33,3 +33,8 @@ input[type="number"] {
   border-radius: 1rem;
   background-color: #dbdbdb;
 }
+
+input[type='number']:focus-visible {
+  outline: 2px solid #854dff;
+
+}

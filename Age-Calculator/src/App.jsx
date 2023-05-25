@@ -14,54 +14,57 @@ export default function App() {
               className="flex flex-col gap-8 md:gap-4"
               onSubmit={handleSubmit}
             >
-              <div className="flex gap-4 md:w-10/12 md:gap-6">
-                <div className="flex flex-col gap-1 md:gap-2">
+              <div className="grid grid-cols-3 gap-4 md:w-10/12 md:gap-6">
+                <div className="relative">
+                  <input
+                    className="peer w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] sm:text-3xl md:px-4"
+                    type="number"
+                    name="day"
+                    id="day"
+                    placeholder=" "
+                  />
                   <label
-                    className="text-xs font-bold uppercase tracking-widest text-[#716f6f] md:text-sm"
+                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:peer-placeholder-shown:text-base max-[350px]:peer-focus-visible:text-xs max-[300px]:peer-placeholder-shown:text-base max-[300px]:peer-focus-visible:-top-1.5 max-[300px]:peer-focus-visible:text-xs sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-sm md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs"
                     htmlFor="day"
                   >
                     Day
                   </label>
-                  <input
-                    className="w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] focus-visible:outline-1 focus-visible:outline-[#854dff] md:px-4 md:text-3xl"
-                    type="number"
-                    name="day"
-                    id="day"
-                  />
                   <p className="translate-y-2 text-[10px] italic text-[#ff5757] opacity-100 transition-all duration-300 sm:text-xs">
                     The field is required
                   </p>
                 </div>
-                <div className="flex flex-col gap-1 md:gap-2">
+                <div className=" relative">
+                  <input
+                    className="peer w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] md:px-4 md:text-3xl"
+                    type="number"
+                    name="month"
+                    id="month"
+                    placeholder=" "
+                  />
                   <label
-                    className="text-xs font-bold uppercase tracking-widest text-[#716f6f] md:text-sm"
+                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:peer-placeholder-shown:text-base max-[350px]:peer-focus-visible:text-xs max-[300px]:peer-placeholder-shown:text-base max-[300px]:peer-focus-visible:-top-1.5 max-[300px]:peer-focus-visible:text-xs sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-sm md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs"
                     htmlFor="month"
                   >
                     Month
                   </label>
-                  <input
-                    className="w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] focus-visible:outline-1 focus-visible:outline-[#854dff] md:px-4 md:text-3xl"
-                    type="number"
-                    name="month"
-                    id="month"
-                  />
                   <p className="translate-y-2 text-[10px] italic text-[#ff5757] opacity-100 transition-all duration-300 sm:text-xs">
                     The field is required
                   </p>
                 </div>
-                <div className="flex flex-col gap-1 md:gap-2">
+                <div className="relative">
+                  <input
+                    className="peer w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] md:px-4 md:text-3xl"
+                    type="number"
+                    name="year"
+                    id="year"
+                    placeholder=" "
+                  />
                   <label
-                    className="text-xs font-bold uppercase tracking-widest text-[#716f6f] md:text-sm"
+                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:peer-placeholder-shown:text-base max-[350px]:peer-focus-visible:text-xs max-[300px]:peer-placeholder-shown:text-base max-[300px]:peer-focus-visible:-top-1.5 max-[300px]:peer-focus-visible:text-xs sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-sm md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs"
                     htmlFor="year"
                   >
                     Year
                   </label>
-                  <input
-                    className="w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] focus-visible:outline-1 focus-visible:outline-[#854dff] md:px-4 md:text-3xl"
-                    type="number"
-                    name="year"
-                    id="year"
-                  />
                   <p className="translate-y-2 text-[10px] italic text-[#ff5757] opacity-100 transition-all duration-300 sm:text-xs">
                     The field is required
                   </p>
@@ -70,7 +73,7 @@ export default function App() {
 
               <div className="z-10 scale-[85%] self-center rounded-[50%] md:scale-100 md:self-end">
                 <button
-                  className="group aspect-square w-full rounded-[50%] border-none bg-[#854dff] px-4 py-2 text-white transition-all duration-300 hover:scale-105 hover:bg-[#7c41fd]"
+                  className="group aspect-square w-full rounded-[50%] border-none bg-[#854dff] px-4 py-2 text-white transition-all duration-300 hover:scale-105 hover:bg-[#7c41fd] focus-visible:outline-offset-2"
                   type="submit"
                 >
                   <svg
