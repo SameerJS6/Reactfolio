@@ -5,6 +5,14 @@ export default function App() {
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
   const [age, setAge] = useState({});
+  const [error, setError] = useState({
+    showDay: false,
+    showMonth: false,
+    showYear: false,
+    dayMessage: "This field is required",
+    monthMessage: "This field is required",
+    yearMessage: "This field is required",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +24,51 @@ export default function App() {
     const years = Math.abs(ageDate.getUTCFullYear() - 1970); //This line calculates the number of years between birth year and current year.
     const months = ageDate.getUTCMonth(); //This line gets the birth month.
     const days = ageDate.getUTCDate() - 1; //This line get the birth date, and subtracting 1 from the result adjust the fact that ageDate represents a duration and not a specific date.
+
+    // Error Handling for Days
+    if (parseInt(day, 10) > 31 || parseInt(day, 10) <= 0) {
+      setError((prevError) => ({
+        ...prevError,
+        showDay: true,
+        dayMessage: "Must be a valid date",
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        showDay: false,
+      }));
+    }
+
+    // Error Handling for Months
+    if (parseInt(month, 10) > 13 || parseInt(month, 10) <= 0) {
+      setError((prevError) => ({
+        ...prevError,
+        showMonth: true,
+        monthMessage: "Must be a valid month",
+      }));
+    } else {
+      setError((prevError) => ({ ...prevError, showMonth: false }));
+    }
+
+    // Error Handling for Years
+    if (parseInt(year, 10) > today.getFullYear()) {
+      setError((prevError) => ({
+        ...prevError,
+        showYear: true,
+        yearMessage: "Must be in the past",
+      }));
+    } else if (parseInt(year, 10) < 1000) {
+      setError((prevError) => ({
+        ...prevError,
+        showYear: true,
+        yearMessage: "Must greater than 1000",
+      }));
+    } else {
+      setError((prevError) => ({
+        ...prevError,
+        showYear: false,
+      }));
+    }
 
     setAge({ year: years, month: months, day: days });
     setDay("");
@@ -35,7 +88,8 @@ export default function App() {
               <div className="grid grid-cols-3 gap-4 md:w-10/12 md:gap-6">
                 <div className="relative">
                   <input
-                    className="peer w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] transition-all duration-200 ease-in-out sm:text-3xl md:px-4"
+                    data-error={`${error.showDay ? "true" : "false"}`}
+                    className="peer w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] transition-all duration-200 ease-in-out sm:text-3xl md:px-4 "
                     type="number"
                     name="day"
                     id="day"
@@ -45,26 +99,37 @@ export default function App() {
                   />
                   {/* Tempo Label for very small screen devices  */}
                   <label
-                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 peer-focus-visible:text-[#854dff] min-[350px]:hidden"
+                    className={`pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 peer-focus-visible:text-[#854dff] min-[350px]:hidden ${
+                      error.showDay ? "text-[#ff5757]" : "text-[#716f6f]"
+                    }`}
                     htmlFor="day"
                   >
                     Day
                   </label>
                   {/* Below the Floating Label for Tablets  */}
                   <label
-                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:hidden sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-xs md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs"
+                    className={`pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:hidden sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-xs md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs ${
+                      error.showDay
+                        ? "text-[#ff5757] peer-placeholder-shown:text-[#ff5757] peer-focus-visible:text-[#ff5757]"
+                        : ""
+                    }`}
                     htmlFor="day"
                   >
                     Day
                   </label>
                   <p
-                    className={`translate-y-2 text-[10px] italic text-[#ff5757] transition-all duration-300 sm:text-xs `}
+                    className={`translate-y-2 text-[10px] italic text-[#ff5757] transition-all duration-300 sm:text-xs ${
+                      error.showDay
+                        ? "translate-y-2 opacity-100"
+                        : "translate-y-4 opacity-0"
+                    }`}
                   >
-                    The field is required
+                    {error.dayMessage}
                   </p>
                 </div>
                 <div className=" relative">
                   <input
+                    data-error={`${error.showMonth ? "true" : "false"}`}
                     className="peer w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] transition-all duration-200 ease-in-out md:px-4 md:text-3xl"
                     type="number"
                     name="month"
@@ -75,24 +140,37 @@ export default function App() {
                   />{" "}
                   {/* Tempo Label for very small screen devices  */}
                   <label
-                    className="pointer-events-none absolute -top-2 left-2 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 peer-focus-visible:text-[#854dff] min-[350px]:hidden"
+                    className={`pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 peer-focus-visible:text-[#854dff] min-[350px]:hidden ${
+                      error.showMonth ? "text-[#ff5757]" : "text-[#716f6f]"
+                    }`}
                     htmlFor="month"
                   >
                     Month
                   </label>
                   {/* Below the Floating Label for Tablets  */}
                   <label
-                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:hidden sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-xs md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs"
+                    className={`pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:hidden sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-xs md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs ${
+                      error.showMonth
+                        ? "text-[#ff5757] peer-placeholder-shown:text-[#ff5757] peer-focus-visible:text-[#ff5757]"
+                        : ""
+                    }`}
                     htmlFor="month"
                   >
                     Month
                   </label>
-                  <p className="translate-y-2 text-[10px] italic text-[#ff5757] opacity-100 transition-all duration-300 sm:text-xs">
-                    The field is required
+                  <p
+                    className={`translate-y-2 text-[10px] italic text-[#ff5757] transition-all duration-300 sm:text-xs ${
+                      error.showMonth
+                        ? "translate-y-2 opacity-100"
+                        : "translate-y-4 opacity-0"
+                    }`}
+                  >
+                    {error.monthMessage}
                   </p>
                 </div>
                 <div className="relative">
                   <input
+                    data-error={`${error.showYear ? "true" : "false"}`}
                     className="peer w-full rounded-lg border-[1.5px] border-[#dbdbdb] p-3 text-2xl font-extrabold text-[#141414] transition-all duration-200 ease-in-out md:px-4 md:text-3xl"
                     type="number"
                     name="year"
@@ -103,20 +181,32 @@ export default function App() {
                   />{" "}
                   {/* Tempo Label for very small screen devices  */}
                   <label
-                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 peer-focus-visible:text-[#854dff] min-[350px]:hidden"
+                    className={`pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 peer-focus-visible:text-[#854dff] min-[350px]:hidden ${
+                      error.showYear ? "text-[#ff5757]" : "text-[#716f6f]"
+                    }`}
                     htmlFor="year"
                   >
                     Year
                   </label>
                   {/* Below the Floating Label for Tablets  */}
                   <label
-                    className="pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:hidden sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-xs md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs"
+                    className={`pointer-events-none absolute -top-2 left-3 bg-white text-xs font-bold uppercase tracking-widest text-[#716f6f] transition-all duration-300 ease-in-out peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#716f6f] peer-focus-visible:-top-2 peer-focus-visible:left-3 peer-focus-visible:text-xs peer-focus-visible:text-[#854dff] max-[350px]:hidden sm:peer-placeholder-shown:top-3 sm:peer-placeholder-shown:text-3xl sm:peer-focus-visible:-top-2 sm:peer-focus-visible:text-xs md:left-4 md:text-xs md:peer-placeholder-shown:left-3 md:peer-placeholder-shown:top-4 md:peer-placeholder-shown:text-2xl md:peer-focus-visible:-top-2 md:peer-focus-visible:text-xs ${
+                      error.showYear
+                        ? "text-[#ff5757] peer-placeholder-shown:text-[#ff5757] peer-focus-visible:text-[#ff5757]"
+                        : ""
+                    }`}
                     htmlFor="year"
                   >
                     Year
                   </label>
-                  <p className="translate-y-2 text-[10px] italic text-[#ff5757] opacity-100 transition-all duration-300 sm:text-xs">
-                    The field is required
+                  <p
+                    className={`translate-y-2 text-[10px] italic text-[#ff5757] transition-all duration-300 sm:text-xs ${
+                      error.showYear
+                        ? "translate-y-2 opacity-100"
+                        : "translate-y-4 opacity-0"
+                    }`}
+                  >
+                    {error.yearMessage}
                   </p>
                 </div>
               </div>
@@ -151,7 +241,7 @@ export default function App() {
             </h1>
             <h2 className="">
               <span className="text-[#854dff]">
-                {age.month ? age.month : "--"}
+                {age.month >= 0 ? age.month : "--"}
               </span>{" "}
               months
             </h2>
