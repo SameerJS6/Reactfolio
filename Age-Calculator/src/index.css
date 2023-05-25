@@ -8,4 +8,28 @@ body {
   min-height: 100dvh;
   place-content: center;
   font-family: "Poppins", sans-serif;
+  background-color: hsl(210, 20%, 98%);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.theInputSection::after {
+  left: 0;
+  content: "";
+  bottom: 20%;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  border-radius: 1rem;
+  background-color: #dbdbdb;
 }
