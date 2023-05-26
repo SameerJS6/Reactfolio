@@ -2,6 +2,7 @@ import React from "react";
 
 export default function FormsInput({ handleSubmit, error, detail, setDetail }) {
   const { day, month, year } = detail;
+  const today = new Date().getFullYear();
   return (
     <div className="theInputSection relative">
       <form className="flex flex-col gap-8 md:gap-4" onSubmit={handleSubmit}>
@@ -97,6 +98,7 @@ export default function FormsInput({ handleSubmit, error, detail, setDetail }) {
               id="year"
               placeholder=" "
               value={year}
+              max={today}
               onChange={(e) => setDetail({ ...detail, year: e.target.value })}
             />{" "}
             {/* Tempo Label for very small screen devices  */}
