@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 export default function App() {
-  const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
+  const [detail, setDetail] = useState({ day: "", month: "", year: "" });
   const [age, setAge] = useState({});
   const [error, setError] = useState({
     showDay: false,
@@ -13,7 +11,7 @@ export default function App() {
     monthMessage: "This field is required",
     yearMessage: "This field is required",
   });
-
+  const { day, month, year } = detail;
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -26,7 +24,12 @@ export default function App() {
     const days = ageDate.getUTCDate() - 1; //This line get the birth date, and subtracting 1 from the result adjust the fact that ageDate represents a duration and not a specific date.
 
     // Error Handling for Days
-    if (parseInt(day, 10) > 31 || parseInt(day, 10) <= 0) {
+    if (
+      !day ||
+      day === "" ||
+      parseInt(day, 10) > 31 ||
+      parseInt(day, 10) <= 0
+    ) {
       setError((prevError) => ({
         ...prevError,
         showDay: true,
@@ -40,7 +43,12 @@ export default function App() {
     }
 
     // Error Handling for Months
-    if (parseInt(month, 10) > 13 || parseInt(month, 10) <= 0) {
+    if (
+      !month ||
+      month === "" ||
+      parseInt(month, 10) > 13 ||
+      parseInt(month, 10) <= 0
+    ) {
       setError((prevError) => ({
         ...prevError,
         showMonth: true,
@@ -51,7 +59,7 @@ export default function App() {
     }
 
     // Error Handling for Years
-    if (parseInt(year, 10) > today.getFullYear()) {
+    if (!year || year === "" || parseInt(year, 10) > today.getFullYear()) {
       setError((prevError) => ({
         ...prevError,
         showYear: true,
@@ -71,9 +79,7 @@ export default function App() {
     }
 
     setAge({ year: years, month: months, day: days });
-    setDay("");
-    setMonth("");
-    setYear("");
+    setDetail({ day: "", month: "", year: "" });
   };
   return (
     <>
@@ -95,7 +101,9 @@ export default function App() {
                     id="day"
                     placeholder=" "
                     value={day}
-                    onChange={(e) => setDay(e.target.value)}
+                    onChange={(e) =>
+                      setDetail({ ...detail, day: e.target.value })
+                    }
                   />
                   {/* Tempo Label for very small screen devices  */}
                   <label
@@ -136,7 +144,9 @@ export default function App() {
                     id="month"
                     placeholder=" "
                     value={month}
-                    onChange={(e) => setMonth(e.target.value)}
+                    onChange={(e) =>
+                      setDetail({ ...detail, month: e.target.value })
+                    }
                   />{" "}
                   {/* Tempo Label for very small screen devices  */}
                   <label
@@ -177,7 +187,9 @@ export default function App() {
                     id="year"
                     placeholder=" "
                     value={year}
-                    onChange={(e) => setYear(e.target.value)}
+                    onChange={(e) =>
+                      setDetail({ ...detail, year: e.target.value })
+                    }
                   />{" "}
                   {/* Tempo Label for very small screen devices  */}
                   <label
