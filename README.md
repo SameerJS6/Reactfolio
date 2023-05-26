@@ -59,3 +59,10 @@ This folder contains all the basic React Project.
 
 - [Live Site](https://typemaster-landing.netlify.app/) |
   [Github](https://github.com/SameerJS6/React-Projects/tree/master/Typemaster-Landing-Page)
+
+### Age Calculator :-
+
+![](./Age-Calculator/Preview.jpg)
+
+- [Live Site](https://age-calculator-singh.netlify.app/) |
+  [Github](https://github.com/SameerJS6/React-Projects/tree/master/Age-Calculator)
