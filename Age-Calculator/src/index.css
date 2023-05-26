@@ -11,6 +11,16 @@ body {
   background-color: #f9fafb;
   background-color: #f9fafb;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23854dff' fill-opacity='0.11'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: bg-pan-tr 80s both infinite linear;
+}
+
+@keyframes bg-pan-tr {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -26,6 +36,8 @@ input[type="number"] {
 }
 
 .theInputSection::after {
+  --transfrom-direction: center;
+
   left: 0;
   content: "";
   bottom: 20%;
@@ -34,8 +46,24 @@ input[type="number"] {
   position: absolute;
   border-radius: 1rem;
   background-color: #dbdbdb;
+  animation: grow 1s ease-in-out;
+  transform-origin: var(--transfrom-direction);
 }
-
+@media (min-width: 768px) {
+  .theInputSection::after {
+    --transfrom-direction: right;
+  }
+}
+@keyframes grow {
+  from {
+    scale: 0;
+    opacity: 0.35;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
 input[type="number"][data-error="false"]:focus-visible {
   outline: 2px solid #854dff;
 }
@@ -44,4 +72,53 @@ input[type="number"][data-error="true"]:focus-visible {
 }
 input[type="number"][data-error="true"] {
   border-color: #ff5757;
+}
+
+/* Utility Animation  */
+.tracking-in {
+  animation: tracking-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes tracking-in {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-in-top {
+  animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in-bck 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: 0.5s;
+}
+.fade-in-main {
+  animation: fade-in-bck 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@keyframes fade-in-bck {
+  0% {
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
 }
