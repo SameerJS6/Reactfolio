@@ -13,19 +13,14 @@ export default function App() {
     monthMessage: "This field is required",
     yearMessage: "This field is required",
   });
+  const [complete, setComplete] = useState(true);
   const { day, month, year } = detail;
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const today = new Date(); //This line creates a new Date() object representing the current date and time.
-    const birthDate = new Date(`${month}/${day}/${year}`); //This line creates a new Date() object representing the birth date using the user input values.
-    const timeDiff = today.getTime() - birthDate.getTime(); //This line calculates the time difference between the current date and the user input date in milliseconds.
-    const ageDate = new Date(timeDiff); //This line creates a new Date using the time calculated in the previous step.
-    const years = Math.abs(ageDate.getUTCFullYear() - 1970); //This line calculates the number of years between birth year and current year.
-    const months = ageDate.getUTCMonth(); //This line gets the birth month.
-    const days = ageDate.getUTCDate() - 1; //This line get the birth date, and subtracting 1 from the result adjust the fact that ageDate represents a duration and not a specific date.
+    const current = new Date();
 
     // Error Handling for Days
+
     if (
       !day ||
       day === "" ||
@@ -61,7 +56,7 @@ export default function App() {
     }
 
     // Error Handling for Years
-    if (!year || year === "" || parseInt(year, 10) > today.getFullYear()) {
+    if (!year || year === "" || parseInt(year, 10) > current.getFullYear()) {
       setError((prevError) => ({
         ...prevError,
         showYear: true,
@@ -80,7 +75,37 @@ export default function App() {
       }));
     }
 
-    setAge({ year: years, month: months, day: days });
+    // Error Handling for showing result
+    if (
+      !day ||
+      day === "" ||
+      parseInt(day, 10) > 31 ||
+      parseInt(day, 10) <= 0 ||
+      !month ||
+      month === "" ||
+      parseInt(month, 10) > 13 ||
+      parseInt(month, 10) <= 0 ||
+      !year ||
+      year === "" ||
+      parseInt(year, 10) > current.getFullYear() ||
+      parseInt(year, 10) < 1000 ||
+      (parseInt(month, 10) > current.getMonth() &&
+        parseInt(year, 10) === current.getFullYear())
+    ) {
+      setComplete(false);
+      setAge({ year: "--", month: "--", day: "--" });
+    } else {
+      setComplete(true);
+      const today = new Date(); //This line creates a new Date() object representing the current date and time.
+      const birthDate = new Date(`${month}/${day}/${year}`); //This line creates a new Date() object representing the birth date using the user input values.
+      const timeDiff = today.getTime() - birthDate.getTime(); //This line calculates the time difference between the current date and the user input date in milliseconds.
+      const ageDate = new Date(timeDiff); //This line creates a new Date using the time calculated in the previous step.
+      const years = Math.abs(ageDate.getUTCFullYear() - 1970); //This line calculates the number of years between birth year and current year.
+      const months = ageDate.getUTCMonth(); //This line gets the birth month.
+      const days = ageDate.getUTCDate() - 1; //This line get the birth date, and subtracting 1 from the result adjust the fact that ageDate represents a duration and not a specific date.
+      setAge({ year: years, month: months, day: days });
+    }
+
     setDetail({ day: "", month: "", year: "" });
   };
   return (
