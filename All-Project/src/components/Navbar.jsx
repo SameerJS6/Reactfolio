@@ -7,7 +7,7 @@ import { Within } from "@theme-toggles/react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  let Navref = useRef(null)
+  let Navref = useRef(null);
   const handleClickOutside = (e) => {
     if (
       Navref.current &&
@@ -43,7 +43,7 @@ export default function Navbar() {
         <nav
           ref={Navref}
           className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-4 bg-lime-500 px-[10%] transition-all  duration-500 ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-6 sm:px-0 sm:opacity-100 ${
-            isOpen ? "right-0 opacity-100" : "-right-72 opacity-0"
+            isOpen ? "right-0 opacity-100 z-[5]" : "-right-72 opacity-0"
           }`}
         >
           <ul className="flex flex-col items-start gap-6 px-2 font-medium sm:flex-row sm:items-center xl:text-lg">
