@@ -135,6 +135,7 @@ export default function FormsInput({ handleSubmit, error, detail, setDetail }) {
           <button
             className="group aspect-square w-full rounded-[50%] border-none bg-[#854dff] px-4 py-2 text-white transition-all duration-300 hover:scale-105 hover:bg-[#7c41fd] focus-visible:outline-offset-2"
             type="submit"
+            aria-label="Submit Button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
