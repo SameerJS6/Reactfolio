@@ -22,19 +22,27 @@ body {
     transition: all 500ms ease-in-out;
     background: linear-gradient(
       0deg,
-      rgba(27, 27, 27, 1) 0%,
-      rgba(116, 116, 116, 1) 100%
+      rgba(27, 27, 27, 0.911) 0%,
+      rgba(116, 116, 116, 0.336) 100%
     );
   }
   header[data-overlay="true"]::after {
     opacity: 1;
+    z-index: 1;
   }
   .navbar {
     height: 100dvh;
   }
+}
+.hero-gradient {
+  background-image: url("./bgLight.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* For the Theme Toggle  */
 .theme-toggle > svg {
   width: 1.85rem;
   height: 1.85rem;
 }
+
+/* Main Color For the whole theme is #015ac2 */
