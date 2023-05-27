@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  height: auto;
+}
+@media (max-width: 640px) {
+  header[data-overlay="false"]::after,
+  header[data-overlay="true"]::after {
+    inset: 0;
+    opacity: 0;
+    content: "";
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    position: fixed;
+    transition: all 500ms ease-in-out;
+    background: linear-gradient(
+      0deg,
+      rgba(27, 27, 27, 1) 0%,
+      rgba(116, 116, 116, 1) 100%
+    );
+  }
+  header[data-overlay="true"]::after {
+    opacity: 1;
+  }
+  .navbar {
+    height: 100dvh;
+  }
+}
+/* For the Theme Toggle  */
+.theme-toggle > svg {
+  width: 1.85rem;
+  height: 1.85rem;
+}
