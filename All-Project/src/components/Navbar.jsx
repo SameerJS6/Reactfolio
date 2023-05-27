@@ -1,19 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import Hamburger from "hamburger-react";
-import useRipple from "use-ripple-hook";
 import "@theme-toggles/react/css/Within.css";
 import { Within } from "@theme-toggles/react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [ripple, event] = useRipple({
-    duration: 1000,
-    color: "rgba(163, 230, 53, .5)",
-  });
-  let Navref = useRef(null);
-
+  let Navref = useRef(null)
   const handleClickOutside = (e) => {
     if (
       Navref.current &&
@@ -90,8 +84,6 @@ export default function Navbar() {
             </a>
             <Within
               duration={1000}
-              ref={ripple}
-              onMouseDown={event}
               className="rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50"
             />
           </div>
