@@ -43,13 +43,17 @@ body {
   }
   header[data-overlay="true"]::after {
     opacity: 1;
-    z-index: 1;
+    z-index: 5;
   }
   .navbar {
     height: 100dvh;
+    z-index: 10;
   }
   .hero-gradient {
     background-position: center bottom;
+  }
+  .scrollHidden {
+    overflow-y: hidden;
   }
 }
 
@@ -73,3 +77,12 @@ body {
 }
 
 /* Main Color For the whole theme is #015ac2 */
+.react-tooltip {
+  --rt-color-dark: pink;
+  --rt-color-white: black;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px !important;
+  border-radius: 0.5rem !important;
+}

@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Hamburger from "hamburger-react";
 import "@theme-toggles/react/css/Within.css";
 import { Within } from "@theme-toggles/react";
+import { Tooltip } from "react-tooltip";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,10 @@ export default function Navbar() {
     };
   }, []);
 
+  isOpen
+    ? document.body.classList.add("scrollHidden")
+    : document.body.classList.remove("scrollHidden");
+
   // const handleHamburger = () => {
   //   setIsOpen(!isOpen);
   // };
@@ -42,7 +47,7 @@ export default function Navbar() {
         </div>
         <nav
           ref={Navref}
-          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-4 bg-lime-500 px-[10%] transition-all  duration-500 ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-6 sm:px-0 sm:opacity-100 ${
+          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-4 bg-lime-500 px-[10%] transition-all duration-500 ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-6 sm:px-0 sm:opacity-100 ${
             isOpen ? "right-0 z-[5] opacity-100" : "-right-72 opacity-0"
           }`}
         >
@@ -68,6 +73,10 @@ export default function Navbar() {
           </ul>
           <div className="flex flex-col items-start gap-2 rounded-[100vmax] px-2 sm:flex-row sm:items-center sm:px-0">
             <a
+              data-tooltip-place="bottom"
+              data-tooltip-content="Vist Gihub Profile"
+              data-tooltip-delay-show={300}
+              data-tooltip-id="github-tooltip"
               className="scale-[140%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-[115%]"
               href="https://github.com/SameerJS6"
               target={"_blank"}
@@ -94,6 +103,7 @@ export default function Navbar() {
                 </g>
               </svg>
             </a>
+            <Tooltip id="github-tooltip" noArrow={true} className="navTip" />
             <Within
               duration={1000}
               className="rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50"
