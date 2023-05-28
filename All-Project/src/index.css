@@ -2,14 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Roboto", sans-serif;
+html {
+  scroll-behavior: smooth;
 }
-
+body {
+  font-family: "Inter", sans-serif;
+}
 .navbar {
   height: auto;
 }
-@media (max-width: 640px) {
+
+.hero-gradient,
+.about-gradient {
+  --bgImage: url(./bgLight.jpg);
+
+  background-image: var(--bgImage);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about-gradient {
+  --bgImage: url(./aboutLight.jpg);
+}
+
+@media (max-width: 639px) {
   header[data-overlay="false"]::after,
   header[data-overlay="true"]::after {
     inset: 0;
@@ -33,16 +48,28 @@ body {
   .navbar {
     height: 100dvh;
   }
+  .hero-gradient {
+    background-position: center bottom;
+  }
 }
-.hero-gradient {
-  background-image: url("./bgLight.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 /* For the Theme Toggle  */
 .theme-toggle > svg {
   width: 1.85rem;
   height: 1.85rem;
+}
+
+.card-grid {
+  --min-size: 250px;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-size), 1fr));
+}
+@media (min-width: 350px) {
+  .card-grid {
+    --min-size: 320px;
+  }
 }
 
 /* Main Color For the whole theme is #015ac2 */
