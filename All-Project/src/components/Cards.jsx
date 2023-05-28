@@ -14,20 +14,38 @@ export default function Cards() {
       </div>
       <div className="card-grid mt-8 sm:gap-4 xl:mx-12">
         <article className="overflow-hidden rounded-3xl bg-[#e1e2ec] transition-all duration-300 hover:bg-[#d8e2ff] active:rounded-2xl sm:min-w-[321px] md:min-h-[350px]">
-          <div className="group relative rounded-[2rem] object-cover p-2 active:rounded-2xl">
-            <img
-              className="rounded-[2rem] transition-all duration-300 active:rounded-2xl"
-              src={Age}
-              alt="A Mockup of First Project"
-            />
-            <div className="absolute inset-0 rounded-[2rem] object-cover p-2  opacity-0 transition-all duration-[350ms] ease-in-out active:rounded-2xl group-hover:opacity-100">
+          <a href="https://age-calculator-singh.netlify.app/" target="_blank">
+            <div className="group relative rounded-[2rem] object-cover p-2 active:rounded-2xl">
               <img
                 className="rounded-[2rem] transition-all duration-300 active:rounded-2xl"
-                src={Age2}
-                alt="A Another Mockup of First Project"
+                src={Age}
+                alt="A Mockup of First Project"
               />
+
+              <div className="absolute right-1.5 top-2 z-10 translate-y-4 rounded-[50%] bg-sky-50 bg-opacity-0 p-2 opacity-0 transition-all duration-500 ease-in-out hover:bg-opacity-75 group-hover:translate-y-0 group-hover:bg-opacity-25  group-hover:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-8 w-8 sm:h-12 sm:w-12"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+
+              <div className="absolute inset-0 rounded-[2rem] object-cover p-2 opacity-0 transition-all duration-[350ms] ease-in-out active:rounded-2xl group-hover:opacity-100">
+                <img
+                  className="rounded-[2rem] transition-all duration-300 active:rounded-2xl"
+                  src={Age2}
+                  alt="A Another Mockup of First Project"
+                />
+              </div>
             </div>
-          </div>
+          </a>
           <div className="grid gap-2 p-6">
             <p className="text-[24px] font-medium">Age Calculator</p>
             <p className="text-sm sm:text-base">
@@ -44,7 +62,7 @@ export default function Cards() {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-h-5 h-5 sm:h-6 sm:w-6"
+                  className="h-5 w-5 sm:h-6 sm:w-6"
                 >
                   <path
                     fillRule="evenodd"
