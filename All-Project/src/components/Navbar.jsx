@@ -43,14 +43,14 @@ export default function Navbar() {
         <nav
           ref={Navref}
           className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-4 bg-lime-500 px-[10%] transition-all  duration-500 ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-6 sm:px-0 sm:opacity-100 ${
-            isOpen ? "right-0 opacity-100 z-[5]" : "-right-72 opacity-0"
+            isOpen ? "right-0 z-[5] opacity-100" : "-right-72 opacity-0"
           }`}
         >
           <ul className="flex flex-col items-start gap-6 px-2 font-medium sm:flex-row sm:items-center xl:text-lg">
-            <li className="cursor-pointer rounded-full bg-red-500 px-4 py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50">
+            <li className="cursor-pointer rounded-3xl bg-red-500 px-4 py-2 transition-all duration-300  hover:-translate-y-1 hover:bg-lime-50 active:rounded-[1rem]">
               <a href="#Project">Project</a>
             </li>
-            <li className="cursor-pointer rounded-full bg-red-500 px-4 py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50">
+            <li className="cursor-pointer rounded-3xl bg-red-500 px-4 py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 active:rounded-2xl">
               <a href="#About">About Us</a>
             </li>
           </ul>
