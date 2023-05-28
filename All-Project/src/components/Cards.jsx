@@ -1,6 +1,8 @@
 import React from "react";
 import Age from "../assets/1.jpg";
 import Age2 from "../assets/2.jpg";
+import { Tooltip } from "react-tooltip";
+
 export default function Cards() {
   return (
     <section
@@ -14,7 +16,13 @@ export default function Cards() {
       </div>
       <div className="card-grid mt-8 sm:gap-4 xl:mx-12">
         <article className="overflow-hidden rounded-3xl bg-[#e1e2ec] transition-all duration-300 hover:bg-[#d8e2ff] active:rounded-2xl sm:min-w-[321px] md:min-h-[350px]">
-          <a href="https://age-calculator-singh.netlify.app/" target="_blank">
+          <a
+            data-tooltip-place="right"
+            data-tooltip-delay-show={200}
+            href="https://age-calculator-singh.netlify.app/"
+            target="_blank"
+            className="live-tooltip"
+          >
             <div className="group relative rounded-[2rem] object-cover p-2 active:rounded-2xl">
               <img
                 className="rounded-[2rem] transition-all duration-300 active:rounded-2xl"
@@ -54,7 +62,9 @@ export default function Cards() {
             </p>
             <div className="mt-2 flex items-center gap-2">
               <a
-                className="scale-[125%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
+                data-tooltip-place="bottom"
+                data-tooltip-delay-show={200}
+                className="live-tooltip scale-[125%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
                 href="https://age-calculator-singh.netlify.app/"
                 target="_blank"
               >
@@ -71,8 +81,11 @@ export default function Cards() {
                   />
                 </svg>
               </a>
+
               <a
-                className="scale-[125%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
+                data-tooltip-place="right"
+                data-tooltip-delay-show={200}
+                className="github-tip scale-[125%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
                 href="https://github.com/SameerJS6"
                 target={"_blank"}
               >
@@ -100,6 +113,16 @@ export default function Cards() {
               </a>
             </div>
           </div>
+          <Tooltip
+            anchorSelect=".live-tooltip"
+            content="Visit Live Site"
+            noArrow={true}
+          />
+          <Tooltip
+            anchorSelect=".github-tip"
+            content="Visit Code"
+            noArrow={true}
+          />
         </article>
         <article></article>
         <article></article>
