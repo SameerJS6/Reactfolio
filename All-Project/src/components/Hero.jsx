@@ -18,7 +18,7 @@ export default function Hero() {
               Learning by Building
             </h1>
             <p
-              className="mx-auto max-w-[85ch] pb-4 text-base sm:text-lg md:text-[22px]"
+              className="mx-auto max-w-[85ch] py-4 text-base sm:text-lg md:text-[22px]"
               role="Sub Heading"
             >
               Showcasing My Impressive Collection of Self-Developed React
