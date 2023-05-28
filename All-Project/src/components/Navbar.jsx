@@ -47,11 +47,11 @@ export default function Navbar() {
           }`}
         >
           <ul className="flex flex-col items-start gap-6 px-2 font-medium sm:flex-row sm:items-center xl:text-lg">
-            <li className="cursor-pointer rounded-3xl bg-red-500 px-4 py-2 transition-all duration-300  hover:-translate-y-1 hover:bg-lime-50 active:rounded-[1rem]">
-              <a href="#Project">Project</a>
+            <li className="cursor-pointer rounded-3xl bg-red-500 px-4 py-2 transition-all duration-300 hover:-translate-y-1 hover:bg-lime-50 active:rounded-[1rem]">
+              <a href="#Projects">Project</a>
             </li>
             <li className="cursor-pointer rounded-3xl bg-red-500 px-4 py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 active:rounded-2xl">
-              <a href="#About">About Us</a>
+              <a href="#About">About Me</a>
             </li>
           </ul>
           <div className="flex flex-col items-start gap-2 rounded-[100vmax] px-2 sm:flex-row sm:items-center sm:px-0">
