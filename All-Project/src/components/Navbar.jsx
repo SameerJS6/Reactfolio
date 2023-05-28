@@ -56,7 +56,7 @@ export default function Navbar() {
                 Project
               </a>
             </li>
-            <li className="transition-all duration-[350ms] ease-in-out hover:-translate-y-1 py-2">
+            <li className="py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1">
               <a
                 className="cursor-pointer rounded-3xl bg-red-500 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-lime-50 active:rounded-2xl"
                 onClick={() => setIsOpen(false)}
