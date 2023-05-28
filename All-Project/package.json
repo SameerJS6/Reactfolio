@@ -13,7 +13,8 @@
     "@theme-toggles/react": "^4.1.0",
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-tooltip": "^5.13.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
