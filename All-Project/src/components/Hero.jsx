@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Cards from "./Cards";
+import About from "./About";
 
 export default function Hero() {
   return (
@@ -17,7 +18,7 @@ export default function Hero() {
               Learning by Building
             </h1>
             <p
-              className="mx-auto max-w-[85ch] pb-4 pt-2 text-base sm:text-lg md:text-[22px]"
+              className="mx-auto max-w-[85ch] pb-4 text-base sm:text-lg md:text-[22px]"
               role="Sub Heading"
             >
               Showcasing My Impressive Collection of Self-Developed React
@@ -33,7 +34,7 @@ export default function Hero() {
               href="#Projects"
               type="button"
               aria-label="Get Started"
-              className="mx-auto w-fit rounded-full bg-[#025ac2] px-6 py-4 text-xl font-medium text-white transition-all duration-300 ease-in-out hover:bg-opacity-[85%] active:rounded-2xl md:px-8 md:py-6 md:text-2xl"
+              className="mx-auto w-fit rounded-[48px] bg-[#025ac2] px-6 py-4 text-xl font-medium text-white transition-all duration-300 hover:bg-opacity-[85%] active:rounded-3xl md:px-8 md:py-6 md:text-2xl"
             >
               Explore My Projects
             </a>
@@ -41,6 +42,8 @@ export default function Hero() {
         </div>
 
         <Cards />
+
+        <About />
       </main>
     </>
   );
