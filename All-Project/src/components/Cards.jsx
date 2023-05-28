@@ -4,7 +4,7 @@ import Age2 from "../assets/2.jpg";
 export default function Cards() {
   return (
     <section
-      className="my-6 px-4 py-2 sm:py-16 md:my-[3.5rem] md:py-2 lg:my-20 lg:py-4"
+      className="relative my-6 px-4 py-2 sm:my-14 sm:py-2 md:my-[3.5rem] md:py-2 lg:my-20 lg:py-4"
       id="Projects"
     >
       <div className="m-6" role="heading">
@@ -86,6 +86,13 @@ export default function Cards() {
         <article></article>
         <article></article>
       </div>
+
+      <button
+        type="button"
+        className="absolute -bottom-7 left-1/2 -translate-x-1/2 rounded-3xl bg-sky-100 px-4 py-2 font-medium transition-all duration-300 hover:bg-sky-200 active:rounded-xl sm:-bottom-10 lg:-bottom-14 lg:px-5 lg:text-lg"
+      >
+        Show More
+      </button>
     </section>
   );
 }
