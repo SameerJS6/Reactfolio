@@ -1,4 +1,5 @@
 import React from "react";
+import Ripple from "../hook/Ripple";
 
 export default function Footer() {
   return (
@@ -51,32 +52,46 @@ export default function Footer() {
 
       <nav
         role="Footer Navigation"
-        className="my-9 ml-2 mr-1 flex flex-col items-center justify-between gap-5 rounded-full bg-pink-100 py-3 pl-2 pr-1 sm:my-10 sm:ml-6 sm:mr-5 sm:flex-row sm:py-4 sm:pl-6 sm:pr-5 md:my-12 md:gap-2 md:pl-7 md:pr-6 lg:mx-14 lg:px-14 lg:py-7"
+        className="mx-6 my-9 flex flex-col items-center justify-between gap-5 rounded-3xl bg-pink-100 py-3 pl-2 pr-1 sm:my-10 sm:ml-6 sm:mr-5 sm:flex-row sm:rounded-full sm:py-4 sm:pl-6 sm:pr-5 md:my-12 md:gap-2 md:pl-7 md:pr-6 lg:mx-14 lg:px-14 lg:py-7"
       >
         <div>
           <p className="text-2xl font-bold sm:text-3xl">Sameer</p>
         </div>
-        <ul className="flex flex-row items-center gap-4 px-2 font-medium md:gap-6 xl:text-lg">
-          <li className="transition-all duration-[350ms] ease-in-out hover:-translate-y-1">
+        <ul className="grid grid-cols-2 items-center gap-4  px-2 font-medium sm:flex sm:flex-row md:gap-6 xl:text-lg">
+          <li
+            data-tooltip-place="top"
+            data-tooltip-content="Go to Project"
+            data-tooltip-delay-show={300}
+            className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+          >
             <a
-              className="cursor-pointer rounded-3xl bg-red-500 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-lime-50 active:rounded-2xl"
+              className="relative cursor-pointer overflow-hidden rounded-3xl bg-red-50 bg-opacity-75 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-opacity-100 active:rounded-2xl"
               onClick={() => setIsOpen(false)}
               href="#Projects"
             >
               Project
+              <Ripple color="rgb(236 72 153)" duration={400} />
             </a>
           </li>
-          <li className="py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1">
+          <li
+            data-tooltip-place="top"
+            data-tooltip-content="Go to Project"
+            data-tooltip-delay-show={300}
+            className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+          >
             <a
-              className="cursor-pointer rounded-3xl bg-red-500 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-lime-50 active:rounded-2xl"
+              className="relative cursor-pointer overflow-hidden rounded-3xl bg-red-50 bg-opacity-75 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-opacity-100 active:rounded-2xl"
               onClick={() => setIsOpen(false)}
               href="#About"
             >
-              About Me
+              About
+              <Ripple color="rgb(236 72 153)" duration={400} />
             </a>
           </li>
           <a
-            className="scale-[140%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-[115%]"
+            data-tooltip-place="top"
+            data-tooltip-delay-show={300}
+            className="github-tooltip | relative col-span-2 mx-auto flex scale-[140%] items-center gap-2 self-center overflow-hidden rounded-[100vmax] bg-pink-50 px-4 py-1.5 text-xs transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-pink-50 hover:bg-opacity-75 max-sm:my-2 sm:scale-[115%] sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:px-2 sm:indent-[-9999px]"
             href="https://github.com/SameerJS6"
             target={"_blank"}
           >
@@ -101,6 +116,8 @@ export default function Footer() {
                 />
               </g>
             </svg>
+            Visit Github
+            <Ripple color="rgb(236 72 153)" duration={400} />
           </a>
         </ul>
       </nav>
