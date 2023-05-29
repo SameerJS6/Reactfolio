@@ -14,14 +14,14 @@ body {
 
 .hero-gradient,
 .about-gradient {
-  --bgImage: url(./bgLight.jpg);
+  --bgImage: url(../bgLight.jpg);
 
   background-image: var(--bgImage);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .about-gradient {
-  --bgImage: url(./aboutLight.jpg);
+  --bgImage: url(../aboutLight.jpg);
 }
 
 @media (max-width: 639px) {
