@@ -2,6 +2,7 @@ import React from "react";
 import Age from "../assets/1.jpg";
 import Age2 from "../assets/2.jpg";
 import { Tooltip } from "react-tooltip";
+import Ripple from "../hook/Ripple";
 
 export default function Cards() {
   return (
@@ -64,7 +65,7 @@ export default function Cards() {
               <a
                 data-tooltip-place="bottom"
                 data-tooltip-delay-show={200}
-                className="live-tooltip scale-[125%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
+                className="live-tooltip relative scale-[125%] self-center overflow-hidden rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
                 href="https://age-calculator-singh.netlify.app/"
                 target="_blank"
               >
@@ -80,12 +81,13 @@ export default function Cards() {
                     clipRule="evenodd"
                   />
                 </svg>
+                <Ripple color={"#F8EC70"} opacity={1} />
               </a>
 
               <a
                 data-tooltip-place="right"
                 data-tooltip-delay-show={200}
-                className="github-tip scale-[125%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
+                className="github-tip relative scale-[125%] self-center overflow-hidden rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-110"
                 href="https://github.com/SameerJS6"
                 target={"_blank"}
               >
@@ -110,6 +112,7 @@ export default function Cards() {
                     />
                   </g>
                 </svg>
+                <Ripple color={"#F8EC70"} opacity={1} />
               </a>
             </div>
           </div>
@@ -130,9 +133,10 @@ export default function Cards() {
 
       <button
         type="button"
-        className="absolute -bottom-7 left-1/2 -translate-x-1/2 rounded-3xl bg-sky-100 px-4 py-2 font-medium transition-all duration-300 hover:bg-sky-200 active:rounded-xl sm:-bottom-10 lg:-bottom-14 lg:px-5 lg:text-lg"
+        className="absolute -bottom-7 left-1/2 -translate-x-1/2 overflow-hidden rounded-3xl bg-sky-100 px-4 py-2 font-medium transition-all duration-300 hover:bg-sky-200 active:rounded-xl sm:-bottom-10 lg:-bottom-14 lg:px-5 lg:text-lg"
       >
         Show More
+        <Ripple color={"rgb(2 132 199)"} opacity={0.35} />
       </button>
     </section>
   );

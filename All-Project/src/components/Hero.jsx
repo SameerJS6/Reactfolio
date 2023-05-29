@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Cards from "./Cards";
 import About from "./About";
+import Ripple from "../hook/Ripple";
 
 export default function Hero() {
   return (
@@ -25,18 +26,14 @@ export default function Hero() {
               Projects, Browse My React Projects: Experience clean and
               impressive creations firsthand.
             </p>
-            {/* <p>
-              Welcome to Reactfolio, where you can explore my diverse range of
-              self-developed React projects. Discover innovative web
-              applications that demonstrate the power and versatility of React.{" "}
-            </p> */}
             <a
               href="#Projects"
               type="button"
               aria-label="Get Started"
-              className="mx-auto w-fit rounded-[48px] bg-[#025ac2] px-6 py-4 text-xl font-medium text-white transition-all duration-300 hover:bg-opacity-[85%] active:rounded-3xl md:px-8 md:py-6 md:text-2xl"
+              className="relative mx-auto w-fit overflow-hidden rounded-[48px] bg-[#025ac2] px-6 py-4 text-xl font-medium text-white transition-all duration-300 hover:bg-opacity-[85%] active:rounded-3xl md:px-8 md:py-6 md:text-2xl"
             >
               Explore My Projects
+              <Ripple color={"#fff"} duration={600} />
             </a>
           </div>
         </div>
