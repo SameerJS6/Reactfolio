@@ -4,6 +4,7 @@ import Hamburger from "hamburger-react";
 import "@theme-toggles/react/css/Within.css";
 import { Within } from "@theme-toggles/react";
 import { Tooltip } from "react-tooltip";
+import Ripple from "../hook/Ripple";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,37 +48,55 @@ export default function Navbar() {
         </div>
         <nav
           ref={Navref}
-          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-4 bg-lime-500 px-[10%] transition-all duration-500 ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-6 sm:px-0 sm:opacity-100 ${
-            isOpen ? "right-0 z-[5] opacity-100" : "-right-72 opacity-0"
+          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-6 bg-white pl-[10%] pr-[2%] transition-all duration-500 ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:bg-transparent sm:px-0 sm:opacity-100 lg:gap-6 ${
+            isOpen
+              ? "right-0 z-[5] rounded-s-2xl opacity-100"
+              : "-right-72 rounded-none opacity-0"
           }`}
         >
           <ul className="flex flex-col items-start gap-6 px-2 font-medium sm:flex-row sm:items-center xl:text-lg">
-            <li className="transition-all duration-[350ms] ease-in-out hover:-translate-y-1">
+            <li
+              data-tooltip-place="bottom"
+              data-tooltip-content="Go to Project"
+              data-tooltip-delay-show={300}
+              className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+            >
               <a
-                className="cursor-pointer rounded-3xl bg-red-500 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-lime-50 active:rounded-2xl"
+                className="relative cursor-pointer overflow-hidden rounded-3xl bg-red-50 bg-opacity-75 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-opacity-100 active:rounded-2xl"
                 onClick={() => setIsOpen(false)}
                 href="#Projects"
               >
                 Project
+                <Ripple color="rgb(236 72 153)" duration={400} />
               </a>
             </li>
-            <li className="py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1">
+            <li
+              data-tooltip-place="bottom"
+              data-tooltip-content="Go to About"
+              data-tooltip-delay-show={300}
+              className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+            >
               <a
-                className="cursor-pointer rounded-3xl bg-red-500 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-lime-50 active:rounded-2xl"
+                className="relative cursor-pointer overflow-hidden rounded-3xl bg-pink-50 bg-opacity-75 px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-opacity-100 active:rounded-2xl"
                 onClick={() => setIsOpen(false)}
                 href="#About"
               >
                 About Me
+                <Ripple color="rgb(236 72 153)" duration={400} />
               </a>
             </li>
+            <Tooltip
+              anchorSelect=".navLinks"
+              noArrow={true}
+              className="navTip"
+            />
           </ul>
-          <div className="flex flex-col items-start gap-2 rounded-[100vmax] px-2 sm:flex-row sm:items-center sm:px-0">
+          <div className="flex flex-col items-start gap-6 rounded-[100vmax] px-2 sm:flex-row sm:items-center sm:px-0">
             <a
               data-tooltip-place="bottom"
-              data-tooltip-content="Vist Gihub Profile"
               data-tooltip-delay-show={300}
               data-tooltip-id="github-tooltip"
-              className="scale-[140%] self-center rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50 sm:scale-[115%]"
+              className="github-tooltip relative right-8 flex scale-[140%] items-center gap-2 self-center overflow-hidden rounded-[100vmax] bg-pink-50 px-2 py-1.5 text-xs transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-pink-50 hover:bg-opacity-75 max-[300px]:right-0 sm:right-auto sm:scale-[115%] sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:indent-[-9999px]"
               href="https://github.com/SameerJS6"
               target={"_blank"}
             >
@@ -102,24 +121,35 @@ export default function Navbar() {
                   />
                 </g>
               </svg>
+              Visit Github
+              <Ripple color="rgb(236 72 153)" duration={400} />
             </a>
-            <Tooltip id="github-tooltip" noArrow={true} className="navTip" />
+            <Tooltip
+              anchorSelect=".github-tooltip"
+              noArrow={true}
+              className="navTip"
+              content="Visit Github Profile"
+            />
             <Within
               duration={1000}
-              className="rounded-[50%] p-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-lime-50"
-            />
+              className="relative flex flex-row-reverse items-center gap-2 overflow-hidden rounded-[100vmax] bg-pink-50 p-3 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-pink-50 hover:bg-opacity-75 sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2  sm:indent-[-9999px] "
+            >
+              {" "}
+              Switch to Dark Mode
+              <Ripple color="rgb(236 72 153)" opacity={0.45} duration={600} />
+            </Within>
           </div>
         </nav>
         <button
-          className="z-20 rounded-[50%] bg-blue-400 p-1 sm:hidden"
+          className="z-20 rounded-[50%] transition-all duration-300 hover:bg-pink-50 hover:bg-opacity-75 sm:hidden"
           aria-label="Hamburger Menu"
-          // onClick={handleHamburger}
         >
           <Hamburger
             toggled={isOpen}
             toggle={setIsOpen}
             duration={0.4}
-            size={25}
+            size={23}
+            distance="sm"
           />
         </button>
       </header>
