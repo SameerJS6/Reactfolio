@@ -14,14 +14,14 @@ body {
 
 .hero-gradient,
 .about-gradient {
-  --bgImage: url(../bgLight.jpg);
+  --bgImage: url(https://lh3.googleusercontent.com/pw/AJFCJaVz9pgyTAJ8If8MlvBGzK-3p_Lm0HVCcaIkN6Hi0hhfVAB00aOx-y3_9GV8OCUib0DLyuK3VK0fcdHUrF0tz5zCZqz3BvKSNjVJW0Kw-xb5fEJ2XX7ehC1YHJE9ZJTqsOSsoHAHUjSpUuDdubHtkG_6=w1279-h682-s-no);
 
   background-image: var(--bgImage);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .about-gradient {
-  --bgImage: url(../aboutLight.jpg);
+  --bgImage: url(https://lh3.googleusercontent.com/pw/AJFCJaXTigH113VATrhpSNOUYbKCrdXNaGpTw8u6WyvoFbxceE6qdByu1S00pbB42kLuyzYsImKi5OUCLZ7guIYcRUBj2V-n5q5niYPNqcmgMXAQgouX3nHQlHaKPFtYbYqnkm7_MQ1zFpA7_w6LlZK38bl5=w1023-h682-s-no);
 }
 
 @media (max-width: 639px) {

@@ -1,10 +1,29 @@
-import React from "react";
-import Age from "../assets/1.jpg";
-import Age2 from "../assets/2.jpg";
+import React, { useState, useEffect } from "react";
+// import Age from "../assets/1.jpg";
+// import Age2 from "../assets/2.jpg";
 import { Tooltip } from "react-tooltip";
 import Ripple from "../hook/Ripple";
+import Projects from "./Projects";
 
 export default function Cards() {
+  const [projects, setProjects] = useState([]);
+  const [visibleProject, setVisibleProject] = useState(3);
+  const url = "https://reactfolio-data.netlify.app/";
+
+  const fetchData = async () => {
+    const response = await fetch(url);
+    const result = await response.json();
+    setProjects(result);
+  };
+
+  useEffect(() => {
+    fetchData();
+    console.log(projects);
+  }, []);
+
+  const handleMore = () => {
+    setVisibleProject((prevvisible) => prevvisible + 3);
+  };
   return (
     <section
       className="relative my-6 px-4 py-2 sm:my-14 sm:py-2 md:my-[3.5rem] md:py-2 lg:my-20 lg:py-4"
@@ -16,7 +35,7 @@ export default function Cards() {
         </h2>
       </div>
       <div className="card-grid mt-8 sm:gap-4 xl:mx-12">
-        <article className="overflow-hidden rounded-3xl bg-[#e1e2ec] transition-all duration-300 hover:bg-[#d8e2ff] active:rounded-2xl sm:min-w-[321px] md:min-h-[350px]">
+        {/* <article className="overflow-hidden rounded-3xl bg-[#e1e2ec] transition-all duration-300 hover:bg-[#d8e2ff] active:rounded-2xl sm:min-w-[321px] md:min-h-[350px]">
           <a
             data-tooltip-place="right"
             data-tooltip-delay-show={200}
@@ -116,22 +135,25 @@ export default function Cards() {
               </a>
             </div>
           </div>
-          <Tooltip
-            anchorSelect=".live-tooltip"
-            content="Visit Live Site"
-            noArrow={true}
-          />
-          <Tooltip
-            anchorSelect=".github-tip"
-            content="Visit Code"
-            noArrow={true}
-          />
-        </article>
-        <article></article>
+        </article> */}
+        {projects.slice(0, visibleProject).map((items) => {
+          return <Projects key={items.id} {...items} />;
+        })}
+        <Tooltip
+          anchorSelect=".live-tooltip"
+          content="Visit Live Site"
+          noArrow={true}
+        />
+        <Tooltip
+          anchorSelect=".github-tip"
+          content="Visit Code"
+          noArrow={true}
+        />
         <article></article>
       </div>
 
       <button
+        onClick={handleMore}
         type="button"
         className="absolute -bottom-7 left-1/2 -translate-x-1/2 overflow-hidden rounded-3xl bg-sky-100 px-4 py-2 font-medium transition-all duration-300 hover:bg-sky-200 active:rounded-xl sm:-bottom-10 lg:-bottom-14 lg:px-5 lg:text-lg"
       >
