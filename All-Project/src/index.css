@@ -2,11 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: 2 90 194;
+  --on-primary: 255 255 255;
+
+  --primary-container: 214 224 255;
+  --on-primary-container: 0 26 66;
+
+  --secondary: 87 94 113;
+  --on-secondary: 255 255 255;
+
+  --secondary-container: 219 226 249;
+  --on-secondary-container: 20 27 44;
+
+  --tertiary: 113 85 115;
+  --on-tertiary: 255 255 255;
+
+  --tertiary-container: 252 215 251;
+  --on-tertiary-container: 41 19 45;
+
+  --error: 186 26 26;
+  --on-error: 255 255 255;
+
+  --error-container: 255 218 214;
+  --on-error-container: 65 0 2;
+
+  --background: 254 251 255;
+  --on-background: 27 27 31;
+
+  --surface: 254 251 255;
+  --on-surface: 27 27 31;
+
+  --surface-variant: 225 226 236;
+  --on-surface-variant: 68 71 79;
+
+  /* Card Hover */
+  --age: #cde5ff;
+  --advice: #c1f18880;
+  --e-commerce: #ffdbc8b3;
+  --room: #c5c6d0d9;
+  --url: #c4e7ff;
+  --card: #8a33b84d;
+
+
+  /* Background Image URL  */
+
+  --Hero-Image: url(https://lh3.googleusercontent.com/pw/AJFCJaVz9pgyTAJ8If8MlvBGzK-3p_Lm0HVCcaIkN6Hi0hhfVAB00aOx-y3_9GV8OCUib0DLyuK3VK0fcdHUrF0tz5zCZqz3BvKSNjVJW0Kw-xb5fEJ2XX7ehC1YHJE9ZJTqsOSsoHAHUjSpUuDdubHtkG_6=w1279-h682-s-no);
+
+  --About-Image: url(https://lh3.googleusercontent.com/pw/AJFCJaXTigH113VATrhpSNOUYbKCrdXNaGpTw8u6WyvoFbxceE6qdByu1S00pbB42kLuyzYsImKi5OUCLZ7guIYcRUBj2V-n5q5niYPNqcmgMXAQgouX3nHQlHaKPFtYbYqnkm7_MQ1zFpA7_w6LlZK38bl5=w1023-h682-s-no);
+}
+
+.DarkMode {
+  --primary: 174 198 255;
+  --on-primary: 0 46 106;
+
+  --primary-container: 0 67 149;
+  --on-primary-container: 216 226 255;
+
+  --secondary: 191 198 220;
+  --on-secondary: 41 48 65;
+
+  --secondary-container: 63 71 89;
+  --on-secondary-container: 219 226 249;
+
+  --tertiary: 222 188 223;
+  --on-tertiary: 64 40 67;
+
+  --tertiary-container: 88 62 91;
+  --on-tertiary-container: 252 215 251;
+
+  --error: 255 180 171;
+  --on-error: 105 0 5;
+
+  --error-container: 147 0 10;
+  --on-error-container: 255 218 214;
+
+  --background: 27 27 31;
+  --on-background: 227 226 230;
+
+  --surface: 27 27 31;
+  --on-surface: 227 226 230;
+
+  --surface-variant: 68 71 79;
+  --on-surface-variant: 197 198 208;
+
+ /* Card Hover */
+  /* --age: rgb(0, 74, 117, 70%); */
+  --age: rgba(0, 76, 106, 1);
+  --advice: rgba(46, 79, 0, 0.7);
+  --e-commerce: rgba(124, 45, 21, 0.7);
+  --room: rgba(197, 198, 208, 0.2);
+  --url: rgba(0, 76, 106, 1);
+  --card: rgba(138, 51, 184, 0.302);
+
+  /* Background Image URL  */
+  --Hero-Image: url(https://lh3.googleusercontent.com/pw/AJFCJaV7wuHNv86sM9T_uVuTyjcywpkNsa9zKY94zDNl34Eils06rv7uwakTA8Xt2EdwP-GDe93X6Wcwprr_6jN1gpLbAT4mCBR_A8JZMZ4jkI_QwbE3CpmWNQp54SbCSn6rP7OuUzDgQVrwy-cF7k7wK8YW=w1279-h682-s-no);
+
+  --About-Image: url(https://lh3.googleusercontent.com/pw/AJFCJaWzzegqPx3uQJKUnrPlXt7_cC3YytPq_20iOG6W60S2UCWHYJhSxJ5D-eOwYwREmvJRl5NDYE1bGVhobv7F7MWMDtWkAAW_QQe9CJRnlgkQE3X51pGV-t1zseIycDLKQdhWcJxlCuvNyS6jB3Wh-_6J=w1023-h682-s-no);
+}
+
 html {
   scroll-behavior: smooth;
 }
 body {
   font-family: "Inter", sans-serif;
+  color: rgb(var(--on-background));
+  background-color: rgb(var(--background));
+  transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
 }
 .navbar {
   height: auto;
@@ -14,14 +116,14 @@ body {
 
 .hero-gradient,
 .about-gradient {
-  --bgImage: url(https://lh3.googleusercontent.com/pw/AJFCJaVz9pgyTAJ8If8MlvBGzK-3p_Lm0HVCcaIkN6Hi0hhfVAB00aOx-y3_9GV8OCUib0DLyuK3VK0fcdHUrF0tz5zCZqz3BvKSNjVJW0Kw-xb5fEJ2XX7ehC1YHJE9ZJTqsOSsoHAHUjSpUuDdubHtkG_6=w1279-h682-s-no);
+  --bgImage: var(--Hero-Image);
 
   background-image: var(--bgImage);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .about-gradient {
-  --bgImage: url(https://lh3.googleusercontent.com/pw/AJFCJaXTigH113VATrhpSNOUYbKCrdXNaGpTw8u6WyvoFbxceE6qdByu1S00pbB42kLuyzYsImKi5OUCLZ7guIYcRUBj2V-n5q5niYPNqcmgMXAQgouX3nHQlHaKPFtYbYqnkm7_MQ1zFpA7_w6LlZK38bl5=w1023-h682-s-no);
+  --bgImage: var(--About-Image);
 }
 
 @media (max-width: 639px) {
@@ -78,8 +180,8 @@ body {
 
 /* Main Color For the whole theme is #015ac2 */
 .react-tooltip {
-  --rt-color-dark: pink;
-  --rt-color-white: black;
+  --rt-color-dark: rgb(var(--tertiary-container));
+  --rt-color-white: rgb(var(--on-tertiary-container));
 
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -93,21 +195,41 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: pink;
+  background: rgb(var(--background));
   margin-block: 5px;
   border-radius: 100vmax;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 100vmax;
-  background-color: #0063db;
+  background-color: rgb(var(--primary));
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #025ac2;
+  background-color: rgba(var(--primary) / 70%);
 }
 /* Scrollbar for firefox  */
-@supports (scrollbar-color: pink skyblue) {
+@supports (scrollbar-color: rgb(var(--background)) rgb(var(--primary))) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: skyblue pink;
+    scrollbar-color: rgb(var(--primary)) rgb(var(--background));
   }
+}
+
+/* Card Background Hover */
+.card-background:nth-child(1):hover {
+  background-color: var(--age);
+}
+.card-background:nth-child(2):hover {
+  background-color: var(--advice)
+}
+.card-background:nth-child(3):hover {
+  background-color: var(--e-commerce);
+}
+.card-background:nth-child(4):hover {
+  background-color: var(--room);
+}
+.card-background:nth-child(5):hover {
+  background-color: var(--url);
+}
+.card-background:nth-child(6):hover {
+  background-color: var(--card);
 }
