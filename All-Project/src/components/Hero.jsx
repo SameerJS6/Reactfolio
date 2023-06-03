@@ -30,10 +30,10 @@ export default function Hero() {
               href="#Projects"
               type="button"
               aria-label="Get Started"
-              className="relative mx-auto w-fit overflow-hidden rounded-[48px] bg-[#025ac2] px-6 py-4 text-xl font-medium text-white transition-all duration-300 hover:bg-opacity-[85%] active:rounded-3xl md:px-8 md:py-6 md:text-2xl"
+              className="relative mx-auto w-fit overflow-hidden rounded-[48px] bg-primary px-6 py-4 text-xl font-medium text-onPrimary transition-all duration-300 hover:bg-opacity-[95%] active:rounded-3xl md:px-8 md:py-6 md:text-2xl"
             >
               Explore My Projects
-              <Ripple color={"#fff"} duration={600} />
+              <Ripple color="rgb(var(--on-surface))" opacity={0.2} duration={600} />
             </a>
           </div>
         </div>

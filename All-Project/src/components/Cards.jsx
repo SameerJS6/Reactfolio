@@ -173,10 +173,10 @@ export default function Cards() {
         <button
           type="button"
           onClick={handleMore}
-          className="absolute -bottom-12 left-1/2 -translate-x-1/2 overflow-hidden rounded-3xl bg-sky-100 px-4 py-2 font-medium transition-all duration-300 hover:bg-sky-200 active:rounded-xl min-[688px]:-bottom-16 lg:-bottom-20 lg:px-5 lg:text-lg"
+          className="absolute -bottom-12 left-1/2 -translate-x-1/2 overflow-hidden rounded-3xl text-onSecondary bg-secondary px-4 py-2 font-medium transition-all duration-300 hover:bg-opacity-95 active:rounded-xl min-[688px]:-bottom-16 lg:-bottom-20 lg:px-5 lg:text-lg shadow-xl hover:shadow-2xl"
         >
           {visibleProject < projects.length ? "Show More" : "Show Less"}
-          <Ripple color={"rgb(2 132 199)"} opacity={0.35} />
+          <Ripple color="rgb(var(--on-secondary-container))" duration={350} opacity={0.25} />
         </button>
       )}
     </section>
