@@ -34,6 +34,8 @@ export default {
         errorContainer: withOpacity("--error-container"),
         onErrorContainer: withOpacity("--on-error-container"),
 
+        onBackground: withOpacity('--on-background'),
+
         surface: withOpacity("--surface"),
         onSurface: withOpacity("--on-surface"),
 
