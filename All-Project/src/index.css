@@ -238,3 +238,36 @@ body {
 .card-background:nth-child(6):hover {
   background-color: var(--card);
 }
+
+
+/* GSAP Text Animation  */
+#target {
+  font-kerning: none;
+}
+.line{
+  overflow: hidden;
+  line-height: 1.17;
+}
+.mainApp {
+  visibility: hidden;
+}
+
+/* Only Applies to Firefox */
+@supports (-moz-appearance: none) {
+  .heroBtn {
+    margin-block: 1rem;
+  }
+}
+.card-background {
+  animation: cardSlide 1s ease-in-out;
+}
+@keyframes cardSlide {
+  0% {
+    opacity: 0;
+    translate: 0 30px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0px;
+  }
+}
