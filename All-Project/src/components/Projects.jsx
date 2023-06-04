@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Ripple from "../hook/Ripple";
 
 export default function Projects({
@@ -8,18 +8,9 @@ export default function Projects({
   MainImage,
   HoverImage,
   message,
-  HoverColor,
 }) {
-  // const [hover, setHover] = useState(false);
   return (
     <article
-      // onMouseEnter={() => {
-      //   setHover(true);
-      // }}
-      // onMouseLeave={() => {
-      //   setHover(false);
-      // }}
-      // style={hover ? { backgroundColor: "" } : { backgroundColor: "" }}
       className="card-background | overflow-hidden rounded-3xl bg-primary bg-opacity-[0.05] transition-all duration-300 active:rounded-2xl sm:min-w-[321px] md:min-h-[350px]"
     >
       <a

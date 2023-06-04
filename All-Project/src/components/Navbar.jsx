@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import Hamburger from "hamburger-react";
-import "@theme-toggles/react/css/Within.css";
-import { Within } from "@theme-toggles/react";
 import { Tooltip } from "react-tooltip";
 import Ripple from "../hook/Ripple";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState(false)
 
   let Navref = useRef(null);
   const handleClickOutside = (e) => {
@@ -32,14 +30,6 @@ export default function Navbar() {
   isOpen
     ? document.body.classList.add("scrollHidden")
     : document.body.classList.remove("scrollHidden");
-
-  // const handleHamburger = () => {
-  //   setIsOpen(!isOpen);
-  // };
-  useEffect(()=> {theme
-    ? document.body.classList.add("DarkMode")
-    : document.body.classList.remove("DarkMode");},[theme])
-
   return (
     <>
       <header
@@ -47,13 +37,13 @@ export default function Navbar() {
         className="mx-auto flex max-w-[1440px] items-center justify-between py-4 pl-4 pr-2 sm:py-6 sm:pl-12 sm:pr-10 md:pl-14 md:pr-12 lg:px-28 xl:px-28"
       >
         <div>
-          <a href="#" className="text-2xl font-bold sm:text-3xl">
+          <a href="#" className="text-2xl font-bold sm:text-3xl transition-all duration-[350ms] ease-in-out">
             Sameer
           </a>
         </div>
         <nav
           ref={Navref}
-          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-6 bg-surface pl-[10%] pr-[2%] transition-all duration-500 ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:bg-transparent sm:px-0 sm:opacity-100 lg:gap-6 ${
+          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-6 max-sm:bg-surface pl-[10%] pr-[2%] transition-all duration-[350ms] ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:px-0 sm:opacity-100 lg:gap-6 ${
             isOpen
               ? "right-0 z-[5] rounded-s-2xl opacity-100"
               : "-right-72 rounded-none opacity-0"
@@ -64,10 +54,10 @@ export default function Navbar() {
               data-tooltip-place="bottom"
               data-tooltip-content="Go to Project"
               data-tooltip-delay-show={300}
-              className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+              className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 active:rounded-2xl"
             >
               <a
-                className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-10 active:rounded-2xl"
+                className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-300 ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-10 active:rounded-2xl"
                 onClick={() => setIsOpen(false)}
                 href="#Projects"
               >
@@ -83,10 +73,10 @@ export default function Navbar() {
               data-tooltip-place="bottom"
               data-tooltip-content="Go to About"
               data-tooltip-delay-show={300}
-              className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+              className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 active:rounded-2xl"
             >
               <a
-                className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
+                className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-300 ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
                 onClick={() => setIsOpen(false)}
                 href="#About"
               >
@@ -147,20 +137,22 @@ export default function Navbar() {
               className="navTip"
               content="Visit Github Profile"
             />
-            <Within
+            {/* <Within
               toggled={theme}
               toggle={setTheme}
               duration={750}
-              className="relative flex flex-row-reverse items-center gap-2 overflow-hidden rounded-[100vmax] p-3 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:indent-[-9999px] "
+              className="relative flex flex-row-reverse items-center gap-2 overflow-hidden rounded-[100vmax] p-3 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:indent-[-9999px]"
+              onClick={handleTheme}
             >
-              {" "}
-              Switch to Dark Mode
+              {!theme ? "Switch to Dark Mode" : "Switch to Light Mode"}
+              
               <Ripple
                 color="rgb(var(--on-surface))"
                 opacity={0.3}
                 duration={350}
               />
-            </Within>
+            </Within> */}
+            <ThemeToggle />
           </div>
         </nav>
         <button

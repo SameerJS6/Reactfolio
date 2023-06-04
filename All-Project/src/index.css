@@ -108,7 +108,7 @@ body {
   font-family: "Inter", sans-serif;
   color: rgb(var(--on-background));
   background-color: rgb(var(--background));
-  transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
+  transition: all 350ms ease;
 }
 .navbar {
   height: auto;
@@ -121,6 +121,7 @@ body {
   background-image: var(--bgImage);
   background-repeat: no-repeat;
   background-size: cover;
+  transition: all 350ms ease;
 }
 .about-gradient {
   --bgImage: var(--About-Image);
