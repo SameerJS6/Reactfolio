@@ -59,7 +59,7 @@ export default function ThemeToggle() {
       toggled={theme}
       toggle={setTheme}
       duration={750}
-      className="relative flex flex-row-reverse items-center gap-2 overflow-hidden rounded-[100vmax] p-3 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:indent-[-9999px]"
+      className="relative flex flex-row-reverse items-center gap-2 overflow-hidden rounded-[100vmax] p-3 text-onBackground transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:indent-[-9999px]"
       onClick={handleTheme}
     >
       {!theme ? "Switch to Dark Mode" : "Switch to Light Mode"}

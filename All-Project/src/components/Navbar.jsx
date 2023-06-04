@@ -37,19 +37,22 @@ export default function Navbar() {
         className="mx-auto flex max-w-[1440px] items-center justify-between py-4 pl-4 pr-2 sm:py-6 sm:pl-12 sm:pr-10 md:pl-14 md:pr-12 lg:px-28 xl:px-28"
       >
         <div>
-          <a href="#" className="text-2xl font-bold sm:text-3xl transition-all duration-[350ms] ease-in-out">
+          <a
+            href="#"
+            className="text-2xl font-bold transition-all duration-[350ms] ease-in-out sm:text-3xl"
+          >
             Sameer
           </a>
         </div>
         <nav
           ref={Navref}
-          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-6 max-sm:bg-surface pl-[10%] pr-[2%] transition-all duration-[350ms] ease-in-out sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:px-0 sm:opacity-100 lg:gap-6 ${
+          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-6 pl-[10%] pr-[2%] transition-all duration-[350ms] ease-in-out max-sm:bg-surface sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:px-0 sm:opacity-100 lg:gap-6 ${
             isOpen
               ? "right-0 z-[5] rounded-s-2xl opacity-100"
               : "-right-72 rounded-none opacity-0"
           }`}
         >
-          <ul className="flex flex-col items-start gap-6 px-2 font-medium sm:flex-row sm:items-center xl:text-lg">
+          <ul className="flex flex-col items-start gap-6 px-2 font-medium sm:flex-row sm:items-center xl:text-lg text-onBackground">
             <li
               data-tooltip-place="bottom"
               data-tooltip-content="Go to Project"
@@ -76,7 +79,7 @@ export default function Navbar() {
               className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 active:rounded-2xl"
             >
               <a
-                className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-300 ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
+                className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3  transition-all duration-300 ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
                 onClick={() => setIsOpen(false)}
                 href="#About"
               >
@@ -99,7 +102,7 @@ export default function Navbar() {
               data-tooltip-place="bottom"
               data-tooltip-delay-show={300}
               data-tooltip-id="github-tooltip"
-              className="github-tooltip relative right-8 flex scale-[140%] items-center gap-2 self-center overflow-hidden rounded-[100vmax]  px-2 py-1.5 text-xs transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 max-[300px]:right-0 sm:right-auto sm:scale-[115%] sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:indent-[-9999px]"
+              className="github-tooltip relative right-8 flex scale-[140%] items-center gap-2 self-center overflow-hidden rounded-[100vmax] text-onBackground px-2 py-1.5 text-xs transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 max-[300px]:right-0 sm:right-auto sm:scale-[115%] sm:gap-0 sm:rounded-[50%] sm:p-2 sm:indent-[-9999px]"
               href="https://github.com/SameerJS6"
               target={"_blank"}
             >
@@ -110,7 +113,7 @@ export default function Navbar() {
                 height="24px"
                 viewBox="0 0 24 23"
                 version="1.1"
-                className="h-5 w-5 transition-colors delay-75 duration-500 sm:h-6 sm:w-6"
+                className="h-5 w-5 transition-all duration-300 sm:h-6 sm:w-6"
               >
                 <g id="surface1">
                   <path

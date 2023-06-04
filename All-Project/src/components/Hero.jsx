@@ -8,10 +8,10 @@ export default function Hero() {
   return (
     <>
       <main>
-        <div className="hero-gradient min-h-[410px] rounded-b-3xl sm:rounded-b-[2.5rem] md:rounded-b-[3rem] lg:min-h-[450px] xl:rounded-b-[4rem]">
+        <div className="hero-gradient min-h-[410px] rounded-b-3xl sm:rounded-b-[2.5rem] md:rounded-b-[3rem] lg:min-h-[450px] xl:rounded-b-[4rem] text-onBackground">
           <Navbar />
 
-          <div className="grid place-content-center gap-4 px-4 py-12 text-center sm:px-8 md:px-10 xl:py-24">
+          <div className="grid place-content-center gap-4 px-4 py-12 text-center sm:px-8 md:px-10 xl:py-24 transition-colors duration-300">
             <h1
               className="text-[50px] font-medium leading-snug sm:text-6xl md:text-[80px] xl:text-[112px]"
               role="heading"
@@ -20,7 +20,6 @@ export default function Hero() {
             </h1>
             <p
               className="mx-auto max-w-[85ch] py-4 text-base sm:text-lg md:text-[22px]"
-              role="Sub Heading"
             >
               Showcasing My Impressive Collection of Self-Developed React
               Projects, Browse My React Projects: Experience clean and

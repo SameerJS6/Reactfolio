@@ -164,6 +164,7 @@ body {
 .theme-toggle > svg {
   width: 1.85rem;
   height: 1.85rem;
+  fill: rgb(var(--on-background));
 }
 
 .card-grid {

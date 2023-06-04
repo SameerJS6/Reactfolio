@@ -10,9 +10,7 @@ export default function Projects({
   message,
 }) {
   return (
-    <article
-      className="card-background | overflow-hidden rounded-3xl bg-primary bg-opacity-[0.05] transition-all duration-300 active:rounded-2xl sm:min-w-[321px] md:min-h-[350px]"
-    >
+    <article className="card-background | overflow-hidden rounded-3xl bg-primary bg-opacity-[0.05] text-onBackground transition-all duration-300 active:rounded-2xl sm:min-w-[321px] md:min-h-[350px]">
       <a
         data-tooltip-place="right"
         data-tooltip-delay-show={200}

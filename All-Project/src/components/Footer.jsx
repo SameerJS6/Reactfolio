@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="mt-10 sm:mt-12">
       <svg
-        className="mx-auto w-[93%]"
+        className="mx-auto w-[93%] transition-colors duration-300"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         aria-hidden="true"
         width="1400"
@@ -52,7 +52,7 @@ export default function Footer() {
 
       <nav
         role="Footer Navigation"
-        className="mx-6 my-9 flex flex-col items-center justify-between gap-5 rounded-3xl bg-primary bg-opacity-[0.05] py-3 pl-2 pr-1 sm:my-10 sm:ml-6 sm:mr-5 sm:flex-row sm:rounded-full sm:py-4 sm:pl-6 sm:pr-5 md:my-12 md:gap-2 md:pl-7 md:pr-6 lg:mx-14 lg:px-14 lg:py-7"
+        className="mx-6 my-9 flex flex-col items-center justify-between gap-5 rounded-3xl bg-primary bg-opacity-[0.05] py-3 pl-2 pr-1 transition-colors duration-300 sm:my-10 sm:ml-6 sm:mr-5 sm:flex-row sm:rounded-full sm:py-4 sm:pl-6 sm:pr-5 md:my-12 md:gap-2 md:pl-7 md:pr-6 lg:mx-14 lg:px-14 lg:py-7"
       >
         <div>
           <p className="text-2xl font-bold sm:text-3xl">Sameer</p>
@@ -62,10 +62,10 @@ export default function Footer() {
             data-tooltip-place="top"
             data-tooltip-content="Go to Project"
             data-tooltip-delay-show={300}
-            className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+            className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 active:rounded-2xl"
           >
             <a
-              className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
+              className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-300 ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
               onClick={() => setIsOpen(false)}
               href="#Projects"
             >
@@ -81,10 +81,10 @@ export default function Footer() {
             data-tooltip-place="top"
             data-tooltip-content="Go to About"
             data-tooltip-delay-show={300}
-            className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 active:rounded-2xl"
+            className="navLinks overflow-hidden rounded-3xl py-2 transition-all duration-300 ease-in-out hover:-translate-y-1 active:rounded-2xl"
           >
             <a
-              className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-[350ms] ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
+              className="relative cursor-pointer overflow-hidden rounded-3xl px-4 py-3 transition-all duration-300 ease-in-out hover:bg-onPrimaryContainer hover:bg-opacity-5 active:rounded-2xl"
               onClick={() => setIsOpen(false)}
               href="#About"
             >

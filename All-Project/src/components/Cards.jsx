@@ -41,7 +41,7 @@ export default function Cards() {
   return (
     <section
       ref={ProjectRef}
-      className="relative my-6 px-4 py-2 sm:my-14 sm:py-2 md:my-[3.5rem] md:py-2 lg:my-20 lg:py-4"
+      className="relative my-6 px-4 py-2 transition-colors duration-300 sm:my-14 sm:py-2 md:my-[3.5rem] md:py-2 lg:my-20 lg:py-4"
       id="Projects"
     >
       <div className="m-6" role="heading">
@@ -52,7 +52,6 @@ export default function Cards() {
       {loading && <Loader />}
       {!loading && (
         <div className="card-grid mt-8 sm:gap-4 xl:mx-12">
-         
           {projects.slice(0, visibleProject).map((items) => {
             return <Projects key={items.id} {...items} />;
           })}
@@ -73,10 +72,14 @@ export default function Cards() {
         <button
           type="button"
           onClick={handleMore}
-          className="absolute -bottom-12 left-1/2 -translate-x-1/2 overflow-hidden rounded-3xl text-onSecondary bg-secondary px-4 py-2 font-medium transition-all duration-300 hover:bg-opacity-95 active:rounded-xl min-[688px]:-bottom-16 lg:-bottom-20 lg:px-5 lg:text-lg shadow-xl hover:shadow-2xl"
+          className="absolute -bottom-12 left-1/2 -translate-x-1/2 overflow-hidden rounded-3xl bg-secondary px-4 py-2 font-medium text-onSecondary shadow-xl transition-all duration-300 hover:bg-opacity-95 hover:shadow-2xl active:rounded-xl min-[688px]:-bottom-16 lg:-bottom-20 lg:px-5 lg:text-lg"
         >
           {visibleProject < projects.length ? "Show More" : "Show Less"}
-          <Ripple color="rgb(var(--on-secondary-container))" duration={350} opacity={0.25} />
+          <Ripple
+            color="rgb(var(--on-secondary-container))"
+            duration={350}
+            opacity={0.25}
+          />
         </button>
       )}
     </section>
