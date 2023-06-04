@@ -44,7 +44,6 @@
   --url: #c4e7ff;
   --card: #8a33b84d;
 
-
   /* Background Image URL  */
 
   --Hero-Image: url(https://lh3.googleusercontent.com/pw/AJFCJaVz9pgyTAJ8If8MlvBGzK-3p_Lm0HVCcaIkN6Hi0hhfVAB00aOx-y3_9GV8OCUib0DLyuK3VK0fcdHUrF0tz5zCZqz3BvKSNjVJW0Kw-xb5fEJ2XX7ehC1YHJE9ZJTqsOSsoHAHUjSpUuDdubHtkG_6=w1279-h682-s-no);
@@ -86,7 +85,7 @@
   --surface-variant: 68 71 79;
   --on-surface-variant: 197 198 208;
 
- /* Card Hover */
+  /* Card Hover */
   /* --age: rgb(0, 74, 117, 70%); */
   --age: rgba(0, 76, 106, 1);
   --advice: rgba(46, 79, 0, 0.7);
@@ -179,7 +178,11 @@ body {
     --min-size: 320px;
   }
 }
-
+@media (min-width: 1440px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 /* Main Color For the whole theme is #015ac2 */
 .react-tooltip {
   --rt-color-dark: rgb(var(--tertiary-container));
@@ -221,7 +224,7 @@ body {
   background-color: var(--age);
 }
 .card-background:nth-child(2):hover {
-  background-color: var(--advice)
+  background-color: var(--advice);
 }
 .card-background:nth-child(3):hover {
   background-color: var(--e-commerce);
