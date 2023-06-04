@@ -34,9 +34,9 @@ export default function Navbar() {
     <>
       <header
         data-overlay={`${isOpen ? "true" : "false"}`}
-        className="mx-auto flex max-w-[1440px] items-center justify-between py-4 pl-4 pr-2 sm:py-6 sm:pl-12 sm:pr-10 md:pl-14 md:pr-12 lg:px-28 xl:px-28"
+        className=" mx-auto flex max-w-[1440px] items-center justify-between py-4 pl-4 pr-2 sm:py-6 sm:pl-12 sm:pr-10 md:pl-14 md:pr-12 lg:px-28 xl:px-28"
       >
-        <div>
+        <div className="heroNav">
           <a
             href="#"
             className="text-2xl font-bold transition-all duration-[350ms] ease-in-out sm:text-3xl"
@@ -46,13 +46,13 @@ export default function Navbar() {
         </div>
         <nav
           ref={Navref}
-          className={`navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-6 pl-[10%] pr-[2%] transition-all duration-[350ms] ease-in-out max-sm:bg-surface sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:px-0 sm:opacity-100 lg:gap-6 ${
+          className={` navbar fixed top-0 flex w-[75%] flex-col items-start justify-center gap-6 pl-[10%] pr-[2%] transition-all duration-[350ms] ease-in-out max-sm:bg-surface sm:static sm:w-auto sm:flex-row sm:items-center sm:gap-4 sm:px-0 sm:opacity-100 lg:gap-6 ${
             isOpen
               ? "right-0 z-[5] rounded-s-2xl opacity-100"
               : "-right-72 rounded-none opacity-0"
           }`}
         >
-          <ul className="flex flex-col items-start gap-6 px-2 font-medium sm:flex-row sm:items-center xl:text-lg text-onBackground">
+          <ul className="heroNav flex flex-col items-start gap-6 px-2 font-medium text-onBackground sm:flex-row sm:items-center xl:text-lg">
             <li
               data-tooltip-place="bottom"
               data-tooltip-content="Go to Project"
@@ -97,12 +97,12 @@ export default function Navbar() {
               className="navTip"
             />
           </ul>
-          <div className="flex flex-col items-start gap-6 rounded-[100vmax] px-2 sm:flex-row sm:items-center sm:px-0">
+          <div className="heroNav flex flex-col items-start gap-6 rounded-[100vmax] px-2 sm:flex-row sm:items-center sm:px-0">
             <a
               data-tooltip-place="bottom"
               data-tooltip-delay-show={300}
               data-tooltip-id="github-tooltip"
-              className="github-tooltip relative right-8 flex scale-[140%] items-center gap-2 self-center overflow-hidden rounded-[100vmax] text-onBackground px-2 py-1.5 text-xs transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 max-[300px]:right-0 sm:right-auto sm:scale-[115%] sm:gap-0 sm:rounded-[50%] sm:p-2 sm:indent-[-9999px]"
+              className="github-tooltip relative right-8 flex scale-[140%] items-center gap-2 self-center overflow-hidden rounded-[100vmax] px-2 py-1.5 text-xs text-onBackground transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 max-[300px]:right-0 sm:right-auto sm:scale-[115%] sm:gap-0 sm:rounded-[50%] sm:p-2 sm:indent-[-9999px]"
               href="https://github.com/SameerJS6"
               target={"_blank"}
             >
@@ -158,19 +158,21 @@ export default function Navbar() {
             <ThemeToggle />
           </div>
         </nav>
-        <button
-          className="z-20 rounded-[50%] transition-all duration-[350ms] hover:bg-onPrimaryContainer hover:bg-opacity-5 sm:hidden"
-          aria-label="Hamburger Menu"
-        >
-          <Hamburger
-            toggled={isOpen}
-            toggle={setIsOpen}
-            duration={0.4}
-            size={23}
-            distance="sm"
-            color="rgb(var(--on-background))"
-          />
-        </button>
+        <div className="heroNav z-20 grid aspect-square rounded-[50%] sm:hidden">
+          <button
+            className="z-20 rounded-[50%] transition-all duration-[350ms] hover:bg-onPrimaryContainer hover:bg-opacity-5 sm:hidden"
+            aria-label="Hamburger Menu"
+          >
+            <Hamburger
+              toggled={isOpen}
+              toggle={setIsOpen}
+              duration={0.4}
+              size={23}
+              distance="sm"
+              color="rgb(var(--on-background))"
+            />
+          </button>
+        </div>
       </header>
     </>
   );

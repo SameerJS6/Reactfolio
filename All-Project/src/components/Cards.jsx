@@ -44,8 +44,8 @@ export default function Cards() {
       className="relative my-6 px-4 py-2 transition-colors duration-300 sm:my-14 sm:py-2 md:my-[3.5rem] md:py-2 lg:my-20 lg:py-4"
       id="Projects"
     >
-      <div className="m-6" role="heading">
-        <h2 className="text-5xl font-medium" role="heading">
+      <div className="m-6 projectText">
+        <h2 className="text-5xl font-medium">
           Projects
         </h2>
       </div>
