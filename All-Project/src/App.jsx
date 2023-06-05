@@ -31,16 +31,27 @@ export default function App() {
     resizeObserverRef.current.observe(containerRef.current);
 
     return () => resizeObserverRef.current.disconnect();
-    // console.log(containerRef.current.offsetWidth);
+
   }, []);
 
   useEffect(() => {
     const textElement = document.querySelector("#target");
     textRef.current = SplitType.create(textElement);
     textRef.current.containerWidth = containerRef.current.offsetWidth;
-    // let text = SplitType.create("#target");
+
 
     gsap.to(".mainApp", { duration: 0, css: { visibility: "visible" } });
+    gsap.fromTo(
+      containerRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        duration: 2,
+        opacity: 1,
+        ease: "power3",
+      }
+    );
     tl.from(".heroNav", {
       duration: 1,
       y: -25,
@@ -98,7 +109,7 @@ export default function App() {
           ease: "power3.out",
           delay: -0.9,
         }
-      )
+      );
   }, []);
   return (
     <>
