@@ -1,6 +1,6 @@
-# React Project
+# Reactfolio
 
-This folder contains all the basic React Project.
+Learning by Building - Reactfolio.
 
 ## Previews:-
 
