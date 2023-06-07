@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+
+import Hero from "./components/Hero Section/Hero";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Bottom Section/Footer";
+
 import { gsap } from "gsap";
 import SplitType from "split-type";
 import debounce from "lodash.debounce";

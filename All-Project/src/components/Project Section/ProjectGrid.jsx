@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import Projects from "./Projects";
 
 import { Tooltip } from "react-tooltip";
-import Ripple from "../hook/Ripple";
-import Loader from "./Loader/Loader";
+import Ripple from "../../hook/Ripple";
+import Loader from "../Loader/Loader";
 
-export default function Cards() {
+export default function ProjectGrid() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleProject, setVisibleProject] = useState(3);
@@ -44,10 +44,8 @@ export default function Cards() {
       className="relative my-6 px-4 py-2 transition-colors duration-300 sm:my-14 sm:py-2 md:my-[3.5rem] md:py-2 lg:my-20 lg:py-4"
       id="Projects"
     >
-      <div className="m-6 projectText">
-        <h2 className="text-5xl font-medium">
-          Projects
-        </h2>
+      <div className="projectText m-6">
+        <h2 className="text-5xl font-medium">Projects</h2>
       </div>
       {loading && <Loader />}
       {!loading && (

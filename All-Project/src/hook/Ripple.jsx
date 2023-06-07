@@ -26,23 +26,6 @@ const Ripple = (props) => {
     setRippleArray([]);
   });
 
-  //   const addRipple = (event) => {
-  //     const rippleContainer = event.currentTarget.getBoundingClientRect();
-  //     const size =
-  //       rippleContainer.width > rippleContainer.height
-  //         ? rippleContainer.width
-  //         : rippleContainer.height;
-  //     const x = event.pageX - rippleContainer.x - size / 2;
-  //     const y = event.pageY - rippleContainer.y - size / 2;
-  //     const newRipple = {
-  //       x,
-  //       y,
-  //       size,
-  //     };
-
-  //     setRippleArray([...rippleArray, newRipple]);
-  //   };
-
   const addRipple = (event) => {
     const rippleContainer = event.currentTarget.getBoundingClientRect();
     const buttonWidth = rippleContainer.width;

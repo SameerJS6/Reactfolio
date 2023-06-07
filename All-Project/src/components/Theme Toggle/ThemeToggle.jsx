@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Ripple from "../hook/Ripple";
+import Ripple from "../../hook/Ripple";
 import "@theme-toggles/react/css/Within.css";
 import { Within } from "@theme-toggles/react";
 
@@ -63,7 +63,6 @@ export default function ThemeToggle() {
       onClick={handleTheme}
     >
       {!theme ? "Switch to Dark Mode" : "Switch to Light Mode"}
-      {/* Switch to Dark Mode */}
       <Ripple color="rgb(var(--on-surface))" opacity={0.3} duration={350} />
     </Within>
   );

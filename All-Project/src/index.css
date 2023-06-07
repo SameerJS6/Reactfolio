@@ -86,13 +86,12 @@
   --on-surface-variant: 197 198 208;
 
   /* Card Hover */
-  /* --age: rgb(0, 74, 117, 70%); */
-  --age: rgba(0, 76, 106, 1);
-  --advice: rgba(46, 79, 0, 0.7);
-  --e-commerce: rgba(124, 45, 21, 0.7);
-  --room: rgba(197, 198, 208, 0.2);
-  --url: rgba(0, 76, 106, 1);
-  --card: rgba(138, 51, 184, 0.302);
+  --age: #004c6a;
+  --advice: #2e4f00b3;
+  --e-commerce: #7c2d15b3;
+  --room: #c5c6d033;
+  --url: #004c6a;
+  --card: #8a33b84d;
 
   /* Background Image URL  */
   --Hero-Image: url(https://lh3.googleusercontent.com/pw/AJFCJaV7wuHNv86sM9T_uVuTyjcywpkNsa9zKY94zDNl34Eils06rv7uwakTA8Xt2EdwP-GDe93X6Wcwprr_6jN1gpLbAT4mCBR_A8JZMZ4jkI_QwbE3CpmWNQp54SbCSn6rP7OuUzDgQVrwy-cF7k7wK8YW=w1279-h682-s-no);
@@ -104,15 +103,16 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  transition: all 350ms ease;
   font-family: "Inter", sans-serif;
   color: rgb(var(--on-background));
   background-color: rgb(var(--background));
-  transition: all 350ms ease;
 }
+
+/* Navbar Styling */
 .navbar {
   height: auto;
 }
-
 .hero-gradient,
 .about-gradient {
   --bgImage: var(--Hero-Image);
@@ -159,13 +159,14 @@ body {
   }
 }
 
-/* For the Theme Toggle  */
+/* For Theme Toggle  */
 .theme-toggle > svg {
   width: 1.85rem;
   height: 1.85rem;
   fill: rgb(var(--on-background));
 }
 
+/* Project Grid  */
 .card-grid {
   --min-size: 250px;
 
@@ -183,7 +184,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* Main Color For the whole theme is #015ac2 */
+
+/* Tooltip Styling  */
 .react-tooltip {
   --rt-color-dark: rgb(var(--tertiary-container));
   --rt-color-white: rgb(var(--on-tertiary-container));
@@ -194,32 +196,7 @@ body {
   border-radius: 0.5rem !important;
 }
 
-/* Scrollbar Styling  */
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: rgb(var(--background));
-  margin-block: 5px;
-  border-radius: 100vmax;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 100vmax;
-  background-color: rgb(var(--primary));
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(var(--primary) / 70%);
-}
-/* Scrollbar for firefox  */
-@supports (scrollbar-color: rgb(var(--background)) rgb(var(--primary))) {
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(var(--primary)) rgb(var(--background));
-  }
-}
-
-/* Card Background Hover */
+/* Project Card Background Hover */
 .card-background:nth-child(1):hover {
   background-color: var(--age);
 }
@@ -239,12 +216,11 @@ body {
   background-color: var(--card);
 }
 
-
 /* GSAP Text Animation  */
 #target {
   font-kerning: none;
 }
-.line{
+.line {
   overflow: hidden;
   line-height: 1.17;
 }
@@ -269,5 +245,31 @@ body {
   100% {
     opacity: 1;
     translate: 0 0px;
+  }
+}
+
+/* Scrollbar Styling  */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+  margin-block: 5px;
+  border-radius: 100vmax;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 100vmax;
+  background-color: rgb(var(--primary));
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(var(--primary) / 70%);
+}
+
+/* Scrollbar for firefox  */
+@supports (scrollbar-color: rgb(var(--background)) rgb(var(--primary))) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--primary)) rgb(var(--background));
   }
 }

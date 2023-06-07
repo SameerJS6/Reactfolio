@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 
 import Hamburger from "hamburger-react";
 import { Tooltip } from "react-tooltip";
-import Ripple from "../hook/Ripple";
-import ThemeToggle from "./ThemeToggle";
+import Ripple from "../../hook/Ripple";
+import ThemeToggle from "../Theme Toggle/ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,14 +43,14 @@ export default function Navbar() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="thumbnail-icon w-10 h-10 sm:w-12 sm:h-12 fill-onBackground transition-colors duration-300 "
+              className="thumbnail-icon h-10 w-10 fill-onBackground transition-colors duration-300 sm:h-12 sm:w-12 "
               viewBox="-0.86 0 201.72 200"
               width="24"
               height="24"
             >
               <path
                 d="M-0.86,100c0-55.23,44.77-100,100-100c23.29,0,44.72,7.96,61.72,21.31c-12.94,-7.21-27.85,-11.31-43.72,-11.31c-49.71,0-90,40.29-90,90c0,49.71,40.29,90,90,90c15.87,0,30.78,-4.11,43.72,-11.31c-16.99,13.35-38.43,21.31-61.72,21.31c-55.23,0-100,-44.77-100,-100zM200.86,100c0,44.18-35.82,80-80,80c-18.63,0-35.78,-6.37-49.38,-17.05c10.36,5.77,22.28,9.05,34.98,9.05c39.76,0,72-32.24,72-72c0-39.76-32.24-72-72-72c-12.69,0-24.62,3.28-34.98,9.05c13.6,-10.68,30.74,-17.05,49.38,-17.05c44.18,0,80,35.82,80,80zM123.05,145.32l-18.83,-34.68v0.13h-28.05v34.68h-11.43v-90.91h38.83c22.21,0,31.43,10.78,31.43,28.44c0,14.42-5.97,23.51-19.74,26.49l20,35.84zM76.17,63.64v38.31h26.88c14.42,0,20.52,-6.36,20.52,-19.09c0,-12.99,-5.97,-19.22,-20.52,-19.22z"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               />
             </svg>
           </a>
@@ -151,21 +151,6 @@ export default function Navbar() {
               className="navTip"
               content="Visit Github Profile"
             />
-            {/* <Within
-              toggled={theme}
-              toggle={setTheme}
-              duration={750}
-              className="relative flex flex-row-reverse items-center gap-2 overflow-hidden rounded-[100vmax] p-3 transition-all duration-[350ms] ease-in-out hover:-translate-y-1 hover:bg-onPrimaryContainer hover:bg-opacity-10 sm:gap-0 sm:rounded-[50%] sm:bg-transparent sm:p-2 sm:indent-[-9999px]"
-              onClick={handleTheme}
-            >
-              {!theme ? "Switch to Dark Mode" : "Switch to Light Mode"}
-              
-              <Ripple
-                color="rgb(var(--on-surface))"
-                opacity={0.3}
-                duration={350}
-              />
-            </Within> */}
             <ThemeToggle />
           </div>
         </nav>

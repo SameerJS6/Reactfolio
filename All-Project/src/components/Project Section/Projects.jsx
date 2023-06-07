@@ -1,5 +1,5 @@
 import React from "react";
-import Ripple from "../hook/Ripple";
+import Ripple from "../../hook/Ripple";
 
 export default function Projects({
   title,

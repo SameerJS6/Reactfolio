@@ -1,8 +1,9 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Cards from "./Cards";
-import About from "./About";
-import Ripple from "../hook/Ripple";
+import Ripple from "../../hook/Ripple";
+
+import Navbar from "../Navbar/Navbar";
+import About from "../Bottom Section/About";
+import ProjectGrid from "../Project Section/ProjectGrid";
 
 export default function Hero({ containerRef }) {
   return (
@@ -13,7 +14,6 @@ export default function Hero({ containerRef }) {
           className="hero-gradient min-h-[410px] rounded-b-3xl text-onBackground sm:rounded-b-[2.5rem] md:rounded-b-[3rem] lg:min-h-[450px] xl:rounded-b-[4rem]"
         >
           <Navbar />
-
           <div className="grid place-content-center gap-4 px-4 py-12 text-center transition-colors duration-300 sm:px-8 md:px-10 xl:py-24">
             <h1
               className="text-[50px] font-medium leading-snug sm:text-6xl md:text-[80px] xl:text-[112px]"
@@ -45,8 +45,7 @@ export default function Hero({ containerRef }) {
           </div>
         </div>
 
-        <Cards />
-
+        <ProjectGrid />
         <About />
       </main>
     </>
