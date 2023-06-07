@@ -29,11 +29,6 @@ export default {
         tertiaryContainer: withOpacity("--tertiary-container"),
         ontertiaryContainer: withOpacity("--on-tertiary-container"),
 
-        error: withOpacity("--error"),
-        onError: withOpacity("--on-error"),
-        errorContainer: withOpacity("--error-container"),
-        onErrorContainer: withOpacity("--on-error-container"),
-
         onBackground: withOpacity('--on-background'),
 
         surface: withOpacity("--surface"),
