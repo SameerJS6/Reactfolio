@@ -22,11 +22,11 @@
 
 ### Light Mode Preview
 
-![Light Mode Preview](https://lh3.googleusercontent.com/pw/AJFCJaX6FR-C5wLQaDkGW3eVSAgr9Iil0qmtGnCcHGhvGhLcxVE21tfVbMs54RXBLvl-h-wn5lXetv-IJMH1RToce_gibEhCFtIh0n6TRLFs7Nn9vVqODwJfY5Rt7sRVFz9m-t4HQv4m2P5MkT6r3mHp92ei=w317-h681-s-no)
+![Light Mode Preview](https://lh3.googleusercontent.com/pw/AJFCJaV_QZMxD0XBnqwgiVrQa1bkrvcwUJWP8nVtBYJ1Z4bnOQgVRpHOGDzfgOU08jNTfzUHz6kutJj1XWtYMMITAudNtEC0bNKe09CupGnKfbNqFFPjJhmUaEnQ0Bb9Vpi9XiqKdj9G05XUcfzdWHohgJcy=w317-h681-s-no)
 
 ### Dark Mode Preview
 
-![Dark Mode Preview](https://lh3.googleusercontent.com/pw/AJFCJaVfeIvt5rbxIZipMJqvll80Ny7rj2t1yjqYHGmdVhGhE321RwHYDi7L7przWob7AFKuFuW8BI5kMrzo5odR0SDGMMnhDt6dds7IiByM8mBLKcRNtAUuxgquWJrxlIozWqhaebWeUPqAiPasj2S673rN=w388-h681-s-no)
+![Dark Mode Preview](https://lh3.googleusercontent.com/pw/AJFCJaV5pV4dDkzpvn_WgM80vKtkQKfzWlMHkpvRnfHSpHyE-eb1-Tq4--JG9MTH97hzRUxJn313HB7KBqiaJHIG8TIhrFARggMDtWm-H9O0DPT9Y22KhS2FsE52-FKFLGa_79hDobkSbCuHJwHO9IpYV6DC=w387-h681-s-no)
 
 </div>
 
