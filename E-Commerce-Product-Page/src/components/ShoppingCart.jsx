@@ -1,15 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Styles/Navbar.css";
 import "./Styles/Animations.css";
 import "./Styles/ShoppingCart.css";
-import RippleAnimation from "./RippleAnimation";
 import mainImage from "../assets/image-product-1-thumbnail.jpg";
 
 export default function ShoppingCart(props) {
-  const buttonRef2 = useRef();
-  RippleAnimation(buttonRef2, { color: "var(--grey-300)" });
-  const buttonRef3 = useRef();
-  RippleAnimation(buttonRef3, { color: "var(--dark-blue)", duration: 500 });
   return (
     <>
       <div
@@ -17,7 +12,25 @@ export default function ShoppingCart(props) {
           props.cartIsOpen == true ? "cart-active" : ""
         }`}
       >
-        <h3 className="opacity">Cart</h3>
+        <div className="cart-header">
+          <h3 className="opacity">Cart</h3>
+          <button className="cart-close-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="cart-close-svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
         <div className="checkout-wrapper">
           <div className="checkout-content">
             <div className="thumbnail">
@@ -30,7 +43,7 @@ export default function ShoppingCart(props) {
               </p>
             </div>
             <div className="delete">
-              <button className="delete-btn" ref={buttonRef2}>
+              <button className="delete-btn">
                 <svg
                   className="event-none"
                   width="14"
@@ -50,9 +63,7 @@ export default function ShoppingCart(props) {
             </div>
           </div>
           <div className="checkout-btn">
-            <button className="out-btn" ref={buttonRef3}>
-              Checkout
-            </button>
+            <button className="out-btn">Checkout</button>
           </div>
         </div>
       </div>

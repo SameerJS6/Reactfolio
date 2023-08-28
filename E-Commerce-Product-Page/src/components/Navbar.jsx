@@ -1,10 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./Styles/Navbar.css";
 import "./Styles/Animations.css";
 import ShoppingCart from "./ShoppingCart";
 import ThemeToggle from "./ThemeToggle";
 import ProfileImage from "../assets/image-avatar.png";
-import RippleAnimation from "./RippleAnimation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,15 +11,11 @@ export default function Navbar() {
   isOpen
     ? document.body.classList.add("overlay")
     : document.body.classList.remove("overlay");
-  const buttonRef = useRef();
-  RippleAnimation(buttonRef, { color: "var(--grey-300)" });
-  const buttonRef2 = useRef();
-  RippleAnimation(buttonRef2, { color: "var(--orange)" });
   return (
     <>
       <header data-overlay={`${isOpen ? "true" : "false"}`}>
         <div className="logo">
-          <div className="hamburger p-1 | opacity" ref={buttonRef}>
+          <div className="hamburger p-1 | opacity">
             <button
               className={`hamburger hamburger-spin ${
                 isOpen ? "is-active" : ""
@@ -66,11 +61,11 @@ export default function Navbar() {
               <a href="#">Contact</a>
             </li>
           </ul>
-          {isOpen && (
+          {/* {isOpen && (
             <div className="theme-mobile-bar">
-              <ThemeToggle />
+              <ThemeToggle /> 
             </div>
-          )}
+          )} */}
         </nav>
 
         <div className="buttons-wrapper">
@@ -80,7 +75,7 @@ export default function Navbar() {
               data-after={`${cartIsOpen ? "true" : "false"}`}
               onClick={() => setCartIsOpen(!cartIsOpen)}
             >
-              <button className="cart" ref={buttonRef2}>
+              <button className="cart">
                 <svg
                   className="cart-svg event-none"
                   width="22"
@@ -97,10 +92,7 @@ export default function Navbar() {
             </div>
             <ShoppingCart cartIsOpen={cartIsOpen} />
           </div>
-          <div className="theme-navBar">
-            {" "}
-            <ThemeToggle />{" "}
-          </div>
+          <ThemeToggle />
           <button className="btn-profile | fade-in-fwd">
             <img src={ProfileImage} alt="ProfileImage" />
           </button>
