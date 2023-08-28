@@ -10,8 +10,10 @@
     "host": "vite --host"
   },
   "dependencies": {
+    "@theme-toggles/react": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "use-ripple-hook": "^1.0.22"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
