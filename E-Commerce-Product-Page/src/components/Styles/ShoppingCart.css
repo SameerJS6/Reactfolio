@@ -1,6 +1,7 @@
 header {
   position: relative;
 }
+
 .cart-content-box {
   top: -5%;
   right: 0%;
@@ -55,12 +56,34 @@ header {
   font-size: var(--size-100);
   font-size: 1rem;
 }
+.cart-header > h3 {
+  color: var(--black);
+}
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 0.5rem;
+}
+.cart-close-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: var(--grey-300);
+}
+.cart-close-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: transparent;
+  padding: 0.25rem 0.25rem;
+  transition: all 350ms ease-in-out;
+}
 /* Delete Svg Button  */
 .delete-btn {
   width: 40px;
   border: none;
   cursor: pointer;
-  aspect-ratio: 1/1;
+  padding: 0.75rem 0.75rem;
   border-radius: 50%;
   background-color: transparent;
   transition: background-color var(--t-350ms);
@@ -68,13 +91,15 @@ header {
 .delete-btn > svg {
   margin-inline: auto;
   fill: var(--grey-200);
-  transition: fill var(--t-350ms), scale var(--t-250ms), rotate var(--t-350ms);
+  transition: fill var(--t-350ms), translate var(--t-250ms),
+    rotate var(--t-350ms);
 }
-.delete-btn:hover {
+.delete-btn:hover,
+.cart-close-btn:hover {
   background-color: var(--hover-grey-200);
 }
 .delete-btn:hover > svg {
-  scale: 1.1;
+  translate: 0 -2px;
   rotate: -10deg;
   fill: var(--grey-300);
 }

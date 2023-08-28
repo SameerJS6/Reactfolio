@@ -1,5 +1,4 @@
-import React, { useState, useRef } from "react";
-import RippleAnimation from "./RippleAnimation";
+import React, { useState } from "react";
 import minus from "../assets/icon-minus.svg";
 import plus from "../assets/icon-plus.svg";
 import "./Styles/MainContent.css";
@@ -8,12 +7,6 @@ import "./Styles/Animations.css";
 export default function MainContent() {
   const [count, setCount] = useState(0);
 
-  const buttonRef = useRef();
-  const buttonRef1 = useRef();
-  const buttonRef2 = useRef();
-  RippleAnimation(buttonRef, { color: "var(--dark-blue)" });
-  RippleAnimation(buttonRef1, {});
-  RippleAnimation(buttonRef2, {});
 
   const IncreamentCount = () => {
     setCount(count + 1);
@@ -58,7 +51,7 @@ export default function MainContent() {
           <div className="counting-container">
             <button
               className="minus"
-              ref={buttonRef1}
+              
               onClick={DecreamentCount}
             >
               <img className="event-none" src={minus} alt="Minus" />
@@ -66,12 +59,12 @@ export default function MainContent() {
 
             <p className="count">{count}</p>
 
-            <button className="plus" ref={buttonRef2} onClick={IncreamentCount}>
+            <button className="plus"  onClick={IncreamentCount}>
               <img className="event-none" src={plus} alt="Plus" />
             </button>
           </div>
 
-          <div className="add-to-cart" ref={buttonRef}>
+          <div className="add-to-cart">
             <svg
               className="add-cart-svg | event-none"
               width="22"

@@ -1,8 +1,7 @@
-import React from 'react'
-import './App.css'
-import ImageSlider from './components/ImageSlider'
-import MainContent from './components/MainContent'
-import Navbar from './components/Navbar'
+import React from "react";
+import ImageSlider from "./components/ImageSlider";
+import MainContent from "./components/MainContent";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
@@ -15,5 +14,5 @@ export default function App() {
         </div>
       </div>
     </>
-  )
+  );
 }
