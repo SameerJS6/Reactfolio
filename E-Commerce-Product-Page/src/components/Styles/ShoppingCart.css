@@ -8,6 +8,8 @@ header {
   z-index: 2;
   opacity: 0;
   padding: 1rem;
+  width: 355px;
+  max-width: 400px;
   position: absolute;
   margin-inline: 1rem;
   pointer-events: none;
@@ -52,9 +54,16 @@ header {
   color: var(--black);
   margin-inline: 0.75rem 0.5rem;
 }
+.center {
+  text-align: center;
+  padding-block: 2rem 1rem;
+  margin-block: 1rem;
+  border-block-start: 3px solid var(--hover-grey-100);
+}
 .out-title > p:first-child {
   font-size: var(--size-100);
   font-size: 1rem;
+  text-transform: capitalize;
 }
 .cart-header > h3 {
   color: var(--black);

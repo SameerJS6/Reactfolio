@@ -114,7 +114,7 @@
   font-weight: var(--fw-700);
   transition: color var(--t-250ms);
 }
-.add-to-cart {
+/* .add-to-cart {
   gap: 1rem;
   display: flex;
   cursor: pointer;
@@ -127,40 +127,41 @@
     0 8px 10px -6px rgb(var(--box-shadow), 0.3);
   transition: background-color var(--t-350ms), color var(--t-250ms),
     scale var(--t-350ms), translate var(--t-350ms);
-}
-.add-to-cart > .add-cart-svg {
+} */
+.add-to-cart-btn > .add-cart-svg {
   fill: var(--white);
   transition: fill var(--t-250ms), translate var(--t-350ms),
     rotate var(--t-250ms), scale var(--t-250ms);
 }
 .add-to-cart-btn {
-  border: none;
+  gap: 1rem;
+  display: flex;
   cursor: pointer;
   color: var(--white);
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  font-weight: var(--fw-700);
   font-size: var(--size-100);
-  background-color: transparent;
+  border: 1px solid transparent;
+  background-color: var(--orange);
   transition: background-color var(--t-350ms), color var(--t-250ms),
     scale var(--t-350ms), translate var(--t-350ms);
 }
-.add-to-cart:hover {
+.add-to-cart-btn:hover {
   scale: 1.01;
   translate: 0 -2px;
+  color: var(--orange);
   border-color: var(--orange);
   background-color: transparent;
   box-shadow: 0 25px 40px -12px rgb(var(--box-shadow), 0.4);
 }
-.add-to-cart:hover > .add-to-cart-btn {
-  scale: 1.02;
-  color: var(--orange);
-}
-.add-to-cart:hover > .add-cart-svg {
+.add-to-cart-btn:hover > .add-cart-svg {
   scale: 1.03;
-  rotate: 360deg;
   translate: 0 -1px;
   fill: var(--orange);
 }
 @media (min-width: 55em) {
-  .add-to-cart {
+  .add-to-cart-btn {
     padding: 0.8rem 1.6rem;
   }
   .counting-container {
@@ -195,7 +196,6 @@
   }
   .add-to-cart:hover > .add-cart-svg {
     scale: 1.1;
-    rotate: 360deg;
     translate: 0 -3px;
   }
 }
