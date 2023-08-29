@@ -3,20 +3,20 @@ import minus from "../assets/icon-minus.svg";
 import plus from "../assets/icon-plus.svg";
 import "./Styles/MainContent.css";
 import "./Styles/Animations.css";
+import { useCartContext } from "../context/Context";
 
 export default function MainContent() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const { increaseItem, quantity, decreaseItem, addToCart } = useCartContext();
+  // const IncreamentCount = () => {
+  //   setCount(count + 1);
+  //   console.log(count);
+  // };
 
-
-  const IncreamentCount = () => {
-    setCount(count + 1);
-    console.log(count);
-  };
-
-  const DecreamentCount = () => {
-    count <= 0 ? "" : setCount(count - 1);
-    console.log(count);
-  };
+  // const DecreamentCount = () => {
+  //   count <= 0 ? "" : setCount(count - 1);
+  //   console.log(count);
+  // };
 
   const Data = {
     id: 1,
@@ -49,22 +49,19 @@ export default function MainContent() {
 
         <div className="buttons">
           <div className="counting-container">
-            <button
-              className="minus"
-              
-              onClick={DecreamentCount}
-            >
+            <button className="minus" onClick={decreaseItem}>
               <img className="event-none" src={minus} alt="Minus" />
             </button>
 
-            <p className="count">{count}</p>
+            <p className="count">{quantity}</p>
 
-            <button className="plus"  onClick={IncreamentCount}>
+            <button className="plus" onClick={increaseItem}>
               <img className="event-none" src={plus} alt="Plus" />
             </button>
           </div>
 
-          <div className="add-to-cart">
+          {/* <div className="add-to-cart"> */}
+          <button onClick={addToCart} className="add-to-cart add-to-cart-btn">
             <svg
               className="add-cart-svg | event-none"
               width="22"
@@ -77,10 +74,9 @@ export default function MainContent() {
                 fillRule="nonzero"
               />
             </svg>
-            <button className="add-to-cart-btn | event-none">
-              Add to cart
-            </button>
-          </div>
+            Add to cart
+          </button>
+          {/* </div> */}
         </div>
       </div>
     </>

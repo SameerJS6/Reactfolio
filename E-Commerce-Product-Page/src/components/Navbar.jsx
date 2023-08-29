@@ -4,10 +4,11 @@ import "./Styles/Animations.css";
 import ShoppingCart from "./ShoppingCart";
 import ThemeToggle from "./ThemeToggle";
 import ProfileImage from "../assets/image-avatar.png";
+import { useCartContext } from "../context/Context";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartIsOpen, setCartIsOpen] = useState(false);
+  const { isCartOpen, openCart } = useCartContext();
   isOpen
     ? document.body.classList.add("overlay")
     : document.body.classList.remove("overlay");
@@ -72,8 +73,8 @@ export default function Navbar() {
           <div>
             <div
               className="cart-wrapper | fade-in-fwd"
-              data-after={`${cartIsOpen ? "true" : "false"}`}
-              onClick={() => setCartIsOpen(!cartIsOpen)}
+              data-after={`${isCartOpen ? "true" : "false"}`}
+              onClick={openCart}
             >
               <button className="cart">
                 <svg
@@ -90,7 +91,7 @@ export default function Navbar() {
                 </svg>
               </button>
             </div>
-            <ShoppingCart cartIsOpen={cartIsOpen} />
+            <ShoppingCart />
           </div>
           <ThemeToggle />
           <button className="btn-profile | fade-in-fwd">
