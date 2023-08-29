@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Styles/Navbar.css";
 import "./Styles/Animations.css";
 import ShoppingCart from "./ShoppingCart";
 import ThemeToggle from "./ThemeToggle";
 import ProfileImage from "../assets/image-avatar.png";
 import { useCartContext } from "../context/Context";
+import { useClickOutside } from "../hook/useClickOutside";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { isCartOpen, openCart } = useCartContext();
+  const { isCartOpen, openCart, closeCart } = useCartContext();
   isOpen
     ? document.body.classList.add("overlay")
     : document.body.classList.remove("overlay");
+
+  let cartRef = useRef();
+  useClickOutside(cartRef, closeCart);
+
+  let navRef = useRef();
+  const closeMenu = () => setIsOpen(false);
+  useClickOutside(navRef, closeMenu);
   return (
     <>
       <header data-overlay={`${isOpen ? "true" : "false"}`}>
@@ -44,7 +52,7 @@ export default function Navbar() {
           </svg>
         </div>
 
-        <nav className={`${isOpen ? "open" : ""}`}>
+        <nav ref={navRef} className={`${isOpen ? "open" : ""}`}>
           <ul className={`nav-list ${isOpen ? "active" : ""}`}>
             <li className="tracking-in">
               <a href="#">Collections</a>
@@ -70,7 +78,7 @@ export default function Navbar() {
         </nav>
 
         <div className="buttons-wrapper">
-          <div>
+          <div ref={cartRef}>
             <div
               className="cart-wrapper | fade-in-fwd"
               data-after={`${isCartOpen ? "true" : "false"}`}
@@ -93,7 +101,9 @@ export default function Navbar() {
             </div>
             <ShoppingCart />
           </div>
+
           <ThemeToggle />
+
           <button className="btn-profile | fade-in-fwd">
             <img src={ProfileImage} alt="ProfileImage" />
           </button>
