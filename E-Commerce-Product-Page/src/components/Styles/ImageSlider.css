@@ -3,6 +3,8 @@
   margin: 0 auto;
   cursor: pointer;
   overflow: hidden;
+  width: 90vw;
+  height: 320px;
   max-width: 350px;
   position: relative;
   border-radius: 6rem 2rem;
@@ -19,6 +21,7 @@
   display: none;
   justify-content: center;
 }
+
 .wrapper-content {
   overflow: hidden;
   position: relative;
@@ -88,8 +91,8 @@
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   }
   .main-img:hover > .hero-img {
-    scale: 1.2;
-    rotate: -5deg;
+    scale: 1.05;
+    rotate: -3deg;
     filter: brightness(110%);
   }
   .wrapper-content:hover {
@@ -147,6 +150,9 @@
   rotate: 0deg;
   filter: hue-rotate(0deg);
 }
+.box:active {
+  scale: 0.98;
+}
 
 /* LightBox  */
 .lightbox {
@@ -163,6 +169,53 @@
 }
 .lightbox > .main-img {
   max-width: 400px;
+  position: relative;
+  width: 90vw;
+  height: 380px;
+  max-width: 500px;
+}
+@media (max-width: 400px) {
+  
+  .lightbox > .main-img {
+    height: 60vh;
+  }
+}
+@media (max-width: 340px) {
+  .main-img {
+    height: 288px;
+  }
+  .lightbox > .main-img {
+    height: 50vh;
+  }
+}
+/* .main-img {
+  max-width: 350px;
+  height: auto;
+} */
+.lightbox-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 500ms ease-in-out;
+}
+.lightbox-img > img {
+  width: 100%;
+  /* max-width: 500px; */
+}
+/* Slide Classes  */
+.NextSlide {
+  opacity: 0;
+  translate: 550px 0;
+  pointer-events: none;
+}
+.ActiveSlide {
+  opacity: 1;
+  translate: 0 0;
+}
+.PrevSlide {
+  opacity: 0;
+  translate: -550px 0;
+  pointer-events: none;
 }
 .box.arrows {
   display: block;
@@ -204,6 +257,11 @@
   .main-img {
     margin: 0 auto 2rem;
     border-radius: 1rem;
+    height: 350px;
+  }
+  .lightbox > .main-img {
+    max-width: 400px;
+    height: 400px;
   }
   .image-wrapper {
     display: flex;
@@ -215,10 +273,10 @@
     top: 40%;
   }
   .box.left-arrow {
-    left: 15%;
+    left: 12%;
   }
   .box.right-arrow {
-    right: 15%;
+    right: 12%;
     opacity: 1;
   }
   .lightbox-close-btn {
@@ -229,19 +287,24 @@
 }
 
 @media (min-width: 1024px) {
+  .lightbox > .main-img {
+    height: 450px;
+    max-width: 450px;
+  }
   .box.arrows {
     width: 45px;
   }
   .box.left-arrow {
-    left: 25%;
+    left: 23%;
   }
   .box.right-arrow {
-    right: 25%;
+    right: 23%;
   }
 }
 @media (min-width: 1300px) {
   .lightbox > .main-img {
     max-width: 500px;
+    height: 500px
   }
   .box.arrows {
     width: 50px;
@@ -260,5 +323,21 @@
   }
   .lightbox > .main-img {
     max-width: 600px;
+    height: 600px;
+  }
+}
+
+/* Animation  */
+.opacity-rev {
+  animation: opacity-rev var(--t-500ms) both;
+}
+@keyframes opacity-rev {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translate(10px);
   }
 }
