@@ -194,7 +194,27 @@ nav {
   scale: 1.2;
   rotate: -360deg;
 }
-
+.cart-quantity {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  color: white;
+  border-radius: 50%;
+  width: 3ch;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0;
+  translate: 0 2px;
+  scale: 0.95;
+  padding: 0.1rem 0.25rem;
+  background-color: var(--orange);
+  transition: all 350ms ease-in-out;
+}
+.cart-show {
+  opacity: 1;
+  scale: 1;
+  translate: 0 0;
+}
 @media (max-width: 59em) {
   header {
     gap: 0;
