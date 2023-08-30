@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./Styles/Navbar.css";
 import "./Styles/Animations.css";
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCart from "./Cart/ShoppingCart";
 import ThemeToggle from "./ThemeToggle";
 import ProfileImage from "../assets/image-avatar.png";
 import { useCartContext } from "../context/Context";
@@ -9,7 +9,7 @@ import { useClickOutside } from "../hook/useClickOutside";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { isCartOpen, openCart, closeCart } = useCartContext();
+  const { isCartOpen, openCart, closeCart, totalQuantity } = useCartContext();
   isOpen
     ? document.body.classList.add("overlay")
     : document.body.classList.remove("overlay");
@@ -20,6 +20,7 @@ export default function Navbar() {
   let navRef = useRef();
   const closeMenu = () => setIsOpen(false);
   useClickOutside(navRef, closeMenu);
+
   return (
     <>
       <header data-overlay={`${isOpen ? "true" : "false"}`}>
@@ -29,7 +30,6 @@ export default function Navbar() {
               className={`hamburger hamburger-spin ${
                 isOpen ? "is-active" : ""
               }`}
-              type="button"
               onClick={() => setIsOpen(!isOpen)}
             >
               <span className="hamburger-box">
@@ -70,11 +70,6 @@ export default function Navbar() {
               <a href="#">Contact</a>
             </li>
           </ul>
-          {/* {isOpen && (
-            <div className="theme-mobile-bar">
-              <ThemeToggle /> 
-            </div>
-          )} */}
         </nav>
 
         <div className="buttons-wrapper">
@@ -98,6 +93,15 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
+              <p
+                className={`${
+                  totalQuantity === 0
+                    ? "cart-quantity"
+                    : "cart-show cart-quantity"
+                }`}
+              >
+                {totalQuantity}
+              </p>
             </div>
             <ShoppingCart />
           </div>

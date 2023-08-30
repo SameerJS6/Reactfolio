@@ -1,6 +1,6 @@
 import React from "react";
-import { useCartContext } from "../context/Context";
-import mainImage from "../assets/image-product-1-thumbnail.jpg";
+import { useCartContext } from "../../context/Context";
+import mainImage from "../../assets/image-product-1-thumbnail.jpg";
 
 export default function CartItem({ productTitle, price }) {
   const { totalQuantity, total, clearCart } = useCartContext();
