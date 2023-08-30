@@ -6,7 +6,7 @@ import {
   useEffect,
 } from "react";
 import Reducer from "./Reducer";
-import Item from "../data";
+import { Item } from "../data";
 
 const CartContext = createContext();
 
