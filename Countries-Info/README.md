@@ -2,6 +2,8 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Countries Info is web app, where user can search any country and get information about that country.
+
 ## Getting Started
 
 First, run the development server:
